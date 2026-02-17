@@ -1,0 +1,22 @@
+/* Réinitialisation marge de tout élément .section.level1 qui contient un enfant direct .section.level2, lui-même ayant un enfant direct .newcolumn qui est son dernier */
+/* Cas 1: section.level1 avec section.level2 qui se termine par newcolumn */
+.section.level1:has(> .section.level2 > .newcolumn:last-child),
+/* Cas 2: section.level1 qui se termine directement par newcolumn */
+.section.level1:has(> .newcolumn:last-child) {
+  margin-bottom: 0 !important;
+}
+
+/* Marge en dessous de section level1 */
+.section.level1{
+  margin-bottom: 2em;
+}
+
+/* Marge sous le dernier paragraphe avant section level1 pour introduction */
+p:has(+ .section.level1) {
+  margin-bottom: 2em;
+}
+
+/* Marge sous le dernier paragraphe avant section level2 */
+p:has(+ .section.level2) {
+  margin-bottom: 1em;
+}

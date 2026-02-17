@@ -1,0 +1,6 @@
+/* mise en page du contenu sur deux colonnes */
+
+.main{
+  column-count: 2;
+  column-gap: 8mm;
+}

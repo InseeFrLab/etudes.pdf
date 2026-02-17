@@ -1,0 +1,9 @@
+^renv$
+^renv\.lock$
+^chartegraphique\.sdse\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^\.gitlab-ci\.yml$
+^data-raw$
+^extdata$
+dev/

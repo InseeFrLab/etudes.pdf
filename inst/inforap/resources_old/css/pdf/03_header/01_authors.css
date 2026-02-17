@@ -1,0 +1,18 @@
+/*** BLOC AUTEURS ***/
+
+.auteurs{
+ color:  var(--color-primary) !important;
+ border-top: 0.5px solid var(--color-primary);
+ font-family: Marianne-Regular;
+ font-weight: bold;
+ width: 35mm;
+ margin-bottom: 8mm;
+ margin-top:5mm;
+ padding-top: 2mm;
+}
+
+.auteurs p{
+ margin-bottom: 0;
+ margin-top: 0;
+ font-size: 8pt;
+}

@@ -1,0 +1,11 @@
+/*** CSS variables ***/
+:root {
+  --background: whitesmoke;
+  --color-paper: white;
+  --color-mbox: rgba(0, 0, 0, 0.2);
+  --color-primary: rgb(72, 77, 122);
+  --color-secondary: rgb(163,166,188);
+  --color-tertiary: rgb(87,112,190);
+  --default-font-size: 8pt;
+  --screen-pages-spacing: 5mm;
+}

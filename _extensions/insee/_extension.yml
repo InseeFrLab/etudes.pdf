@@ -1,0 +1,24 @@
+title: Insee Typst
+author: Insee
+version: 1.1.0
+
+contributes:
+  formats:
+    typst:
+      # Indispensable : Quarto utilise ces fichiers pour construire le rendu
+      template-partials:
+        - typst-template.typ
+        - typst-show.typ
+      
+      # Options de rendu
+      mainfont: "Marianne"    
+      fontsize: 10pt
+      
+      # On déclare les variables que Quarto doit passer au template
+      variables:
+        logo_insee_header: resources/images/logoInseeFr.png
+        tetiere: resources/images/tetiere.png
+
+      # On s'assure que Quarto embarque bien tout ton dossier resources
+      format-resources:
+        - resources/

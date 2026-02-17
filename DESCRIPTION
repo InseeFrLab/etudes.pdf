@@ -1,0 +1,35 @@
+Package: chartegraphique.sser
+Title: Charte Graphique ddu SSER
+Version: 2.4.2
+Authors@R: c(
+    person("Fanny", "Allard", ,"fanny.allard@justice.gouv.fr", role = c("aut")),
+    person("Adam" , "Marsal", ,"adam.marsal@justice.gouv.fr",  role = c("aut", "cre")),
+    person(, "SSM Justice - SSER", role = "cph")
+  )
+Description: Ce package a pour objectif de regrouper toutes les fonctions R, les modèles de publication ainsi que des modèles de présentation relatifs à la charte graphique du  SSER.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Language: en
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 2.10)
+Imports: 
+    ggplot2,
+    colorspace,
+    htmltools,
+    here,
+    glue,
+    rmarkdown,
+    fontawesome,
+    pals,
+    dplyr,
+    ggtext,
+    pagedown
+Remotes: 
+    tidyverse/ggplot2@v3.3.5
+Files: ["css"]

@@ -1,0 +1,12 @@
+
+/*
+TODO :
+
+Idéalement, déplacer tout les éléments relatifs aux pieds de page présent
+dans le fichier 01_page.css dans ce fichier
+
+*/
+
+.pied-page-1 {
+  position: running(running-pied-page1);
+}

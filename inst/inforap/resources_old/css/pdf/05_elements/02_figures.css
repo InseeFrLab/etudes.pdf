@@ -1,0 +1,14 @@
+/*** FIGURES ET IMAGES ***/
+
+.section.level2 img{
+  border: 1px solid #f5f5f5;
+  border-radius:10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+img, svg, figure {
+  max-width: 100%;
+  height: auto;
+}
+

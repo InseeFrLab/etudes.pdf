@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+/dev/**/*.html
+/dev/tests/**/*.html
+/dev/tests/**/**/*.html
+/dev/*.html
+
+/.quarto/
+**/*.quarto_ipynb

@@ -1,0 +1,186 @@
+---
+title: "Titre de la publication"
+date_publication: 'mois AAAA'
+numero: 'n°X'
+auteur1: "Prenom Nom"
+auteur2: ""
+maquette: "SSER"
+directeur-publication: "Pascal Chevalier"
+redacteur-chef: "Thierry Ziliotto"
+page-web-justice: "https://www.justice.gouv.fr/documentation/etudes‑statistiques"
+page-web-justice-url: "https://www.justice.gouv.fr/documentation/etudes‑statistiques"
+pour-en-savoir-plus: |
+ * [Auteur 1, Auteur 2, Titre de la publication, Date de la publication (mois et année), SSER, Collection et numéro](https://www.justice.gouv.fr/documentation/etudes-et-statistiques/)
+ * [Moreau Jérôme, Le Bihan Evan, 79 300 personnes détenues au 1er janvier 2025, janvier 2025, SSER, Infos Rapides Justice n°23](https://www.justice.gouv.fr/documentation/etudes-et-statistiques/79-300-personnes-detenues-au-1er-janvier-2025)
+format: inforap-typst
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+
+library(chartegraphique.sser)
+library(dplyr)
+library(ggplot2)
+
+```
+
+Ce document Rmarkdown est un modèle simple de publication de la collection *Infos Rapides Justice* du SSER.   
+
+Pour utiliser un espace insécable, utiliser le caractère spécial " " (uniquement visible dans le fichier Rmarkdown). Exemple :  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit 1.7 %.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales mollis justo sit amet bibendum. Nulla laoreet arcu eu facilisis suscipit. Nulla sollicitudin nunc eget risus mattis, eget feugiat turpis aliquet. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque. Nunc interdum ac magna ac dictum. Fusce auctor, nulla sit amet vestibulum condimentum, elit dolor venenatis justo, non faucibus dui elit sed enim. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque.
+
+# Titre 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales mollis justo sit amet bibendum. Nulla laoreet arcu eu facilisis suscipit. Nulla sollicitudin nunc eget risus mattis, eget feugiat turpis aliquet. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque. Nunc interdum ac magna ac dictum. Fusce auctor, nulla sit amet vestibulum condimentum, elit dolor venenatis justo, non faucibus dui elit sed enim.
+
+## Figure 1. Les couleurs de la charte graphique
+
+::: {.figure_box}
+```{r}
+#| label: fig-1
+#| fig-cap: "couleurs"
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-width: 7
+#| fig-height: 4
+
+chartegraphique.sser::colors_sser()
+
+```
+
+:::
+
+
+
+# Titre 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales mollis justo sit amet bibendum. Nulla laoreet arcu eu facilisis suscipit. Nulla sollicitudin nunc eget risus mattis, eget feugiat turpis aliquet. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque. Nunc interdum ac magna ac dictum. Fusce auctor, nulla sit amet vestibulum condimentum, elit dolor venenatis justo, non faucibus dui elit sed enim.
+
+## Figure 2. Les palettes de couleurs
+
+::: {.figure_box}
+```{r}
+#| label: fig-2
+#| fig-cap: "Palettes"
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-width: 7
+#| fig-height: 4
+
+chartegraphique.sser::palettes_sser()
+
+```
+
+:::
+
+# Titre 3
+
+Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet. Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.
+
+# Titre 4
+
+Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet.
+
+# Titre 5 - Interligne réduit {.interligne-reduit}
+
+Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi.
+
+## Figure 3. Graphique simple aux couleurs G1, P1, E1
+
+::: {.figure_box}
+```{r}
+#| label: fig-3
+#| fig-cap: "Graphique"
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-width: 7
+#| fig-height: 4
+
+ggplot(mpg, aes(x = class, fill = drv)) +
+  geom_bar() +
+  scale_fill_manual(values = colors_sser(c("G1", "P1", "E1"))) +
+  theme_sser_irj()
+
+```
+
+:::
+
+# Titre 6 - Interligne trés réduit {.interligne-tres-reduit}
+
+Aliquam convallis sollicitudin purus. Praesent aliquam, enim at fermentum mollis, ligula massa adipiscing nisl, ac euismod nibh nisl eu lectus. Fusce vulputate sem at sapien. Vivamus leo. Aliquam euismod libero eu enim. Nulla nec felis sed leo placerat imperdiet. Aenean suscipit nulla in justo. Suspendisse cursus rutrum augue. Nulla tincidunt tincidunt mi. Curabitur iaculis, lorem vel rhoncus faucibus, felis magna fermentum augue, et ultricies lacus lorem varius purus. Curabitur eu amet.
+
+## Figure 4. Graphique avec la palette IRJ et une note de graphique
+
+
+::: {.figure_box}
+```{r}
+#| label: fig-4
+#| fig-cap: "Graphique2"
+#| echo: false
+#| message: false
+#| warning: false
+#| results: false
+#| fig-width: 7
+#| fig-height: 4
+
+capt <- build_caption(Source= "Fichier de données mtcars, 1974 Motor Trend US magazine",
+                      Axe = "Abscisse : Consommation en miles par gallon, Ordonnée : poids, Couleur : cylindrée")
+
+p <- ggplot(mtcars, aes(x = wt, y = mpg, color = as.factor(cyl))) +
+  geom_point(size=10) +
+  scale_color_manual(values = palettes_sser("IRJ"))+
+  labs(caption=capt)+
+  theme_sser_irj()
+  
+print(p)
+
+```
+:::
+
+# Titre 7
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales mollis justo sit amet bibendum. Nulla laoreet arcu eu facilisis suscipit. Nulla sollicitudin nunc eget risus mattis, eget feugiat turpis aliquet. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque. Nunc interdum ac magna ac dictum. Fusce auctor, nulla sit amet vestibulum condimentum, elit dolor venenatis justo, non faucibus dui elit sed enim. Nulla sollicitudin nunc eget risus mattis, eget feugiat turpis aliquet. Cras faucibus in eros et suscipit. Vestibulum scelerisque tortor vel gravida scelerisque. Nunc interdum ac magna ac dictum. Fusce auctor, nulla sit amet vestibulum condimentum, elit dolor venenatis justo, non faucibus dui elit sed enim.
+
+
+
+
+```{=typst}
+
+#source_box(
+  [
+
+==  Source et définitions 
+
+== Source des données
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer urna nibh, egestas sit amet enim ac, elementum dapibus metus. Aliquam at libero lectus. Sed at mauris ligula. Suspendisse eu porttitor ipsum. Morbi tellus turpis, consectetur venenatis nibh et, congue finibus arcu. Aliquam orci ligula, varius non faucibus a, maximus sed sem. Integer at tellus arcu. Praesent lorem velit, suscipit dictum nulla ut, rhoncus lobortis diam. In faucibus non nisl et ullamcorper. Vestibulum feugiat lectus congue ante facilisis varius. Vestibulum sed enim aliquet erat accumsan hendrerit. Nam sit amet urna gravida, luctus nisi id, viverra metus. Nulla justo nibh, finibus sed erat ut, dapibus lobortis nibh. Nulla elementum orci turpis.
+
+== Périmètre
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate dolor leo, quis posuere augue imperdiet vitae. Nullam auctor aliquet nisi, sit amet convallis tortor semper id. Vestibulum vitae justo eget nibh porta interdum nec ut tortor. Curabitur nec neque sed lorem luctus luctus eu in ex. Praesent luctus pellentesque.
+  ],
+  [
+== Définitions
+
+== Définition 1
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate dolor leo, quis posuere augue imperdiet vitae. Nullam auctor aliquet nisi, sit amet convallis tortor semper id. Vestibulum vitae justo eget nibh porta interdum nec ut tortor. Curabitur nec neque sed lorem luctus luctus eu in ex. Praesent luctus pellentesque.
+
+== Définition 2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate dolor leo, quis posuere augue imperdiet vitae. Nullam auctor aliquet nisi, sit amet convallis tortor semper id. Vestibulum vitae justo eget nibh porta interdum nec ut tortor. Curabitur nec neque sed lorem luctus luctus eu in ex. Praesent luctus pellentesque.
+
+  ]
+)
+```

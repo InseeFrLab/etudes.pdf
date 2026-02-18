@@ -11,6 +11,7 @@ les espaces ruraux restent plébiscités. Les nouveaux arrivants viennent princi
 d’Île-de-France. En revanche, les régions métropolitaines les plus attractives contribuent
 négativement à la démographie ligérienne."
 auteurs: "David Morineau, Samuel Trivière (Insee)"
+surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS"
 format: insee-typst
 ---
 
@@ -120,21 +121,92 @@ l’Île-de-France. L’attrait des Franciliens pour les Pays de la Loire ne
 cesse de progresser : 239 entrées pour 100 sorties en 2021,
 contre 198 en 2015.
 
+`#colbreak()`{=typst}
+
 Le solde migratoire a également fortement progressé avec les
 Hauts-de-France, troisième région de provenance des
 Néo-ligériens : +22 % entre 2015 et 2021, pour atteindre +1 880
 habitants en 2022.
+
+
+
 En revanche, le solde des Pays de la Loire est déficitaire avec les
 régions métropolitaines les plus attractives. En particulier, les
 Ligériens partent de plus en plus vers la Bretagne, et le déficit
 d’attrait des Pays de la Loire se creuse : 88 arrivées pour 100
-départs en 2021, contre 99 en 2015.
+départs en 2021, contre 99 en 2015.`#pt_insee`{=typst}
+
+```{=typst}
+
+#signature()
+
+```
+
+```{=typst}
+#encadre[
+  == Encadré - Chaque année, un Ligérien sur dix déménage
+
+En 2023, un habitant des Pays de la Loire sur dix ne vit pas à la même
+adresse qu’un an auparavant. Ce résultat reste stable sur la dernière
+décennie. La plupart des mouvements sont intra-départementaux : 39 %
+résidaient, un an plus tôt, dans une autre commune de leur département
+et 33 % changent d’adresse dans la même commune ; 7 % habitaient déjà
+la région, mais pas le même département ; 21 % sont des Néo-ligériens.
+Depuis plusieurs années, les Ligériens qui déménagent au sein de la
+région privilégient les espaces ruraux, au détriment des espaces urbains.
+Ainsi, après un pic d’attrait des espaces urbains en 2017 (110 entrées pour
+100 sorties), les Ligériens les délaissent progressivement.
+Dès 2019, les espaces urbains deviennent déficitaires, mouvement qui s’accentue post-Covid (80 entrées pour 100 sorties en 2022). Dans les espaces ruraux, les logements sont plus spacieux, moins onéreux et, peut-être, davantage en proximité avec la nature. La Covid a sans doute eu un effet catalyseur d’une bascule commencée dès 2019.
+]
+
+```
 
 
+```{=typst}
+#definitions[
+  == Définitions
 
+*Solde naturel* : différence entre le nombre de naissances et le nombre
+de décès enregistrés au cours d’une période.
 
-Encadré
+*Migrations résidentielles* : changements de lieu de résidence au sein
+de la France hors Mayotte, en dehors des changements de résidence
+dans la même commune, entre l’année d’enquête et l’année
+précédente.
 
-Définitions
+*Solde migratoire* : différence entre le nombre de personnes qui sont
+entrées sur le territoire et le nombre de personnes qui en sont sorties
+au cours d’une période.
 
-Pour en savoir plus
+*Rapport entre les entrants et les sortants* : il mesure le nombre
+d’entrées sur le territoire pour 100 sorties. S’il est supérieur à 100, les
+personnes qui entrent dans le territoire sont plus nombreuses que
+celles qui en sortent. S’il est inférieur à 100, les personnes qui en
+sortent sont plus nombreuses que celles qui y entrent. Une
+augmentation de ce ratio peut refléter une hausse des arrivées comme
+une baisse des départs.
+
+*Espace urbain* : il regroupe les communes qui concentrent un nombre
+élevé d’habitants. Elles sont de tailles diverses : des grands centres
+urbains, des centres urbains intermédiaires, des ceintures urbaines ou
+des petites villes.
+
+*Espace rural* : il regroupe les communes qui sont situées hors de
+l’espace urbain, et dont la densité de population constitue un habitat
+plus ou moins dispersé. L’espace rural inclut ainsi des communes de
+type « bourgs ruraux », des communes d’habitat dispersé et des
+communes d’habitat très dispersé.
+]
+
+```
+
+```{=typst}
+#pour-en-savoir-plus[
+  == Pour en savoir plus
+
+- *Coutard G., Morineau D.*, « #link("https://www.insee.fr/fr/statistiques/8627617")[Un tiers des habitants des Pays de la Loire ne sont pas nés dans la région]», Insee Flash Pays de la Loire n° 156, août 2025.
+- *Brutel C.*, « #link("https://www.insee.fr/fr/statistiques/7637352")[En 2021, des déménagements un peu plus nombreux qu’avant la crise sanitaire depuis l’Île-de-France vers les autres régions]», Insee Première n° 1954, juin 2023.
+- *Bouba-Olga O., Bouvard C.*, « #link("https://www.strategie-plan.gouv.fr/publications/exode-urbain-une-mise-vert-timide")[Exode urbain : une mise au vert timide]», Note d’analyse France stratégie n° 22, juin 2023.
+]
+
+```

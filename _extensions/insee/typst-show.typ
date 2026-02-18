@@ -5,12 +5,12 @@
   numero: [$numero$],
   chapeau: [$chapeau$],
   auteurs: [$auteurs$],
+  surtitre: [$surtitre$],
   
-  
-  // Chemins de fichiers (Strings)
   logo_insee_header: "$logo_insee_header$",
   tetiere: "$tetiere$",
-
   
   doc
 )
+
+

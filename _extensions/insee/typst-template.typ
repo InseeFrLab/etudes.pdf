@@ -98,11 +98,16 @@ grid(
   logo_state.update(logo_insee_header)
 
   set text(font: "Open Sans", lang: "fr", size: 8pt)
+
+   // --- FIGURES ---
   show figure: it => {
     set text(size: 6pt)
     set align(left)
     it
   }
+
+
+
   show figure: set figure(supplement: none, numbering: none)
 
   // --- EN-TÊTE (LOGO INSEE 47mm + TITRE) ---
@@ -185,7 +190,16 @@ box(height: 25mm, width: 100%)[
 
   show: columns.with(2,  gutter: 5mm)
 
+// pour les figures, on conserve le gras noir
+show figure: it => {
+  show strong: it => text(weight: "bold", it.body)
+  it
+}
 
+// pour le reste du texte principal, on met du gras bleu
+show strong: it => {
+  text(fill: blue, weight: "bold", it.body)
+}
   
   
   body 
@@ -199,12 +213,18 @@ box(height: 25mm, width: 100%)[
 
 // Fonction pour l'encadré
 #let encadre(corps) = {
+  show strong: it => {
+  // appliquer seulement si on est dans la section principale
+  set text(fill: black, weight: "bold")
+  it.body
+}
   block(
     width: 100%,
     inset: 5pt, //marge interieure = padding
     radius: 0pt, //angle des coins
     stroke: 2pt + color-titre, // Ajoute une bordure de 1pt de couleur rouge
     spacing: 1.2em, // marging, définit l'espace vide au dessus et en dessous du bloc
+    
   )[
     #set text(size: 7pt, weight: "regular")
     #corps
@@ -213,6 +233,11 @@ box(height: 25mm, width: 100%)[
 
 // Fonction pour bloc Définitions
 #let definitions(corps) = {
+  show strong: it => {
+  // appliquer seulement si on est dans la section principale
+  set text(fill: black, weight: "bold")
+  it.body
+}
   block(
     fill: blocDefinitions,
     width: 100%,
@@ -227,6 +252,11 @@ box(height: 25mm, width: 100%)[
 
 // Fonction pour bloc Pour en savoir plus
 #let pour-en-savoir-plus(corps) = {
+  show strong: it => {
+  // appliquer seulement si on est dans la section principale
+  set text(fill: black, weight: "bold")
+  it.body
+}
   block(
     fill: blocEnSavoirPlus,
     width: 100%,
@@ -244,6 +274,11 @@ box(height: 25mm, width: 100%)[
 
 // fonction auteurs
 #let signature() = {
+  show strong: it => {
+  // appliquer seulement si on est dans la section principale
+  set text(fill: black, weight: "bold")
+  it.body
+}
   context {
     let noms = auteur-state.get() //.get() récupère la valeur actuelle du state
     if noms != none {

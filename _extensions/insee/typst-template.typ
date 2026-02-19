@@ -1,32 +1,45 @@
-// --- VARIABLES DE CHARTE (Issues de ton CSS) ---
-#let color-primary = rgb("#042F80")   
-#let color-secondary = rgb("#248BFF")  
-#let color-tertiary = rgb("#FB5A5A") 
-#let color-titre = rgb("#FF848A") 
+// *****************************************************************************
+// ***********************     TEMPLATE INSEE FLASH     ************************
+// *****************************************************************************
 
-#let blocDefinitions = rgb("#F6F6F6") 
-#let blocEnSavoirPlus = rgb("#E1F3FF")
+
+// =============================================================================
+// VARIABLES 
+// =============================================================================
+
+#let B4 = rgb("#248BFF")
+#let B6 = rgb("#145CBF")
+#let B8 = rgb("#042F80")
+#let R3 = rgb("#FF848A")
+
+#let gris = rgb("#f2f2f2")
+#let bleu-clair = rgb("#f0faff")
 #let blocSources = rgb("#FFF8E5")
 
-#let contourB1 = rgb("#B5E1FF")
-
-#let puceR4 = rgb("#FA5A5A")
-#let puceB6 = rgb("#145CBE")
-
-#let auteur-state = state("auteur-state", none)
-#let logo_state = state("logo_path", none)
 
 
-#let pt_insee_titre(y) = box(height: 0pt, width: 0.5em, {
+// =============================================================================
+// HELPERS INTERNES
+// =============================================================================
+
+// Fonction pour le point median INSEE.
+// Valeur par défaut : dy = -1.7em (point final).
+#let pt-insee(dy: -1.7em) = h(0.4em) + box(height: 0pt, width: 0.5em, {
   move(
-    dy: y, // Ajustez cette valeur pour le monter (-) ou le descendre (+)
-    text(fill: color-titre, weight: "bold", size: 24pt)[#sym.dot.c]
+    dy: dy,
+    text(fill: R3, weight: "bold", size: 28pt)[#sym.dot.c]
   )
 })
 
+// Réinitialise la couleur du gras à noir (usage : à l'intérieur des blocs
+// encadrés pour ne pas hériter du gras bleu du corps principal).
+#let _strong-noir(it) = text(fill: black, weight: "bold", it.body)
 
 
-// --- Structure de la page ---
+// =============================================================================
+// FONCTION PRINCIPALE
+// =============================================================================
+
 #let insee(
   title: none,
   collection: none,
@@ -34,83 +47,104 @@
   date_publication: none,
   chapeau: none,
   logo_insee_header: none,
+  logo_x: none,
   tetiere: none,
+  qrcode: none,
   auteurs: none,
   surtitre: none,
-
+  footer-from: 2,
   body
-
-
 ) = {
-  // --- CONFIGURATION DE LA PAGE ---
+
+  // --- CONFIGURATION DE LA PAGE et du FOOTER ---
 set page(
     paper: "a4",
     margin: (x: 15mm, y:  15mm),
     footer: context {
       let page_num = counter(page).get().at(0)
-      if page_num == 2 {
-      let logo_path = logo_state.get()
+      if page_num >= footer-from {
+      show strong: _strong-noir
 
-  v(-15mm)  
+      v(-15mm)  
 
-  set text(size: 6pt, font: "Open Sans")
-grid(
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    gutter: 2mm,
-    align: left + top,
-
-    [*Insee Pays de la Loire* \
-     105, rue des Français Libres \
-     BP 67401 \
-     44274 NANTES \
-     Cedex 2],
-
-    [*Directeur de la publication :* \
-     Arnaud Degorre \
-    \
-
-     *Rédactrice en chef :* \
-     Valérie Deroin],
-
-    [Bureau de presse : \
-     02 40 41 75 89 \
-
-     ISSN 2275 – 9808 \
-     © Insee Pays de la Loire],
-
-   
-    [#link("www.insee.fr")[www.insee.fr]\
-    #link("https://twitter.com/InseePdL")[\@Insee]],
-
-     [QRcode],
-
-    image(logo_path, height: 0.8cm)
-  )
-  
-    }
       set text(size: 6pt, font: "Open Sans")
-      
-     
-    }
-  )
+      grid(
+        columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        gutter: 2mm,
+        align: left + top,
 
-  auteur-state.update(auteurs)
-  logo_state.update(logo_insee_header)
+        [*Insee Pays de la Loire* \
+        105, rue des Français Libres \
+        BP 67401 \
+        44274 NANTES \
+        Cedex 2],
 
+        [*Directeur de la publication :* \
+        Arnaud Degorre \
+        \
+
+        *Rédactrice en chef :* \
+        Valérie Deroin],
+
+        [*Bureau de presse :* \
+        02 40 41 75 89 \
+
+        ISSN 2275 – 9808 \
+        © Insee Pays de la Loire],
+
+        [#link("www.insee.fr")[www.insee.fr]\
+        #box(baseline: 2mm, image(logo_x)) #h(2pt) #link("https://twitter.com/InseePdL")[\@Insee]],
+
+        [#if qrcode != none and qrcode != "" {
+          image(qrcode) 
+        } else {
+          [qrcode]
+        }],
+
+        image(logo_insee_header, height: 0.8cm)
+      )
+  }
+      set text(size: 6pt, font: "Open Sans")
+  }
+ ) // fin set page
+
+
+  // taille et police du corps de texte
   set text(font: "Open Sans", lang: "fr", size: 8pt)
 
+
+
    // --- FIGURES ---
+  show figure: set figure(supplement: none, numbering: none)
   show figure: it => {
     set text(size: 6pt)
     set align(left)
+    show strong: _strong-noir
     it
   }
 
 
+// --- TITRES ---
+  show heading.where(level: 1): it => {
+    set text(fill: B6, size: 9pt, weight: "bold")
+    block(above: 2em, below: 1.2em)[#it.body]
+  }
+  show heading.where(level: 2): it => {
+    set text(fill: B6, size: 9pt, weight: "bold")
+    block(above: 1.5em, below: 1em,
+      grid(
+        columns: (auto, 1fr),
+        column-gutter: 0.3em,
+        align(top, move(dy: -0.2em, text(size: 1.4em)[#sym.triangle.filled.r])),
+        par(hanging-indent: 1em, it.body),
+      )
+    )
+  }
 
-  show figure: set figure(supplement: none, numbering: none)
+  show strong: it => text(fill: blue, weight: "bold", it.body)
 
-  // --- EN-TÊTE (LOGO INSEE 47mm + TITRE) ---
+
+  // --- EN-TÊTE  ---
   grid(
     columns: (47mm, 1fr),
     column-gutter: 9.6mm,
@@ -121,32 +155,31 @@ grid(
       ]
     ],
     // Zone Titre
-box(height: 25mm, width: 100%)[
-  #align(bottom)[
-    #set text(size: 12pt, weight: "regular", fill:color-secondary )
+   box(height: 25mm, width: 100%)[
+   #align(bottom)[
+    #set text(size: 12pt, weight: "regular", fill:B6 )
     #block(below: 3.5mm,surtitre)
     #set text(weight: "extrabold", size: 19pt, fill:black)
     #block(title)
   ]
-]
+  ]
   )
 
   v(12mm) // Espace vertical de 12mm
 
   // --- BANDEAU BLEU  ---
-// On regroupe les deux éléments dans un stack sans aucun espacement
   stack(spacing: 0pt)[
     #move(dx: -15mm)[
       #block(
-        fill: color-primary,
+        fill: B8,
         width: 100% + 30mm,
         height: 15mm,
         inset: (x: 15mm),
         spacing: 0pt, //  Supprime la marge propre au bloc
       )[
         #align(right + horizon)[
-          #set text(fill: color-titre, weight: "bold", size: 12pt)
-          #collection #pt_insee_titre(-0.3em) n° #numero #pt_insee_titre(-0.3em) #date_publication
+          #set text(fill: R3, weight: "bold", size: 12pt)
+          #collection #pt-insee(dy: -0.3em) n° #numero #pt-insee(dy: -0.3em) #date_publication
         ]
       ]
     ]
@@ -161,144 +194,102 @@ box(height: 25mm, width: 100%)[
 
   v(5mm)
 
-  // --- ZONE CHAPEAU
+  // --- CHAPEAU
   grid(
     align(top)[
       #set text(weight: "bold", size: 10pt)
       #chapeau
-    ]
+    ],
   )
 
 
   v(13mm)
 
-  // --- CORPS DE TEXTE (2 COLONNES)  et TITRES---
-  //  Style des titres avec le triangle bleu Insee
-  show heading.where(level: 1): it => {
-    set text(fill: color-secondary, size: 9pt, weight: "bold")
-    block(above: 2em, below: 1.2em)[
-      #it.body
-    ]
-  }
-
-  show heading.where(level: 2): it => {
-    set text(fill: color-secondary, size: 9pt, weight: "bold")
-    block(above: 1.5em, below: 1em)[
-      #sym.triangle.filled.r #it.body
-    ]
-  }
-
+  // --- CORPS DE TEXTE (2 COLONNES) ---
   show: columns.with(2,  gutter: 5mm)
 
-// pour les figures, on conserve le gras noir
-show figure: it => {
-  show strong: it => text(weight: "bold", it.body)
-  it
-}
-
-// pour le reste du texte principal, on met du gras bleu
-show strong: it => {
-  text(fill: blue, weight: "bold", it.body)
-}
-  
-  
+  // --- TEXTE ---
   body 
-
 
 
 } // fin de la fonction principale
 
 
+// =============================================================================
+// FONCTIONS DE BLOCS
+// =============================================================================
 
+//  Bloc Encadré
+#let encadre(corps) = block(
+  width: 100%,
+  inset: 5pt,
+  radius: 0pt,
+  stroke: 2pt + R3,
+  spacing: 1.2em,
+)[
+  #show strong: _strong-noir
+  #set text(size: 7pt, weight: "regular")
+  #show heading.where(level: 2): it => {
+    set text(fill: B6, size: 9pt, weight: "bold")
+    block(above: 1.5em, below: 1em)[
+      #box(text(size: 1.4em)[#sym.triangle.filled.r])
+      #h(0.3em)#it.body
+    ]
+  }
+  #corps
+] 
 
-// Fonction pour l'encadré
-#let encadre(corps) = {
-  show strong: it => {
-  // appliquer seulement si on est dans la section principale
-  set text(fill: black, weight: "bold")
-  it.body
-}
-  block(
-    width: 100%,
-    inset: 5pt, //marge interieure = padding
-    radius: 0pt, //angle des coins
-    stroke: 2pt + color-titre, // Ajoute une bordure de 1pt de couleur rouge
-    spacing: 1.2em, // marging, définit l'espace vide au dessus et en dessous du bloc
-    
-  )[
-    #set text(size: 7pt, weight: "regular")
-    #corps
-  ]
-} 
+// Bloc Définitions
+#let definitions(corps) = block(
+  fill: gris,
+  width: 100%,
+  inset: 5pt,
+  radius: 0pt,
+  spacing: 1.2em,
+)[
+  #show strong: _strong-noir
+  #set text(size: 7pt, weight: "regular")
+  #corps
+]
 
-// Fonction pour bloc Définitions
-#let definitions(corps) = {
-  show strong: it => {
-  // appliquer seulement si on est dans la section principale
-  set text(fill: black, weight: "bold")
-  it.body
-}
-  block(
-    fill: blocDefinitions,
-    width: 100%,
-    inset: 5pt,
-    radius: 0pt,
-    spacing: 1.2em,
-  )[
-    #set text(size: 7pt, weight: "regular")
-    #corps
-  ]
-}
+// Bloc Pour en savoir plus
+#let pour-en-savoir-plus(corps) = block(
+  fill: bleu-clair,
+  width: 100%,
+  inset: 5pt,
+  radius: 0pt,
+  spacing: 1.2em,
+)[
+  #show strong: _strong-noir
+  #set text(size: 7pt, weight: "regular")
+  #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
+  #show link: set text(fill: blue)
+  #show link: underline
+  #corps
+]
 
-// Fonction pour bloc Pour en savoir plus
-#let pour-en-savoir-plus(corps) = {
-  show strong: it => {
-  // appliquer seulement si on est dans la section principale
-  set text(fill: black, weight: "bold")
-  it.body
-}
-  block(
-    fill: blocEnSavoirPlus,
-    width: 100%,
-    inset: 5pt,
-    radius: 0pt,
-    spacing: 1.2em,
-  )[
-    #set text(size: 7pt, weight: "regular")
-    #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
-    #show link: set text(fill: blue)
-    #show link: underline
-    #corps
-  ]
-}
+// Bloc Sources 
+#let sources(corps) = block(
+  fill: blocSources,
+  width: 100%,
+  inset: 5pt,
+  radius: 0pt,
+  spacing: 1.2em,
+)[
+  #show strong: _strong-noir
+  #set text(size: 7pt, weight: "regular")
+  #corps
+]
 
-// fonction auteurs
-#let signature() = {
-  show strong: it => {
-  // appliquer seulement si on est dans la section principale
-  set text(fill: black, weight: "bold")
-  it.body
-}
-  context {
-    let noms = auteur-state.get() //.get() récupère la valeur actuelle du state
-    if noms != none {
-      v(1em)
-      block(width: 100%, breakable: false)[
-        #set text(size: 8pt, weight: "semibold", fill: color-primary)
-        #noms
-      ]
-      v(1em)
-    }
+// Auteurs
+#let signature(auteurs: none) = {
+  show strong: _strong-noir
+  if auteurs != none {
+    v(1em)
+    block(width: 100%, breakable: false)[
+      #set text(size: 8pt, weight: "semibold", fill: B4)
+      #auteurs
+    ]
+    v(1em)
   }
 }
-
-#let pt_insee = h(0.4em) + box(height: 0pt, width: 0.5em, {
-  move(
-    dy: -1.7em, // Ajustez cette valeur pour le monter (-) ou le descendre (+)
-    text(fill: color-titre, weight: "bold", size: 28pt)[#sym.dot.c]
-  )
-})
-
-
-
-

@@ -11,7 +11,8 @@ les espaces ruraux restent plébiscités. Les nouveaux arrivants viennent princi
 d’Île-de-France. En revanche, les régions métropolitaines les plus attractives contribuent
 négativement à la démographie ligérienne."
 auteurs: "David Morineau, Samuel Trivière (Insee)"
-surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS"
+surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS" # mettre "" si pas de surtitre
+qrcode: "qrcode.png" # mettre "" si pas de qrcode
 format: insee-typst
 ---
 
@@ -61,12 +62,12 @@ Les Franciliens représentent 28 % des entrées sur le sol ligérien, alors que 
 
 Le solde migratoire a également fortement progressé avec les Hauts-de-France, troisième région de provenance des Néo-ligériens : +22 % entre 2015 et 2021, pour atteindre +1 880 habitants en 2022.
 
-En revanche, le solde des Pays de la Loire est déficitaire avec les régions métropolitaines les plus attractives. En particulier, les Ligériens partent de plus en plus vers la Bretagne, et le déficit d’attrait des Pays de la Loire se creuse : 88 arrivées pour 100 départs en 2021, contre 99 en 2015.`#pt_insee`{=typst}
+En revanche, le solde des Pays de la Loire est déficitaire avec les régions métropolitaines les plus attractives. En particulier, les Ligériens partent de plus en plus vers la Bretagne, et le déficit d’attrait des Pays de la Loire se creuse : 88 arrivées pour 100 départs en 2021, contre 99 en 2015.`#pt-insee()`{=typst}
 
 ```{=typst}
-
-#signature()
+#signature(auteurs:auteurs)
 ```
+
 ```{=typst}
 #encadre[
   == Encadré - Chaque année, un Ligérien sur dix déménage

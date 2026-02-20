@@ -36,11 +36,16 @@ Néanmoins, si la région est dans une situation favorable, avec un gain conséq
 
 # L’attrait de la région s’étiole
 
-Après avoir crû de façon constante entre 2012 et 2019, le rapport entre les entrants et les sortants baisse de 13 % entre 2019 et 2022 et revient à son niveau le plus faible sur les dix dernières années. Les départs des Pays de La Loire augmentent de 17,3 %, sensiblement plus que les arrivées (+2,5 %). Ainsi la région recule à la 5e place pour le nombre d’arrivées pour 100 départs. Elle se situe derrière l’Occitanie, la Nouvelle-Aquitaine, la Bretagne et, en tête, la Corse. Parmi ces cinq régions, seuls les Pays de la Loire enregistrent une baisse, quand les régions du sud restent en essor. L’attrait progresse dans les régions du sud. Entre 2019 et 2022, le rapport entre les entrants et les sortants augmente en Corse, en Occitanie et en Provence-Alpes-Côte d’Azur.
+Après avoir crû de façon constante entre 2012 et 2019, le rapport entre les entrants et les sortants baisse de 13 % entre 2019 et 2022 et revient à son niveau le plus faible sur les dix dernières années. Les départs des Pays de La Loire augmentent de 17,3 %, sensiblement plus que les arrivées (+2,5 %).
+
+Ainsi la région recule à la 5e place pour le nombre d’arrivées pour 100 départs. Elle se situe derrière l’Occitanie, la Nouvelle-Aquitaine, la Bretagne et, en tête, la Corse. Parmi ces cinq régions, seuls les Pays de la Loire enregistrent une baisse, quand les régions du sud restent en essor.
+
+L’attrait progresse dans les régions du sud. Entre 2019 et 2022, le rapport entre les entrants et les sortants augmente en Corse, en Occitanie et en Provence-Alpes-Côte d’Azur.
 
 # Les espaces urbains séduisent moins depuis la Covid
 
-Depuis 2019, l’attrait des espaces urbains ligériens décline, au profit des espaces ruraux. L’épidémie de Covid accentue ce déclin. Avec 114 entrées pour 100 sorties en 2022 (contre 138 en 2019), les espaces urbains n’ont jamais aussi peu attiré les Néo-ligériens. Les espaces ruraux, quant à eux, gagnent en attrait depuis 2017. Cette progression se conforte après l’épidémie de Covid, avec 136 et 142 entrées pour 100 sorties en 2021 et 2022 (contre 146 entrées en 2019).
+Depuis 2019, l’attrait des **espaces urbains** ligériens décline, au profit des **espaces ruraux**. L’épidémie de Covid accentue ce déclin. Avec 114 entrées pour 100 sorties en 2022 (contre 138 en 2019), les espaces urbains n’ont jamais aussi peu attiré les Néo-ligériens.
+Les espaces ruraux, quant à eux, gagnent en attrait depuis 2017. Cette progression se conforte après l’épidémie de Covid, avec 136 et 142 entrées pour 100 sorties en 2021 et 2022 (contre 146 entrées en 2019).
 
 # La région, attractive pour les Franciliens
 
@@ -78,6 +83,7 @@ décennie. La plupart des mouvements sont intra-départementaux : 39 %
 résidaient, un an plus tôt, dans une autre commune de leur département
 et 33 % changent d’adresse dans la même commune ; 7 % habitaient déjà
 la région, mais pas le même département ; 21 % sont des Néo-ligériens.
+
 Depuis plusieurs années, les Ligériens qui déménagent au sein de la
 région privilégient les espaces ruraux, au détriment des espaces urbains.
 Ainsi, après un pic d’attrait des espaces urbains en 2017 (110 entrées pour

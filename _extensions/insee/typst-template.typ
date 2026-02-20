@@ -31,6 +31,11 @@
   )
 })
 
+// Triangle décoratif des titres de niveau 2.
+#let mytriangle(b,s) = {box(
+  baseline: b,  text(size: s)[#sym.triangle.filled.r]
+)}
+
 // Réinitialise la couleur du gras à noir (usage : à l'intérieur des blocs
 // encadrés pour ne pas hériter du gras bleu du corps principal).
 #let _strong-noir(it) = text(fill: black, weight: "bold", it.body)
@@ -135,13 +140,16 @@ set page(
       grid(
         columns: (auto, 1fr),
         column-gutter: 0.3em,
-        align(top, move(dy: -0.2em, text(size: 1.4em)[#sym.triangle.filled.r])),
+        pad(top: -2pt, text(size: 12pt)[#sym.triangle.filled.r]),
         par(hanging-indent: 1em, it.body),
       )
     )
   }
 
   show strong: it => text(fill: blue, weight: "bold", it.body)
+
+   // Intercepte le triangle Unicode ▶ écrit directement dans le texte
+  show "▶︎": mytriangle(0em,12pt)
 
 
   // --- EN-TÊTE  ---
@@ -232,7 +240,7 @@ set page(
   #show heading.where(level: 2): it => {
     set text(fill: B6, size: 9pt, weight: "bold")
     block(above: 1.5em, below: 1em)[
-      #box(text(size: 1.4em)[#sym.triangle.filled.r])
+      #mytriangle(-0.1em,12pt)
       #h(0.3em)#it.body
     ]
   }
@@ -249,6 +257,13 @@ set page(
 )[
   #show strong: _strong-noir
   #set text(size: 7pt, weight: "regular")
+  #show heading.where(level: 2): it => {
+    set text(fill: B6, size: 9pt, weight: "bold")
+    block(above: 1.5em, below: 1em)[
+      #mytriangle(-0.1em,12pt)
+      #h(0.3em)#it.body
+    ]
+  }
   #corps
 ]
 
@@ -265,6 +280,13 @@ set page(
   #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
   #show link: set text(fill: blue)
   #show link: underline
+  #show heading.where(level: 2): it => {
+    set text(fill: B6, size: 9pt, weight: "bold")
+    block(above: 1.5em, below: 1em)[
+      #mytriangle(-0.1em,12pt)
+      #h(0.3em)#it.body
+    ]
+  }
   #corps
 ]
 

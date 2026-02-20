@@ -24,7 +24,7 @@
 
 // Fonction pour le point median INSEE.
 // Valeur par défaut : dy = -1.7em (point final).
-#let pt-insee(dy: -1.7em) = h(0.4em) + box(height: 0pt, width: 0.5em, {
+#let pt-insee(dy: -1.7em) = h(0.2em) + box(height: 0pt, width: 0.5em, {
   move(
     dy: dy,
     text(fill: R3, weight: "bold", size: 28pt)[#sym.dot.c]
@@ -32,9 +32,18 @@
 })
 
 // Triangle décoratif des titres de niveau 2.
-#let mytriangle(b,s) = {box(
-  baseline: b,  text(size: s)[#sym.triangle.filled.r]
-)}
+#let mytriangle(b, s) = box(
+  baseline: b, text(size: s)[#sym.triangle.filled.r]
+)
+
+// Heading niveau 2 pour les blocs 
+#let _heading2-bloc(it) = {
+  set text(fill: B6, size: 9pt, weight: "bold")
+  block(above: 1.5em, below: 1em)[
+    #mytriangle(-0.1em, 12pt)
+    #h(0.3em)#it.body
+  ]
+}
 
 // Réinitialise la couleur du gras à noir (usage : à l'intérieur des blocs
 // encadrés pour ne pas hériter du gras bleu du corps principal).
@@ -227,7 +236,7 @@ set page(
 // FONCTIONS DE BLOCS
 // =============================================================================
 
-//  Bloc Encadré
+//Encadre
 #let encadre(corps) = block(
   width: 100%,
   inset: 5pt,
@@ -236,18 +245,12 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
+  #show heading.where(level: 2): _heading2-bloc
   #set text(size: 7pt, weight: "regular")
-  #show heading.where(level: 2): it => {
-    set text(fill: B6, size: 9pt, weight: "bold")
-    block(above: 1.5em, below: 1em)[
-      #mytriangle(-0.1em,12pt)
-      #h(0.3em)#it.body
-    ]
-  }
   #corps
-] 
+]
 
-// Bloc Définitions
+//Definitions
 #let definitions(corps) = block(
   fill: gris,
   width: 100%,
@@ -256,18 +259,12 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
+  #show heading.where(level: 2): _heading2-bloc
   #set text(size: 7pt, weight: "regular")
-  #show heading.where(level: 2): it => {
-    set text(fill: B6, size: 9pt, weight: "bold")
-    block(above: 1.5em, below: 1em)[
-      #mytriangle(-0.1em,12pt)
-      #h(0.3em)#it.body
-    ]
-  }
   #corps
 ]
 
-// Bloc Pour en savoir plus
+//Pour en savoir plus
 #let pour-en-savoir-plus(corps) = block(
   fill: bleu-clair,
   width: 100%,
@@ -276,17 +273,11 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
+  #show heading.where(level: 2): _heading2-bloc
   #set text(size: 7pt, weight: "regular")
   #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
   #show link: set text(fill: blue)
   #show link: underline
-  #show heading.where(level: 2): it => {
-    set text(fill: B6, size: 9pt, weight: "bold")
-    block(above: 1.5em, below: 1em)[
-      #mytriangle(-0.1em,12pt)
-      #h(0.3em)#it.body
-    ]
-  }
   #corps
 ]
 

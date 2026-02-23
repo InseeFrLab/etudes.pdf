@@ -36,5 +36,5 @@ Il est possible d'utiliser un document initial au format .qmd . Cela necessite l
 ## commandes utiles pour le developpeur:
 - devtools::document()
 - devtools::check()
-- devtools::install()
+- devtools::install() ou devtools::build()
 - detach("package:etudes.pdf", unload = TRUE)

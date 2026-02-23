@@ -1,5 +1,5 @@
 
 
-# etudes-pdf 0.0.1
+# etudes.pdf 0.0.1
 
 * Init

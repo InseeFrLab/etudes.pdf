@@ -2,14 +2,14 @@
 
 ## 📋 Présentation
 
-`etudes.pdf` est un package R qui permet la création de publications Insee Flash Pays de la Loire
-au format PDF conformes à la charte graphique de l'Insee.
+`etudes.pdf` est un package R qui permet la création de publications **Insee Flash Pays de la Loire**
+au format **PDF** conformes à la charte graphique de l'Insee.
 
 
 
 ## 🚀 Installation
 
-Lancez la commande suivante pour installer le package `chartegraphique.sser`:
+Lancez la commande suivante pour installer le package `etudes.pdf`:
 
 ``` r
 devtools::install_gitlab(repo="douxvalkyn/etudes.pdf", host="https://gitlab.com",  dependencies = TRUE,   upgrade = FALSE)
@@ -28,7 +28,11 @@ Il est possible d'utiliser un document initial au format .qmd . Cela necessite l
 
 
 ## commandes utiles pour le developpeur:
-- devtools::document()
-- devtools::check()
-- devtools::install() ou devtools::build()
-- detach("package:etudes.pdf", unload = TRUE)
+- `devtools::document()`
+- `devtools::check()`
+- `devtools::install()` ou `devtools::build()`
+- `detach("package:etudes.pdf", unload = TRUE)`
+
+
+## Utilisation de l'exemple if157
+- déplacer le fichier `if157.qmd` à la racine puis lancer quarto render `if157.qmd`

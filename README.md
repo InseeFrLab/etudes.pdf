@@ -7,19 +7,13 @@ au format PDF conformes à la charte graphique de l'Insee.
 
 
 
-
 ## 🚀 Installation
 
 Lancez la commande suivante pour installer le package `chartegraphique.sser`:
 
 ``` r
-
-devtools::install_gitlab(repo="douxvalkyn/etudes-pdf",
-                        host="https://gitlab.com",
-                        dependencies = TRUE,
-                        upgrade = FALSE)
+devtools::install_gitlab(repo="douxvalkyn/etudes.pdf", host="https://gitlab.com",  dependencies = TRUE,   upgrade = FALSE)
 ```
-
 
 
 ## Utilisation d'un document .qmd au lieu d'un document .rmd

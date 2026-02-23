@@ -13,7 +13,7 @@ négativement à la démographie ligérienne."
 chapo_taille: 11
 auteurs: "David Morineau, Samuel Trivière (Insee)"
 surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS" # mettre "" si pas de surtitre
-qrcode: "_extensions/insee/resourcesqrcode.png" # mettre "" si pas de qrcode
+qrcode: "_extensions/insee/resources/images/qrcode.png" # mettre "" si pas de qrcode
 format: insee-typst
 ---
 
@@ -32,7 +32,7 @@ Néanmoins, si la région est dans une situation favorable, avec un gain conséq
 ## 1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022
 
 ::: {#fig-1}
-![](_extensions/insee/resources/if157_fig1.png){width="100%"}
+![](_extensions/insee/resources/images/if157_fig1.png){width="100%"}
 
 **Lecture** : La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.
 
@@ -59,7 +59,7 @@ La région attire principalement des Franciliens, avec un solde migratoire de +1
 ## 2. Flux et solde migratoires entre les Pays de la Loire et les autres régions métropolitaines en 2021
 
 ::: {#fig-2}
-![](_extensions/insee/resources/if157_fig2.png){width="100%"}
+![](_extensions/insee/resources/images/if157_fig2.png){width="100%"}
 
 **Lecture** : En 2021, le solde entre le nombre de Franciliens arrivés dans les Pays de la Loire, et le nombre de Ligériens partis en Île-de-France est de +12 570 habitants.
 

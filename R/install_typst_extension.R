@@ -4,7 +4,7 @@
 #' @export
 use_insee_typst <- function() {
   # On pointe vers le dossier parent qui contient TOUT
-  source_dir <- system.file("insee", package = "etudes-pdf")
+  source_dir <- system.file("insee", package = "etudes.pdf")
   
   if (source_dir == "") stop("Source introuvable dans le package.")
 

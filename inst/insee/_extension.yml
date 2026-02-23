@@ -20,6 +20,3 @@ contributes:
         tetiere: resources/images/tetiere.png
         logo_x: resources/images/logo_x.png
 
-      # On s'assure que Quarto embarque bien tout ton dossier resources
-      format-resources:
-        - resources/

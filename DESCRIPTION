@@ -1,23 +1,22 @@
-Package: chartegraphique.sser
-Title: Charte Graphique ddu SSER
-Version: 2.4.2
-Authors@R: c(
-    person("Fanny", "Allard", ,"fanny.allard@justice.gouv.fr", role = c("aut")),
-    person("Adam" , "Marsal", ,"adam.marsal@justice.gouv.fr",  role = c("aut", "cre")),
-    person(, "SSM Justice - SSER", role = "cph")
-  )
-Description: Ce package a pour objectif de regrouper toutes les fonctions R, les modèles de publication ainsi que des modèles de présentation relatifs à la charte graphique du  SSER.
+Package: etudes.pdf
+Title: Maquettage Insee Flash Pays de la Loire
+Version: 1.0.0
+Authors@R: person("Régis", "Relland", 
+             email = "regis.relland@insee.fr", 
+             role = c("aut", "cre"))
+Description: Regroupe les fonctions R et les modeles Typst relatifs a la 
+    publication des notes Insee Flash.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Language: en
+Language: fr
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5.0)
 Imports: 
     ggplot2,
     colorspace,
@@ -28,8 +27,5 @@ Imports:
     fontawesome,
     pals,
     dplyr,
-    ggtext,
-    pagedown
-Remotes: 
-    tidyverse/ggplot2@v3.3.5
-Files: ["css"]
+    ggtext
+    

@@ -30,7 +30,7 @@
 
 // Heading niveau 2 pour les blocs 
 #let _heading2-bloc(it) = {
-  set text(fill: B6, size: 9pt, weight: "bold")
+  set text(fill: B6, size: 8pt, weight: "bold")
   block(above: 1.5em, below: 1em)[
     #mytriangle(-0.1em, 12pt)
     #h(0.3em)#it.body
@@ -117,7 +117,7 @@ set page(
 
 
   // taille et police du corps de texte 
-  set text(font: "Open Sans", lang: "fr", size: 8pt)
+  set text(font: "Open Sans", lang: "fr", size: 7.5pt)
 
 
 
@@ -133,11 +133,11 @@ set page(
 
 // --- TITRES ---
   show heading.where(level: 1): it => {
-    set text(fill: B6, size: 9pt, weight: "bold")
+    set text(fill: B6, size: 8pt, weight: "bold")
     block(above: 2em, below: 1.2em)[#it.body]
   }
   show heading.where(level: 2): it => {
-    set text(fill: B6, size: 9pt, weight: "bold")
+    set text(fill: B6, size: 8pt, weight: "bold")
     block(above: 1.5em, below: 1em,
       grid(
         columns: (auto, 1fr),
@@ -146,6 +146,10 @@ set page(
         par(hanging-indent: 1em, it.body),
       )
     )
+  }
+  show heading.where(level: 3): it => {
+    set text(fill: B6, size: 7pt, weight: "bold")
+    block(above: 2em, below: 1.2em)[#it.body]
   }
 
   show strong: it => text(fill: blue, weight: "bold", it.body)
@@ -239,7 +243,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 7pt, weight: "regular")
+  #set text(size: 6.5pt, weight: "regular")
   #corps
 ]
 
@@ -253,7 +257,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 7pt, weight: "regular")
+  #set text(size: 6.5pt, weight: "regular")
   #corps
 ]
 
@@ -267,7 +271,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 7pt, weight: "regular")
+  #set text(size: 6.5pt, weight: "regular")
   #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
   #show link: set text(fill: B6)
   #show link: underline
@@ -283,7 +287,7 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
-  #set text(size: 7pt, weight: "regular")
+  #set text(size: 6.5pt, weight: "regular")
   #corps
 ]
 

@@ -11,6 +11,9 @@ les espaces ruraux restent plébiscités. Les nouveaux arrivants viennent princi
 d’Île-de-France. En revanche, les régions métropolitaines les plus attractives contribuent
 négativement à la démographie ligérienne."
 chapo_taille: 11
+texte_taille: 8
+titre_taille: 9
+bloc_texte_taille: 7
 auteurs: "David Morineau, Samuel Trivière (Insee)"
 surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS" # mettre "" si pas de surtitre
 qrcode: "_extensions/insee/resources/images/qrcode.png" # mettre "" si pas de qrcode

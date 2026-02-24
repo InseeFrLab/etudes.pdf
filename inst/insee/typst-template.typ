@@ -53,6 +53,9 @@
   date_publication: none,
   chapo: none,
   chapo_taille: none,
+  texte_taille: none,
+  titre_taille: none,
+  bloc_texte_taille: none,
   logo_insee_header: none,
   logo_x: none,
   tetiere: none,
@@ -117,7 +120,7 @@ set page(
 
 
   // taille et police du corps de texte 
-  set text(font: "Open Sans", lang: "fr", size: 7.5pt)
+  set text(font: "Open Sans", lang: "fr", size: texte_taille * 1pt)
 
 
 
@@ -133,11 +136,11 @@ set page(
 
 // --- TITRES ---
   show heading.where(level: 1): it => {
-    set text(fill: B6, size: 8pt, weight: "bold")
+    set text(fill: B6, size: titre_taille * 1pt, weight: "bold")
     block(above: 2em, below: 1.2em)[#it.body]
   }
   show heading.where(level: 2): it => {
-    set text(fill: B6, size: 8pt, weight: "bold")
+    set text(fill: B6, size: titre_taille * 1pt, weight: "bold")
     block(above: 1.5em, below: 1em,
       grid(
         columns: (auto, 1fr),
@@ -243,7 +246,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 6.5pt, weight: "regular")
+  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
   #corps
 ]
 
@@ -257,7 +260,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 6.5pt, weight: "regular")
+  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
   #corps
 ]
 
@@ -271,7 +274,7 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: 6.5pt, weight: "regular")
+  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
   #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
   #show link: set text(fill: B6)
   #show link: underline
@@ -287,7 +290,7 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
-  #set text(size: 6.5pt, weight: "regular")
+  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
   #corps
 ]
 

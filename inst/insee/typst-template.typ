@@ -15,7 +15,6 @@
 #let bloc-pour-en-savoir-plus = rgb("#f0faff")
 #let blocSources = rgb("#FFF8E5")
 
-
 // =============================================================================
 // HELPERS INTERNES
 // =============================================================================
@@ -41,6 +40,8 @@
 // encadrés pour ne pas hériter du gras bleu du corps principal).
 #let _strong-noir(it) = text(fill: black, weight: "bold", it.body)
 
+//taille du texte des blocs (insee -> blocs)
+#let taille_bloc_state = state("taille_bloc", 7)
 
 // =============================================================================
 // FONCTION PRINCIPALE
@@ -88,20 +89,15 @@ set page(
         BP 67401 \
         44274 NANTES \
         Cedex 2],
-
         [*Directeur de la publication :* \
         Arnaud Degorre \
         \
-
         *Rédactrice en chef :* \
         Valérie Deroin],
-
         [*Bureau de presse :* \
         02 40 41 75 89 \
-
         ISSN 2275 – 9808 \
         © Insee Pays de la Loire],
-
         [#link("www.insee.fr")[www.insee.fr]\
         #box(baseline: 2mm, image(logo_x)) #h(2pt) #link("https://twitter.com/InseePdL")[\@Insee]],
 
@@ -121,7 +117,7 @@ set page(
 
   // taille et police du corps de texte 
   set text(font: "Open Sans", lang: "fr", size: texte_taille * 1pt)
-
+  taille_bloc_state.update(bloc_texte_taille)
 
 
    // --- FIGURES ---
@@ -219,7 +215,6 @@ set page(
     ],
   )
 
-
   v(8mm)
 
   // --- CORPS DE TEXTE (2 COLONNES) ---
@@ -237,7 +232,8 @@ set page(
 // =============================================================================
 
 //Encadre
-#let encadre(corps) = block(
+#let encadre(corps) = context{
+  block(
   width: 100%,
   inset: 5pt,
   radius: 0pt,
@@ -246,12 +242,14 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
+  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #corps
 ]
+}
 
 //Definitions
-#let definitions(corps) = block(
+#let definitions(corps) = context{
+  block(
   fill: bloc-definitions,
   width: 100%,
   inset: 5pt,
@@ -260,12 +258,14 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
+  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #corps
 ]
+}
 
 //Pour en savoir plus
-#let pour-en-savoir-plus(corps) = block(
+#let pour-en-savoir-plus(corps) = context{
+  block(
   fill: bloc-pour-en-savoir-plus,
   width: 100%,
   inset: 5pt,
@@ -274,15 +274,17 @@ set page(
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
+  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
   #show link: set text(fill: B6)
   #show link: underline
   #corps
 ]
+}
 
 // Bloc Sources 
-#let sources(corps) = block(
+#let sources(corps) = context{
+  block(
   fill: blocSources,
   width: 100%,
   inset: 5pt,
@@ -290,9 +292,10 @@ set page(
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
-  #set text(size: bloc_texte_taille * 1pt, weight: "regular")
+  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #corps
 ]
+}
 
 // Auteurs
 #let signature(auteurs: none) = {

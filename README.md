@@ -44,5 +44,29 @@ Il est possible d'utiliser un document initial au format .qmd . Cela necessite l
 ## Moyens de faire le triangle:
 - blabla **`#box(text(size: 7.5pt, font: "DejaVu Sans")[▶])`{=typst} figure 2** \
 - blabla **`#box(text(size: 6pt)[#fa-icon("play")])`{=typst} figure 2** \ (necessite ceci: #import "@preview/fontawesome:0.5.0": *)
+- #let appel-fleche(corps) = {
+  box(
+  width: 0.8em,
+  height: 0.8em,
+  {
+    place(center + horizon, 
+      polygon(
+        fill: B6,
+        (0%, 0%),   // Point haut gauche
+        (100%, 50%),// Pointe (milieu droite)
+        (0%, 100%)  // Point bas gauche
+      )
+    )
+  }
+)
+  h(0.4em)
+  corps
+}
+
+et dans le qmd:  ```{=typst}
+
+blabla devant #appel-fleche[figure 3]
+
+``` 
 
 

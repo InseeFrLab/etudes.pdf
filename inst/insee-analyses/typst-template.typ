@@ -1,5 +1,5 @@
 // *****************************************************************************
-// ***********************     TEMPLATE INSEE FLASH     ************************
+// ***********************     TEMPLATE INSEE ANALYSES     ************************
 // *****************************************************************************
 
 // =============================================================================
@@ -14,10 +14,6 @@
 #let R4 = rgb("#FB5A5A")
 #let R1 = rgb("#FFE2E2")
 #let G1 = rgb("#F2F2F2")
-
-#let bloc-definitions = rgb("#f2f2f2")
-#let bloc-pour-en-savoir-plus = rgb("#f0faff")
-#let blocSources = rgb("#FFF8E5")
 
 
 // =============================================================================
@@ -89,7 +85,7 @@
 // FONCTION PRINCIPALE
 // =============================================================================
 
-#let ia(
+#let insee-analyses(
   title: none,
   collection: none,
   numero: none,
@@ -108,7 +104,6 @@
   surtitre: none,
   partenaire: none,
   logo_partenaire:none,
-  footer-from: 4, // numero de la derniere page pour le footer
   body
 ) = {
 
@@ -171,7 +166,7 @@ l’Aménagement et du Logement (Dreal).  ]
       }
 
       // ── PAGE 4  ──────────────────────────────
-      else if page_num >= footer-from {
+      else if page_num == 4 {
         v(-20mm)
         show strong: _strong-noir
         grid(
@@ -334,7 +329,6 @@ body
 // =============================================================================
 
 
-
 //Encadre
 #let encadre(corps) = context{
   block(
@@ -354,7 +348,7 @@ body
 //Definitions
 #let definitions(corps) = context{
   block(
-  fill: bloc-definitions,
+  fill: G1,
   width: 100%,
   inset: 5pt,
   radius: 8pt,

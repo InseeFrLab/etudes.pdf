@@ -11,7 +11,7 @@ contributes:
         - typst-show.typ
       
       # Options de rendu
-      mainfont: "Marianne"    
+      mainfont: "Open Sans"    
       fontsize: 10pt
       
       # On déclare les variables que Quarto doit passer au template

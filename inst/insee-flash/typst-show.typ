@@ -1,7 +1,7 @@
 #let auteurs = [$auteurs$] //necessaire pour que le code typst des auteurs fonctionne dans le .qmd
 
 
-#show: doc => ia(
+#show: doc => insee-flash(
   title: [$title$],
   collection: [$collection$],
   date_publication: [$date_publication$],
@@ -17,9 +17,6 @@
   tetiere: "$tetiere$",
   logo_x: "$logo_x$",
   qrcode: "$qrcode$",
-  partenaire: [$partenaire$],
-  logo_partenaire: "$logo_partenaire$",
-  logo_donnees_compl: "$logo_donnees_compl$",
   
   doc
 )

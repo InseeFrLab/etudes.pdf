@@ -2,7 +2,7 @@
 
 ## 📋 Présentation
 
-`etudes.pdf` est un package R qui permet la création de publications **Insee Flash Pays de la Loire** au format **PDF** conformes à la charte graphique de l'Insee.
+`etudes.pdf` est un package R qui permet la création de publications **Insee Flash Pays de la Loire** ou **Insee Analyses Pays de la Loire**au format **PDF** conformes à la charte graphique de l'Insee.
 
 https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109
 
@@ -15,11 +15,11 @@ https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109
 remotes::install_github("https://github.com/InseeFrLab/etudes.pdf")
 ```
 
--   Lancer la fonction `etudes.pdf::use_insee_typst()` pour installer l'extension typst de l'Insee: un dossier \_extensions est créé.
+-   Lancer la fonction `install_if_typst()` pour installer l'extension typst dédiée aux Insee Flash ou `install_ia_typst()` pour installer l'extension typst des Insee Analyses: un dossier \_extensions est créé.
 
--   déplacer le fichier modèle `if157.qmd` du dossier \_extensions/insee vers la racine puis lancer `quarto render if157.qmd` pour générer le pdf.
+-   déplacer le fichier modèle `if157.qmd` ou `ia144.qmd `du dossier \_extensions/if ou \_extensions/ia vers la racine puis lancer `quarto render if157.qmd` ou `quarto render ia144.qmd`pour générer le pdf.
 
--   modifier le fichier `if157.qmd` en fonction de vos besoins et lancer `quarto render if157.qmd` pour reafficher le pdf.
+-   modifier le fichier `if157.qmd` ou `ia144.qmd`en fonction de vos besoins et lancer `quarto render if157.qmd` ou `quarto render ia144.qmd`pour régenerer le pdf.
 
 ## Commandes utiles pour le developpeur:
 

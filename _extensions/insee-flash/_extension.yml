@@ -1,4 +1,4 @@
-title: Insee Analyses Typst 3 colonnes
+title: Insee Typst
 author: Insee
 version: 1.1.0
 
@@ -11,7 +11,7 @@ contributes:
         - typst-show.typ
       
       # Options de rendu
-      mainfont: "Marianne"    
+      mainfont: "Open Sans"    
       fontsize: 10pt
       
       # On déclare les variables que Quarto doit passer au template
@@ -19,5 +19,4 @@ contributes:
         logo_insee_header: resources/images/logoInseeFr.png
         tetiere: resources/images/tetiere.png
         logo_x: resources/images/logo_x.png
-        logo_donnees_compl: resources/images/logo_donnees_compl.png
 

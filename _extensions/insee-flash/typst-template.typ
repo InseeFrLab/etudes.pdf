@@ -10,8 +10,8 @@
 #let B6 = rgb("#145CBF")
 #let B8 = rgb("#042F80")
 #let R3 = rgb("#FF848A")
+#let G1 = rgb("#F2F2F2")
 
-#let bloc-definitions = rgb("#f2f2f2")
 #let bloc-pour-en-savoir-plus = rgb("#f0faff")
 #let blocSources = rgb("#FFF8E5")
 
@@ -45,17 +45,34 @@
 #let taille_bloc_state = state("taille_bloc", 7)
 
 
-//figures sur 2 COLONNES
-#let fig-2col(body) = {
- place(
-    bottom, 
-    float: true,
-    scope: "parent",
-    dy: -40mm,
-    block(width: 100%, body)
-  )
-  }
 
+
+// ═══════════════════════════════════════════
+// MEANDER 
+// ═══════════════════════════════════════════
+#import "@preview/meander:0.4.1"
+
+#let mybloc(pos: top + right, largeur: 50%, hauteur: auto,  dx: 4pt, dy: 0pt, 
+            pad-top: 0mm, pad-bottom: 4mm, contenu) = {
+  meander.placed(pos, dx: dx, dy: dy,
+    pad(top: pad-top, bottom: pad-bottom,
+      block(width: largeur, height: hauteur)[#contenu]
+    )
+  )
+}
+
+#let page_2_colonnes(marge: 3mm, saut: true) = {
+  meander.container(align: left,width: 50%, margin: marge)
+  meander.container(align: right, width: 50%, margin: marge)
+    if saut { meander.pagebreak() }
+
+}
+
+#let page2_2colonnes(marge: 3mm) = {
+  meander.container(align: left, width: 50%, margin: marge, height: 100% - 40mm)
+  meander.container(align: right, width: 50%, margin: marge, height: 100% - 40mm)
+
+}
 
 
 
@@ -64,7 +81,7 @@
 // FONCTION PRINCIPALE
 // =============================================================================
 
-#let insee(
+#let insee-flash(
   title: none,
   collection: none,
   numero: none,
@@ -80,20 +97,19 @@
   qrcode: none,
   auteurs: none,
   surtitre: none,
-  footer-from: 2,
   body
 ) = {
 
-  // --- CONFIGURATION DE LA PAGE et du FOOTER  ---
+  // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
-    margin: (x: 10mm, y:  10mm),
+    margin: (x: 15mm, y:  15mm, bottom: 20mm),
     footer: context {
       let page_num = counter(page).get().at(0)
-      if page_num == footer-from {
+      if page_num == 2 {
       show strong: _strong-noir
 
-      v(-15mm)  
+      v(-5mm)  
 
       set text(size: 6pt, font: "Open Sans")
       grid(
@@ -234,8 +250,7 @@ set page(
 
   v(6mm)
 
-  // --- CORPS DE TEXTE (2 COLONNES) ---
-  show: columns.with(2,  gutter: 5mm)
+
 
   // --- TEXTE ---
   body 
@@ -267,7 +282,7 @@ set page(
 //Definitions
 #let definitions(corps) = context{
   block(
-  fill: bloc-definitions,
+  fill: G1,
   width: 100%,
   inset: 5pt,
   radius: 0pt,
@@ -312,6 +327,48 @@ set page(
   #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #corps
 ]
+}
+
+//Bloc encadre-figure
+#let encadre-figure(corps) = context{
+  block(
+  width: 100%,
+  inset: 5pt,
+  spacing: 1.2em,
+  radius: 8pt,
+  fill: G1,
+)[
+  #show strong: _strong-noir
+  #show heading.where(level: 2): _heading2-bloc
+  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
+  #corps
+]
+}
+
+#let mfig(
+  pos: top + right,
+  largeur: 66%,
+  dx: 4pt, dy: 0pt,
+  pad-top: 0mm, pad-bottom: 4mm,
+  titre: none,
+  lecture: none,
+  source: none,
+  champ: none,
+  note: none,
+  width-image: 100%,
+  chemin
+) = {
+  mybloc(pos: pos, largeur: largeur, dx: dx, dy: dy,
+         pad-top: pad-top, pad-bottom: pad-bottom)[
+    #if titre     != none [== #titre]
+    #encadre-figure[
+      #figure(image(chemin, width: width-image))
+      #if note    != none [*Note* : #note \ ]
+      #if lecture != none [*Lecture* : #lecture \ ]
+      #if champ   != none [*Champ* : #champ \ ]
+      #if source  != none [*Source* : #source]
+    ]
+  ]
 }
 
 // Auteurs

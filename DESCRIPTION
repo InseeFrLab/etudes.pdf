@@ -1,11 +1,11 @@
 Package: etudes.pdf
-Title: Maquettage Insee Flash Pays de la Loire
+Title: Maquettage Insee Pays de la Loire
 Version: 1.0.0
 Authors@R: person("Régis", "Relland", 
              email = "regis.relland@insee.fr", 
              role = c("aut", "cre"))
 Description: Regroupe les fonctions R et les modeles Typst relatifs a la 
-    publication des notes Insee Flash.
+    publication des notes Insee Flash et Insee Analyses.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -22,7 +22,6 @@ Imports:
     here,
     glue,
     rmarkdown,
-    fontawesome,
     dplyr
 
     

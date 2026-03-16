@@ -12,7 +12,7 @@ texte_taille: 8
 titre_taille: 9
 bloc_texte_taille: 7
 partenaire: "Cette étude est réalisée dans le cadre d'un partenariat entre l'Insee et la direction régionale de l'Environnement, de l'Aménagement du territoire et du Logement (Dreal)."
-logo_partenaire: "ia144/logo-partenaire.png"
+logo_partenaire: "_extensions/ia/resources/images/logo-partenaire.png"
 auteurs: "Perrine Bauer, Nathalie Le Guillou (Insee),Christelle Belkacem, Célia Péoc’h (Dreal Pays de la Loire)"
 surtitre: "MORPHOLOGIE DES TERRITOIRES ET INTERACTIONS" # mettre "" si pas de surtitre
 qrcode: "_extensions/ia/resources/images/qrcode.png" # mettre "" si pas de qrcode
@@ -190,67 +190,52 @@ colfill()
 // -----------------------Positionnement des figures et encadrés---------------------------
 
 
-  // ── PAGE 1 ──
-mybloc(pos: top + right, largeur: 33%, dy: 0mm)[
-   == 1. Taux d’extension liée à l’activité économique entre 2011 et fin 2020
-       #encadre-figure[
-  #figure(image("ia144/ia144_fig1.png", width: 95%))
-*Lecture* : Le taux d’extension liée à l’activité
-économique dans les Hauts-de-France est de
-1,84 % entre 2011 et fin 2020.\
-*Source* : Cerema, fichiers fonciers de début 2011
-à fin 2020
-  ]
-
-]
-
-
-
+// ── PAGE 1 ──
+mfig(
+  pos: top + right, largeur: 33%, dx: 0mm, dy: 0mm,width-image: 100%,
+  titre: "1. Taux d’extension liée à l’activité économique entre 2011 et fin 2020",
+  lecture: "Le taux d’extension liée à l’activité économique dans les Hauts-de-France est de 1,84 % entre 2011 et fin 2020.",
+  source: "Cerema, fichiers fonciers de début 2011 à fin 2020",
+  "_extensions/ia/resources/images/ia144_fig1.png"
+)
 
 page1_3colonnes()
 
 
+// ── PAGE 2 ──
+mfig(
+  pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
+  titre: "2. Flux annuels de consommation d’espaces de l’activité économique et de l’habitat dans les Pays de la Loire, entre 2011 et fin 2020",
+  lecture: "En 2020, dans les Pays de la Loire, l’activité économique consomme 250 ha, et l’habitat, 890 ha.",
+  source: "Cerema, fichiers fonciers de début 2011 à fin 2020.",
+  "_extensions/ia/resources/images/ia144_fig2.png"
+)
 
-  // ── PAGE 2 ──
 
-
-mybloc(pos: top + right, largeur: 66%)[
-    == 2. Flux annuels de consommation d’espaces de l’activité économique et de l’habitat dans les Pays de la Loire, entre 2011 et fin 2020
-        #encadre-figure[
-    #figure(image("ia144/ia144_fig2.png", width: 100%))
-    *Lecture* : En 2020, dans les Pays de la Loire, l’activité économique consomme 250 ha, et l’habitat, 890 ha.\
-*Source* : Cerema, fichiers fonciers de début 2011 à fin 2020.
-    ]
-]
-
-mybloc(pos: bottom + right, largeur: 66%)[
-    == 3. Taux d’extension liée à l’activité économique, par SCoT, entre 2011 et fin 2020
-        #encadre-figure[
-    #figure(image("ia144/ia144_fig3.png", width: 100%))
-    *Lecture* : Le taux d’extension du SCoT Yon et Vie est de 3,3 %, tandis que celui de la communauté de communes
-de Nozay est de 0,5 %.\
-*Champ* : Schémas de cohérence territoriale (SCoT) des Pays de la Loire, intercommunalités de Nozay et du Mont des Avaloirs et commune de l’Île d’Yeu.\
-*Source* : Cerema, fichiers fonciers de début 2011 à fin 2020.
-    ]
-]
-
+mfig(
+  pos: bottom + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
+  titre: "3. Taux d’extension liée à l’activité économique, par SCoT, entre 2011 et fin 2020",
+  lecture: "Le taux d’extension du SCoT Yon et Vie est de 3,3 %, tandis que celui de la communauté de communes de Nozay est de 0,5 %.",
+  champ: "Schémas de cohérence territoriale (SCoT) des Pays de la Loire, intercommunalités de Nozay et du Mont des Avaloirs et commune de l’Île d’Yeu.",
+  source: "Cerema, fichiers fonciers de début 2011 à fin 2020.",
+  "_extensions/ia/resources/images/ia144_fig3.png"
+)
 
 page_3_colonnes()
 
 
   // ── PAGE 3 ──
 
-mybloc(pos: top + right, largeur: 66%)[
-    == 4. Part de la consommation d’espaces et de l’emploi salarié dans les Pays de la Loire, par secteur économique
-    #encadre-figure[
-    #figure(image("ia144/ia144_fig4.png", width: 100%))
-    *Note* : L’agriculture, la construction et d’autres secteurs indéterminés ne figurent pas sur le graphique. Le total des secteurs n’est donc pas égal à 100 %.\
-*Lecture* : Les bureaux et autres services représentent 29 % de la consommation d’espaces pour l’activité économique entre 2011 et fin 2020. Ce secteur pèse 52 % de l’emploi salarié fin 2010.\
-*Sources* : Cerema, fichiers fonciers de début 2011 à fin 2020 ; Insee, estimations d’emploi salarié fin 2010.
-    ]
-    ]
+mfig(
+  pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
+  titre: "4. Part de la consommation d’espaces et de l’emploi salarié dans les Pays de la Loire, par secteur économique",
+  note: "L’agriculture, la construction et d’autres secteurs indéterminés ne figurent pas sur le graphique. Le total des secteurs n’est donc pas égal à 100 %.",
+  lecture: "Les bureaux et autres services représentent 29 % de la consommation d’espaces pour l’activité économique entre 2011 et fin 2020. Ce secteur pèse 52 % de l’emploi salarié fin 2010.",
+  source: "Cerema, fichiers fonciers de début 2011 à fin 2020 ; Insee, estimations d’emploi salarié fin 2010.",
+  "_extensions/ia/resources/images/ia144_fig4.png"
+)
 
- mybloc(pos: bottom + right, largeur: 66%)[
+mybloc(pos: bottom + right, largeur: 66%)[
 #encadre[
     ==  Encadré 1 – Rendre les activités économiques plus sobres
 Les contraintes d’installation diffèrent selon les secteurs économiques, mais des améliorations
@@ -344,9 +329,6 @@ exemple) ; \
 - parmi les communes rurales, on distingue les communes à habitat regroupé en
 bourgs ruraux, le rural à habitat dispersé et le rural à habitat très dispersé]
 ]
-
-
-
 
 
 page_3_colonnes(saut: false)

@@ -83,6 +83,8 @@
 
 
 
+
+
 // =============================================================================
 // FONCTION PRINCIPALE
 // =============================================================================
@@ -331,6 +333,8 @@ body
 // FONCTIONS DE BLOCS
 // =============================================================================
 
+
+
 //Encadre
 #let encadre(corps) = context{
   block(
@@ -396,6 +400,9 @@ body
   #corps
 ]
 }
+
+
+
 //Bloc encadre-figure
 #let encadre-figure(corps) = context{
   block(
@@ -411,6 +418,34 @@ body
   #corps
 ]
 }
+
+#let mfig(
+  pos: top + right,
+  largeur: 66%,
+  dx: 4pt, dy: 0pt,
+  pad-top: 0mm, pad-bottom: 4mm,
+  titre: none,
+  lecture: none,
+  source: none,
+  champ: none,
+  note: none,
+  width-image: 100%,
+  chemin
+) = {
+  mybloc(pos: pos, largeur: largeur, dx: dx, dy: dy,
+         pad-top: pad-top, pad-bottom: pad-bottom)[
+    #if titre     != none [== #titre]
+    #encadre-figure[
+      #figure(image(chemin, width: width-image))
+      #if note    != none [*Note* : #note \ ]
+      #if lecture != none [*Lecture* : #lecture \ ]
+      #if champ   != none [*Champ* : #champ \ ]
+      #if source  != none [*Source* : #source]
+    ]
+  ]
+}
+
+
 
 // Auteurs
 #let signature(auteurs: none) = {

@@ -22,6 +22,7 @@ Imports:
     here,
     glue,
     rmarkdown,
+    stringr,
     dplyr
 
     

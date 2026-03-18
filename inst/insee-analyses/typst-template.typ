@@ -58,7 +58,7 @@
             pad-top: 0mm, pad-bottom: 0mm, contenu) = {
   meander.placed(pos, dx: dx, dy: dy,
     pad(top: pad-top, bottom: pad-bottom,
-      block(width: largeur, height: hauteur)[#contenu]
+      block(width: largeur, height: hauteur, contenu)
     )
   )
 }
@@ -109,10 +109,13 @@
   body
 ) = {
 
+
+
+
   // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
-    margin: (x: 15mm, top: 15mm, bottom: 15mm),
+    margin: (x: 15mm, y: 15mm,  top: 8mm, bottom: 12mm),
 
     // ── PAGE 1 : footer partenaire éventuel ─────────────────────
     footer: context {
@@ -255,8 +258,8 @@ set page(
     // Zone Titre
    box(height: 25mm, width: 100%)[
     #set text(size: 12pt, weight: "regular", fill:B6 )
-    #block(below: 7mm,surtitre)
-    #set text(weight: "extrabold", size: 16pt, fill:black)
+    #block(below: 4mm,surtitre)
+    #set text(weight: "extrabold", size: 15pt, fill:black)
     #block(title)
   ]
   )
@@ -278,7 +281,7 @@ move(dx: -15mm)[
 ]
 ]
 
-
+v(-3.5mm)
 // --- TETIERE + CHAPO ---
 grid(
   columns: (68mm, 1fr),
@@ -310,11 +313,18 @@ grid(
 
   v(8mm)
 
-  // --- CORPS DE TEXTE (2 COLONNES) ---
-  //show: columns.with(3,  gutter: 5mm)
+  // --- TEXTE : espacements --
+let mon_leading = 5pt
+set par(
+  leading: mon_leading, //interligne
+  spacing: texte_taille*1pt +mon_leading    //texte_taille + leading=spacing spacing=espace entre paragraphes
+)
 
-  // --- TEXTE ---
-
+show heading: set block(
+  above: 13pt,       // Un saut de ligne exact AVANT le titre
+  below: 13pt,       // Un saut de ligne exact APRÈS le titre
+  sticky: true       // Empêche le titre de rester seul en bas de colonne
+)
 
 body
 
@@ -388,6 +398,7 @@ body
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
+  #show heading.where(level: 2): _heading2-bloc
   #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
   #corps
 ]
@@ -490,6 +501,3 @@ body
   h(0.4em)
   corps
 }
-
-
-

@@ -1,7 +1,7 @@
 #' calibrage
 #'
 #' 
-#' Calcule le nombre de caractères de chaque bloc de l'étude
+#' Calcule le nombre de caractères de chaque bloc de l'étude.
 #' @export
 calibrage <-  function(file_path) {
   # Lecture du fichier

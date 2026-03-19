@@ -2,7 +2,7 @@
 #'
 #' Calcule le nombre de caractères de chaque bloc de l'étude
 #' @export
-calibrage<- function(file_path) {
+calibrage <- function(file_path) {
   # Lecture du fichier
   text <- readChar(file_path, file.info(file_path)$size)
   

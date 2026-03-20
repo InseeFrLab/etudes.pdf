@@ -195,6 +195,7 @@ colfill()
 // ── PAGE 1 ──
 mfig(
   pos: top + right, largeur: 33%, dx: 0mm, dy: 0mm,width-image: 100%,
+  pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "1. Taux d’extension liée à l’activité économique entre 2011 et fin 2020",
   lecture: "Le taux d’extension liée à l’activité économique dans les Hauts-de-France est de 1,84 % entre 2011 et fin 2020.",
   source: "Cerema, fichiers fonciers de début 2011 à fin 2020",
@@ -206,7 +207,8 @@ page1_3colonnes(avec-partenaire: true)
 
 // ── PAGE 2 ──
 mfig(
-  pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 4mm, pad-top: 0mm,
+  pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%, 
+  pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "2. Flux annuels de consommation d’espaces de l’activité économique et de l’habitat dans les Pays de la Loire, entre 2011 et fin 2020",
   lecture: "En 2020, dans les Pays de la Loire, l’activité économique consomme 250 ha, et l’habitat, 890 ha.",
   source: "Cerema, fichiers fonciers de début 2011 à fin 2020.",
@@ -215,7 +217,8 @@ mfig(
 
 
 mfig(
-  pos: bottom + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%, pad-top: 4mm, pad-bottom:  0mm,
+  pos: bottom + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-top: 4mm, pad-bottom: 0mm, pad-left: 2mm, pad-right: 0mm,
   titre: "3. Taux d’extension liée à l’activité économique, par SCoT, entre 2011 et fin 2020",
   lecture: "Le taux d’extension du SCoT Yon et Vie est de 3,3 %, tandis que celui de la communauté de communes de Nozay est de 0,5 %.",
   champ: "Schémas de cohérence territoriale (SCoT) des Pays de la Loire, intercommunalités de Nozay et du Mont des Avaloirs et commune de l’Île d’Yeu.",
@@ -230,6 +233,7 @@ page_3_colonnes()
 
 mfig(
   pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "4. Part de la consommation d’espaces et de l’emploi salarié dans les Pays de la Loire, par secteur économique",
   note: "L’agriculture, la construction et d’autres secteurs indéterminés ne figurent pas sur le graphique. Le total des secteurs n’est donc pas égal à 100 %.",
   lecture: "Les bureaux et autres services représentent 29 % de la consommation d’espaces pour l’activité économique entre 2011 et fin 2020. Ce secteur pèse 52 % de l’emploi salarié fin 2010.",
@@ -237,7 +241,8 @@ mfig(
   "_extensions/insee-analyses/resources/images/ia144_fig4.png"
 )
 
-mybloc(pos: bottom + right, largeur: 66%)[
+mybloc(pos: bottom + right, largeur: 66%,
+pad-top: 4mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm)[
 #encadre[
     ==  Encadré 1 – Rendre les activités économiques plus sobres
 Les contraintes d’installation diffèrent selon les secteurs économiques, mais des améliorations
@@ -262,11 +267,13 @@ page_3_colonnes()
 
   // ── PAGE 4 ──
 
-mybloc(pos: bottom + right, largeur: 33%, dy:-160mm)[
+mybloc(pos: bottom + right, largeur: 33%, dy:-175mm,
+pad-top: 0mm, pad-bottom: 0mm, pad-left: 2mm, pad-right: 0mm)[
   #donnees()
 ]
  
-mybloc(pos: top + right, largeur: 66%)[
+mybloc(pos: top + right, largeur: 66%,
+pad-top: 0mm, pad-bottom: 4mm, pad-left: 0mm, pad-right: 0mm)[
     #encadre[
           == Encadré 2 – Au niveau régional, un lien distendu entre création d’emploi et consommation économique d’espaces
 Dans la région, 154 000 emplois ont été créés entre fin 2010 et fin 2020. À court terme,
@@ -280,7 +287,8 @@ Cependant, au niveau national, l’emploi salarié augmente entre fin 2011 et fi
 de la consommation d’espaces, notamment dans les activités tertiaires [Khamallah, 2025].
 ]
       ]
-mybloc(pos: bottom + left, largeur: 66%, dy: -45mm)[
+mybloc(pos: bottom + left, largeur: 66%, dy: -45mm,
+pad-top: 4mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 2mm)[
     #sources[
           == Sources et méthodes
 La loi Climat et résilience de 2021 apporte une définition générale des processus d’artificialisation et de désartificialisation. Elle précise que « la consommation des espaces naturels, agricoles et forestiers est entendue comme la création ou l’extension effective d’espaces urbanisés sur le territoire concerné ». La loi prévoit une première étape de réduction de 50 % du rythme de consommation d’espaces, d’ici à 2031. Cette étude aborde exclusivement la notion de consommation d’espaces, c’est pourquoi le terme d’artificialisation n’est pas utilisé.\
@@ -304,10 +312,11 @@ Insee Analyses Pays de la Loire no 112, février 2023.]
 ]
 
 //bloc invisible pour bloquer l'espace
-mybloc(pos: bottom + left, largeur: 66%,  hauteur: 20% , dy: 0mm)[]
+mybloc(pos: bottom + left, largeur: 100%,  hauteur: 20% , dy: 0mm)[]
 
 
-mybloc(pos: bottom + right, largeur: 33%, dy: -25mm)[
+mybloc(pos: bottom + right, largeur: 33%, dy: -25mm,
+pad-top: 4mm, pad-bottom: 0mm, pad-left: 2mm, pad-right: 0mm)[
   #definitions[
     == Définitions
 La *consommation d’espaces* correspond à la transformation en espaces urbanisés de

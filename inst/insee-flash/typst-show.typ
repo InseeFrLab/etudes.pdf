@@ -17,6 +17,7 @@
   tetiere: "$tetiere$",
   logo_x: "$logo_x$",
   qrcode: "$qrcode$",
+  logo_donnees_compl: "$logo_donnees_compl$",
   
   doc
 )

@@ -55,29 +55,29 @@
 
 //un bloc positionné à 'top' aura une marge haute à 0 sinon 4mm (et de même pour bloc à 'bottom')
 #let mybloc(pos: top + right, largeur: 66%, hauteur: auto, dx: 4pt, dy: 0pt,
-            pad-top: 0mm, pad-bottom: 0mm, contenu) = {
+            pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm, contenu) = {
   meander.placed(pos, dx: dx, dy: dy,
-    pad(top: pad-top, bottom: pad-bottom,
+    pad(top: pad-top, bottom: pad-bottom, right: pad-right, left: pad-left,
       block(width: largeur, height: hauteur, contenu)
     )
   )
 }
 
-#let page_3_colonnes(marge: 2.5mm, saut: true) = {
-  meander.container(align: left,width: 33%, margin: marge)
-  meander.container(align: center, width: 33%, margin: marge)
-  meander.container(align: right, width: 33%, margin: marge)
+#let page_3_colonnes(saut: true) = {
+  meander.container(align: left,width: 32%, margin: (right: 2.5mm))
+  meander.container(align: center, width: 32%, margin: (x: 2.5mm))
+  meander.container(align: right, width: 32%, margin: (left: 2.5mm))
     if saut { meander.pagebreak() }
 
 }
 
 
 
-#let page1_3colonnes(marge: 2.5mm, saut: true, avec-partenaire: false) = {
+#let page1_3colonnes(saut: true, avec-partenaire: false) = {
   let h = if avec-partenaire { 100% - 3.8cm } else { 100% }
-  meander.container(align: left,   width: 33%, margin: marge, height: h)
-  meander.container(align: center, width: 33%, margin: marge, height: h)
-  meander.container(align: right,  width: 33%, margin: marge, height: h)
+  meander.container(align: left,   width: 32%, margin: (right: 2.5mm), height: h)
+  meander.container(align: center, width: 32%, margin: (x: 2.5mm), height: h)
+  meander.container(align: right,  width: 32%, margin: (left: 2.5mm), height: h)
   if saut { meander.pagebreak() }
 }
 
@@ -115,7 +115,7 @@
   // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
-    margin: (x: 15mm, y: 15mm,  top: 8mm, bottom: 12mm),
+    margin: (x: 15mm, y: 15mm,  top: 15mm, bottom: 15mm),
 
     // ── PAGE 1 : footer partenaire éventuel ─────────────────────
     footer: context {
@@ -426,8 +426,9 @@ body
   pos: top + right,
   largeur: 66%,
   dx: 4pt, dy: 0pt,
-  pad-top: 0mm, pad-bottom: 4mm,
+  pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,
   titre: none,
+  champ-libre: none,
   lecture: none,
   source: none,
   champ: none,
@@ -436,7 +437,7 @@ body
   chemin
 ) = {
   mybloc(pos: pos, largeur: largeur, dx: dx, dy: dy,
-         pad-top: pad-top, pad-bottom: pad-bottom)[
+         pad-top: pad-top, pad-bottom: pad-bottom, pad-left:  pad-left, pad-right: pad-right)[
     #if titre     != none [== #titre]
     #encadre-figure[
       #figure(image(chemin, width: width-image))

@@ -19,4 +19,5 @@ contributes:
         logo_insee_header: resources/images/logoInseeFr.png
         tetiere: resources/images/tetiere.png
         logo_x: resources/images/logo_x.png
+        logo_donnees_compl: resources/images/logo_donnees_compl.png
 

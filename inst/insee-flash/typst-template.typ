@@ -7,13 +7,14 @@
 // =============================================================================
 
 #let B4 = rgb("#248BFF")
+#let B5 = rgb("#2674DD")
 #let B6 = rgb("#145CBF")
 #let B8 = rgb("#042F80")
+#let R1 = rgb("#FFE2E2")
 #let R3 = rgb("#FF848A")
 #let G1 = rgb("#F2F2F2")
 
 #let bloc-pour-en-savoir-plus = rgb("#f0faff")
-#let blocSources = rgb("#FFF8E5")
 
 
 // =============================================================================
@@ -44,7 +45,8 @@
 //taille du texte des blocs (insee -> blocs)
 #let taille_bloc_state = state("taille_bloc", 7)
 
-
+//donnees compl
+#let _logo_donnees_compl = state("logo_donnees_compl", none)
 
 
 // ═══════════════════════════════════════════
@@ -53,27 +55,26 @@
 #import "@preview/meander:0.4.1"
 
 #let mybloc(pos: top + right, largeur: 50%, hauteur: auto,  dx: 4pt, dy: 0pt, 
-            pad-top: 0mm, pad-bottom: 4mm, contenu) = {
+            pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,  contenu) = {
   meander.placed(pos, dx: dx, dy: dy,
-    pad(top: pad-top, bottom: pad-bottom,
-      block(width: largeur, height: hauteur)[#contenu]
+    pad(top: pad-top, bottom: pad-bottom,left: pad-left, right: pad-right, 
+    block(width: largeur, height: hauteur)[#contenu]
     )
   )
 }
 
-#let page_2_colonnes(marge: 3mm, saut: true) = {
-  meander.container(align: left,width: 50%, margin: marge)
-  meander.container(align: right, width: 50%, margin: marge)
+#let page1_2colonnes(saut: true) = {
+  meander.container(align: left,width: 49%, margin: (right: 2.5mm), height: 100%)
+  meander.container(align: right, width: 49%, margin: (left: 2.5mm), height: 100%)
     if saut { meander.pagebreak() }
 
 }
 
-#let page2_2colonnes(marge: 3mm) = {
-  meander.container(align: left, width: 50%, margin: marge, height: 100% - 40mm)
-  meander.container(align: right, width: 50%, margin: marge, height: 100% - 40mm)
+#let page2_2colonnes() = {
+  meander.container(align: left, width: 49%, margin: (right: 2.5mm), height: 100% - 40mm)
+  meander.container(align: right, width: 49%, margin: (left: 2.5mm), height: 100% - 40mm)
 
 }
-
 
 
 
@@ -93,6 +94,7 @@
   bloc_texte_taille: none,
   logo_insee_header: none,
   logo_x: none,
+  logo_donnees_compl: none,
   tetiere: none,
   qrcode: none,
   auteurs: none,
@@ -103,13 +105,13 @@
   // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
-    margin: (x: 15mm, y:  15mm, bottom: 20mm),
+    margin: (x: 15mm, y: 15mm,  top: 10mm, bottom: 15mm),
     footer: context {
       let page_num = counter(page).get().at(0)
       if page_num == 2 {
       show strong: _strong-noir
 
-      v(-5mm)  
+      v(-10mm)  
 
       set text(size: 6pt, font: "Open Sans")
       grid(
@@ -152,6 +154,8 @@ set page(
   set text(font: "Open Sans", lang: "fr", size: texte_taille * 1pt)
   taille_bloc_state.update(bloc_texte_taille)
 
+  // Donnees complementaires
+ _logo_donnees_compl.update(logo_donnees_compl)
 
    // --- FIGURES ---
   show figure: set figure(supplement: none, numbering: none)
@@ -268,7 +272,7 @@ set page(
   block(
   width: 100%,
   inset: 5pt,
-  radius: 4pt,
+  radius: 8pt,
   stroke: 2pt + R3,
   spacing: 1.2em,
 )[
@@ -285,7 +289,7 @@ set page(
   fill: G1,
   width: 100%,
   inset: 5pt,
-  radius: 0pt,
+  radius: 8pt,
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
@@ -301,7 +305,7 @@ set page(
   fill: bloc-pour-en-savoir-plus,
   width: 100%,
   inset: 5pt,
-  radius: 0pt,
+  radius: 8pt,
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
@@ -317,10 +321,10 @@ set page(
 // Bloc Sources 
 #let sources(corps) = context{
   block(
-  fill: blocSources,
+  fill: R1,
   width: 100%,
   inset: 5pt,
-  radius: 0pt,
+  radius: 8pt,
   spacing: 1.2em,
 )[
   #show strong: _strong-noir
@@ -349,7 +353,8 @@ set page(
   pos: top + right,
   largeur: 66%,
   dx: 4pt, dy: 0pt,
-  pad-top: 0mm, pad-bottom: 4mm,
+  pad-top: 0mm, pad-bottom: 4mm, pad-left: 0mm, pad-right: 0mm,
+  champ-libre: none,
   titre: none,
   lecture: none,
   source: none,
@@ -359,10 +364,11 @@ set page(
   chemin
 ) = {
   mybloc(pos: pos, largeur: largeur, dx: dx, dy: dy,
-         pad-top: pad-top, pad-bottom: pad-bottom)[
+         pad-top: pad-top, pad-bottom: pad-bottom, pad-right: pad-right, pad-left: pad-left)[
     #if titre     != none [== #titre]
     #encadre-figure[
       #figure(image(chemin, width: width-image))
+      #if champ-libre != none [champ-libre]
       #if note    != none [*Note* : #note \ ]
       #if lecture != none [*Lecture* : #lecture \ ]
       #if champ   != none [*Champ* : #champ \ ]
@@ -382,6 +388,27 @@ set page(
     ]
     v(1em)
   }
+}
+
+
+//Donnees complementaires
+#let donnees() = context {
+  let logo = _logo_donnees_compl.get()
+  link("https://www.insee.fr")[
+    #block(
+      radius: 8pt,
+      fill: B5,
+      inset: 8pt,
+    )[
+      #grid(
+        columns: (auto, 1fr),
+        column-gutter: 6pt,
+        align: left + horizon,
+        if logo != none { image(logo, width: 15pt) },
+        text(size: (taille_bloc_state.get() - 1) * 1pt, fill: white)[Retrouvez les données associées à cette publication sur insee.fr],
+      )
+    ]
+  ]
 }
 
 #let appel-fleche(corps) = {

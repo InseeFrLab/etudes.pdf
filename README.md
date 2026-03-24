@@ -15,13 +15,6 @@ https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109
 remotes::install_github("https://github.com/InseeFrLab/etudes.pdf")
 ```
 
-Pour installer le package sur AUS, utiliser cette commande:
-
-``` r
-remotes::install_git("https://gitlab.insee.fr/yfawc1/etudes.pdf")
-```
-
-La premiere fois, Gitlab vous demandera un username, mettre son idep, et un PAT. Pour le trouver, aller sur gitlab.insee.fr, sur Preferences, Personal Access Tokens, et ajouter un nouveau token puis le renseigner dans le champ du formulaire gitlab.
 
 
 -   Lancer la fonction `install_if_typst()` pour installer l'extension typst dédiée aux Insee Flash ou `install_ia_typst()` pour installer l'extension typst des Insee Analyses: un dossier \_extensions est créé.
@@ -47,3 +40,10 @@ et dans le qmd:
 
 ```{=typst}
 blabla devant #appel-fleche[figure 3]```
+
+
+Pour conserver le .typ généré avant le .pdf, mettre ceci comme format dans le yml du fichier qmd:
+format:
+  insee-flash-typst:
+    keep-typ: true
+    

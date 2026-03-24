@@ -441,6 +441,7 @@ body
     #if titre     != none [== #titre]
     #encadre-figure[
       #figure(image(chemin, width: width-image))
+      #if champ-libre != none [#champ-libre \ ]
       #if note    != none [*Note* : #note \ ]
       #if lecture != none [*Lecture* : #lecture \ ]
       #if champ   != none [*Champ* : #champ \ ]

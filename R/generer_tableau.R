@@ -25,7 +25,7 @@ generer_tableau_insee <- function(n_lignes, format_colonnes = 1, nom_fichier = "
       fg_params = list(fontsize = 8, fontface = "bold", hjust = 0.5, x = 0.5),
       bg_params = list(fill = "#E1F1F8", col = "#A0A0A0", lwd = 0.5)
     ),
-    padding = unit(c(2, 4), "mm") # Réduit pour éviter le blanc interne
+    padding = grid::unit(c(2, 4), "mm") # Réduit pour éviter le blanc interne
   )
 
   # 3. Création du grob

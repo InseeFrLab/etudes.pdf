@@ -34,8 +34,8 @@ generer_tableau_insee <- function(n_lignes, format_colonnes = 1, nom_fichier = "
   
   # Calculer la largeur et hauteur réelles du tableau (en pouces)
   # On convertit les unités grid (mm ou cm) en pouces pour ggsave
-  w <- sum(convertWidth(tableau_grob$widths, "in", valueOnly = TRUE))
-  h <- sum(convertHeight(tableau_grob$heights, "in", valueOnly = TRUE))
+  w <- sum(grid::convertWidth(tableau_grob$widths, "in", valueOnly = TRUE))
+  h <- sum(grid::convertHeight(tableau_grob$heights, "in", valueOnly = TRUE))
 
   # On ajoute une toute petite marge de sécurité (0.1 pouce) pour ne pas couper les bords
   ggplot2::ggsave(

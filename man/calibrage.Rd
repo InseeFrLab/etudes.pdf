@@ -7,5 +7,5 @@
 calibrage(file_path)
 }
 \description{
-Calcule le nombre de caractères de chaque bloc de l'étude
+Calcule le nombre de caractères de chaque bloc de l'étude.
 }

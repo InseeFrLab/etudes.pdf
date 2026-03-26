@@ -16,7 +16,6 @@ remotes::install_github("https://github.com/InseeFrLab/etudes.pdf")
 ```
 
 
-
 -   Lancer la fonction `install_if_typst()` pour installer l'extension typst dédiée aux Insee Flash ou `install_ia_typst()` pour installer l'extension typst des Insee Analyses: un dossier \_extensions est créé.
 
 -   déplacer le fichier modèle `if157.qmd` ou `ia144.qmd `du dossier \_extensions/if ou \_extensions/ia vers la racine puis lancer `quarto render if157.qmd` ou `quarto render ia144.qmd`pour générer le pdf.
@@ -46,4 +45,30 @@ Pour conserver le .typ généré avant le .pdf, mettre ceci comme format dans le
 format:
   insee-flash-typst:
     keep-typ: true
-    
+
+
+## Pour faire un exemple de tableau à 1 colonne et n lignes:
+
+mfig(
+  pos: bottom + right, largeur: 50%,  dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm,
+  titre: "1. Un titre sur une seule ligne",
+  lecture: "Une note de lecture sur une seule ligne.",
+  source: "Insee, 2026.",
+  "insee_1col.png"
+) 
+
+Et un exemple de tableau à 2 colonnes:
+
+mfig(
+  pos: bottom, largeur: 100%,  dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm,
+  titre: "1. Un titre sur une seule ligne",
+  lecture: "Une note de lecture sur une seule ligne.",
+  source: "Insee, 2026.",
+  "insee_2cols.png"
+)
+
+L'image du tableau est fabriquée avec cette fonction:
+etudes.pdf::generer_tableau_insee(n_lignes = 20, format_colonnes = 1, nom_fichier = "insee_1col.png")
+

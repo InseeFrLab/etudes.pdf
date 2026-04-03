@@ -7,6 +7,7 @@ on:
 jobs:
   pkgdown:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -14,8 +15,9 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Install dependencies
-        run: Rscript -e 'install.packages(c("pkgdown", "remotes"))'
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: pkgdown
 
       - name: Build site
         run: Rscript -e 'pkgdown::build_site()'

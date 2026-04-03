@@ -1,5 +1,5 @@
 # article
 
-``` r
-library(etudes.pdf)
-```
+### Mon article en rmd
+
+Voici mon article

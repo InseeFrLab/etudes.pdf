@@ -96,15 +96,33 @@
 </ul>
 <p>et dans le qmd:</p>
 <p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
-<p>Pour conserver le .typ généré avant le .pdf, mettre ceci comme format dans le yml du fichier qmd: format: insee-flash-typst: keep-typ: true</p>
 </div>
 <div class="section level2">
-<h2 id="pour-faire-un-exemple-de-tableau-à-1-colonne-et-n-lignes">Pour faire un exemple de tableau à 1 colonne et n lignes:<a class="anchor" aria-label="anchor" href="#pour-faire-un-exemple-de-tableau-%C3%A0-1-colonne-et-n-lignes"></a>
+<h2 id="pour-conserver-le-typ-généré-avant-le-pdf">Pour conserver le .typ généré avant le .pdf<a class="anchor" aria-label="anchor" href="#pour-conserver-le-typ-g%C3%A9n%C3%A9r%C3%A9-avant-le-pdf"></a>
 </h2>
+<p>Mettre ceci comme format dans le yml du fichier qmd: format: <code>insee-flash-typst: keep-typ: true</code></p>
+<div class="section level3">
+<h3 id="exemple-de-tableau-à-1-colonne-">Exemple de tableau à 1 colonne :<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-1-colonne-"></a>
+</h3>
 <p>mfig( pos: bottom + right, largeur: 50%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une note de lecture sur une seule ligne.”, source: “Insee, 2026.”, “insee_1col.png” )</p>
-<p>Et un exemple de tableau à 2 colonnes:</p>
+</div>
+<div class="section level3">
+<h3 id="exemple-de-tableau-à-2-colonnes">Exemple de tableau à 2 colonnes:<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-2-colonnes"></a>
+</h3>
 <p>mfig( pos: bottom, largeur: 100%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une note de lecture sur une seule ligne.”, source: “Insee, 2026.”, “insee_2cols.png” )</p>
 <p>L’image du tableau est fabriquée avec cette fonction: etudes.pdf::generer_tableau_insee(n_lignes = 20, format_colonnes = 1, nom_fichier = “insee_1col.png”)</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="gestion-fine-des-espacements">Gestion fine des espacements:<a class="anchor" aria-label="anchor" href="#gestion-fine-des-espacements"></a>
+</h2>
+<p>Ajouter un espace insécable dans le texte du content[]: <code>~</code></p>
+<p>Ajouter un espace insécable dans le chapo: <code>\u202f</code></p>
+<p>Modifier l’espace entre 2 mots (par défaut entre 0.25 et 0.33em), dans le texte du content[]: <code>La population#h(0.15em)ligérienne</code></p>
+<p>Faire un saut de colonne dans le texte du content[]:</p>
+<p><code>]</code></p>
+<p><code>colbreak()</code></p>
+<p><code>content[</code></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="licence">

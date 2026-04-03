@@ -28,4 +28,4 @@ Imports:
     gridExtra,
     grid,
     gtable
-Config/Needs/website: quarto
+Config/Needs/website: quarto, rmarkdown

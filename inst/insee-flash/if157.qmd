@@ -73,7 +73,7 @@ En revanche, le solde des Pays de la Loire est déficitaire avec les régions m�
 
 // ── PAGE 1 ──
 
-mfig(
+myfig(
   pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
   pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
   titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
@@ -87,7 +87,7 @@ page_2colonnes()
 
 // ── PAGE 2 ──
 
-mfig(
+myfig(
   pos: bottom + left, largeur: 49%, dx: 0mm, dy: -38mm, width-image: 100%,
   pad-bottom: 0mm, pad-top: 0mm, pad-left: 0mm, pad-right: 0mm,
   titre: "2. Flux et solde migratoires entre les Pays de la Loire et les autres régions métropolitaines en 2021",

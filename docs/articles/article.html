@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>article • etudes.pdf</title>
+<title>Documentation de base • etudes.pdf</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="article">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Documentation de base">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Passer au contenu</a>
@@ -29,11 +29,12 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="../reference/index.html">Référence</a></li>
 <li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/article.html">article</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-documentation" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Documentation</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-documentation">
+<li><a class="dropdown-item" href="../articles/article.html">Documentation de base</a></li>
+    <li><a class="dropdown-item" href="../articles/article2.html">Documentation avancée</a></li>
+    <li><a class="dropdown-item" href="../articles/dev.html">Dev</a></li>
   </ul>
 </li>
       </ul>
@@ -41,6 +42,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Rechercher sur le site" placeholder="Rechercher" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/InseeFrLab/etudes.pdf/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -54,27 +56,134 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>article</h1>
+      <h1>Documentation de base</h1>
             
       
-
+      <small class="dont-index">Source : <a href="https://github.com/InseeFrLab/etudes.pdf/blob/HEAD/vignettes/articles/article.rmd" class="external-link"><code>vignettes/articles/article.rmd</code></a></small>
       <div class="d-none name"><code>article.rmd</code></div>
     </div>
 
     
     
 <div class="section level3">
-<h3 id="mon-article-en-rmd">Mon article en rmd<a class="anchor" aria-label="anchor" href="#mon-article-en-rmd"></a>
+<h3 id="structure-du-fichier--qmd-à-modifier">Structure du fichier .qmd à modifier<a class="anchor" aria-label="anchor" href="#structure-du-fichier--qmd-%C3%A0-modifier"></a>
 </h3>
-<p>Voici mon article</p>
+<p>Un document se compose de trois parties :</p>
+<ol style="list-style-type: decimal">
+<li><strong>Métadonnées (YAML)</strong></li>
+</ol>
+<p>Ces variables (sauf le format) sont à mettre à jour selon
+l’étude:</p>
+<ul>
+<li>title: “Titre de l’étude”</li>
+<li>collection: “Insee Flash Pays de la Loire”</li>
+<li>numero: “157”</li>
+<li>date_publication: “Septembre 2025”</li>
+<li>chapo: “Résumé de l’étude”</li>
+<li>chapo_taille: 12</li>
+<li>texte_taille: 8</li>
+<li>titre_taille: 9</li>
+<li>bloc_texte_taille: 7</li>
+<li>auteurs: “Nom Prénom (Insee)”</li>
+<li>surtitre: “SURTITRE”</li>
+<li>qrcode: “_extensions/insee-flash/resources/images/qrcode.png”</li>
+<li>format: insee-flash-typst</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Contenu (Typst)</strong></li>
+</ol>
+<p>Le contenu est écrit dans un bloc et se compose de 2 grandes parties,
+le texte et les figures/encadrés. Le texte est à mettre dans la balise
+content[] tandis que les figures/encadrés sont à positionner plus
+bas.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>meander.reflow({</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  import meander: *</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  content[</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    &lt;&lt;..texte de l'étude ici..&gt;&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  ]</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>  <span class="co">// ── PAGE 1 ──</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>  page_2colonnes()</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>  <span class="co">// ── PAGE 2 ──</span></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>  page_2colonnes(saut: false)</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>})</span></code></pre></div>
 </div>
-  </main>
+<div class="section level3">
+<h3 id="rédiger-le-texte">Rédiger le texte<a class="anchor" aria-label="anchor" href="#r%C3%A9diger-le-texte"></a>
+</h3>
+<p>= Titre niveau 1</p>
+<p>* <strong>gras</strong> <em>*</em></p>
+</div>
+<div class="section level3">
+<h3 id="ajouter-une-figure-sous-forme-dimage">Ajouter une figure (sous forme d’image)<a class="anchor" aria-label="anchor" href="#ajouter-une-figure-sous-forme-dimage"></a>
+</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>myfig(</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  source: "Insee, Enquête annuelle de recensement 2023.",</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  "_extensions/insee-flash/resources/images/if157_fig1.png"</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>)</span></code></pre></div>
+<p>Paramètres utiles:</p>
+<ul>
+<li>pos : position (top, bottom, left, right)</li>
+<li>largeur : largeur du bloc (mettre 49% afin de laisser suffisamment
+de places entre les deux colonnes)</li>
+<li>dx : ajustement horizontal</li>
+<li>dy : ajustement vertical</li>
+</ul>
+<p>Sous le titre, il est possible d’ajouter un champ-libre, une note,
+une lecture, un champ, une source. Le dernier paramètre de myfig() est
+le chemin de l’image.</p>
+</div>
+<div class="section level3">
+<h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
+</h3>
+<p>Encadré:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+<p>Définitions:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+<p>Pour en savoir plus:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">[</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">== Pour en savoir plus</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>- lien<span class="op">]</span></span></code></pre></div>
+<p>Sources:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">#</span>sources<span class="op">[</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="positionnement-des-blocs">Positionnement des blocs<a class="anchor" aria-label="anchor" href="#positionnement-des-blocs"></a>
+</h3>
+<p>Les blocs sont positionnés avec mybloc :</p>
+<p>mybloc( pos: bottom + right, largeur: 49%, dy: -20mm )</p>
+<p><span class="math display">$$ #encadre\[ ... $$</span></p>
+<p>Paramètres clés pos : position dans la page largeur : largeur dy :
+décalage vertical dx : décalage horizontal</p>
+</div>
+<div class="section level3">
+<h3 id="ajouter-lours-footer">Ajouter l’ours (footer)<a class="anchor" aria-label="anchor" href="#ajouter-lours-footer"></a>
+</h3>
+<p>#ours() Hauteur fixe : 17 mm QR code automatique si défini dans le
+YAML</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
+    </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Développé par Régis Relland.</p>
+  <p>Auteur: Régis Relland <a href="mailto:regis.relland@insee.fr">contact</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

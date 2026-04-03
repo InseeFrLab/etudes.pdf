@@ -3,7 +3,9 @@ pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   articles/article: article.html
-last_built: 2026-04-03T09:17Z
+  articles/article2: article2.html
+  articles/dev: dev.html
+last_built: 2026-04-03T15:42Z
 urls:
-  reference: https://mon-site/reference
-  article: https://mon-site/articles
+  reference: https://inseefrlab.github.io/etudes.pdf/reference
+  article: https://inseefrlab.github.io/etudes.pdf/articles

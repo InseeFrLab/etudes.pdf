@@ -31,11 +31,12 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="reference/index.html">Référence</a></li>
 <li class="nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="articles/article.html">article</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-documentation" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Documentation</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-documentation">
+<li><a class="dropdown-item" href="articles/article.html">Documentation de base</a></li>
+    <li><a class="dropdown-item" href="articles/article2.html">Documentation avancée</a></li>
+    <li><a class="dropdown-item" href="articles/dev.html">Dev</a></li>
   </ul>
 </li>
       </ul>
@@ -43,6 +44,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Rechercher sur le site" placeholder="Rechercher" data-search-index="search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/InseeFrLab/etudes.pdf/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -50,113 +52,40 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="etudespdf">etudes.pdf<a class="anchor" aria-label="anchor" href="#etudespdf"></a>
-</h1></div>
-<div class="section level2">
-<h2 id="clipboard-présentation">📋 Présentation<a class="anchor" aria-label="anchor" href="#clipboard-pr%C3%A9sentation"></a>
+  <main id="main" class="col-md-9"><div class="section level2">
+<h2 id="générer-un-insee-flash-ou-insee-analyses-en-pdf">Générer un Insee Flash ou Insee Analyses en PDF<a class="anchor" aria-label="anchor" href="#g%C3%A9n%C3%A9rer-un-insee-flash-ou-insee-analyses-en-pdf"></a>
 </h2>
-<p><code>etudes.pdf</code> est un package R qui permet la création de publications <strong>Insee Flash Pays de la Loire</strong> ou <strong>Insee Analyses Pays de la Loire</strong>au format <strong>PDF</strong> conformes à la charte graphique de l’Insee.</p>
-<p><a href="https://www.insee.fr/fr/statistiques?debut=0&amp;categorie=2&amp;collection=109" class="external-link uri">https://www.insee.fr/fr/statistiques?debut=0&amp;categorie=2&amp;collection=109</a></p>
+<div class="section level3">
+<h3 id="clipboard-présentation">📋 Présentation<a class="anchor" aria-label="anchor" href="#clipboard-pr%C3%A9sentation"></a>
+</h3>
+<p><code>etudes.pdf</code> est un package R qui permet la création de publications <strong>Insee Flash Pays de la Loire</strong> ou <strong>Insee Analyses Pays de la Loire</strong> au format <strong>PDF</strong> conformes à la charte graphique de l’Insee.</p>
+<p>Liste des publications Insee Pays de la Loire: <a href="https://www.insee.fr/fr/statistiques?debut=0&amp;categorie=2&amp;collection=109" class="external-link uri">https://www.insee.fr/fr/statistiques?debut=0&amp;categorie=2&amp;collection=109</a></p>
 </div>
-<div class="section level2">
-<h2 id="rocket-installation">🚀 Installation<a class="anchor" aria-label="anchor" href="#rocket-installation"></a>
-</h2>
+<div class="section level3">
+<h3 id="rocket-installation">🚀 Installation<a class="anchor" aria-label="anchor" href="#rocket-installation"></a>
+</h3>
 <ul>
 <li>Lancez la commande suivante pour installer le package <code>etudes.pdf</code>:</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"https://github.com/InseeFrLab/etudes.pdf"</span><span class="op">)</span></span></code></pre></div>
 <ul>
-<li><p>Lancer la fonction <code>install_if_typst()</code> pour installer l’extension typst dédiée aux Insee Flash ou <code>install_ia_typst()</code> pour installer l’extension typst des Insee Analyses: un dossier _extensions est créé.</p></li>
-<li><p>déplacer le fichier modèle <code>if157.qmd</code> ou <code>ia144.qmd</code>du dossier _extensions/if ou _extensions/ia vers la racine puis lancer <code>quarto render if157.qmd</code> ou <code>quarto render ia144.qmd</code>pour générer le pdf.</p></li>
+<li><p>Lancer la fonction <code><a href="reference/install_insee_flash_typst.html">install_insee_flash_typst()</a></code> pour installer l’extension typst dédiée aux Insee Flash ou <code><a href="reference/install_insee_analyses_typst.html">install_insee_analyses_typst()</a></code> pour installer l’extension typst des Insee Analyses: un dossier <code>\_extensions</code> est créé.</p></li>
+<li><p>déplacer le fichier modèle <code>if157.qmd</code> ou <code>ia144.qmd</code>du dossier <code>\_extensions/insee-flash</code> ou <code>\_extensions/insee-analyses</code> vers la racine puis lancer <code>quarto render if157.qmd</code> ou <code>quarto render ia144.qmd</code>pour générer le pdf.</p></li>
 <li><p>modifier le fichier <code>if157.qmd</code> ou <code>ia144.qmd</code>en fonction de vos besoins et lancer <code>quarto render if157.qmd</code> ou <code>quarto render ia144.qmd</code>pour régenerer le pdf.</p></li>
 </ul>
 </div>
-<div class="section level2">
-<h2 id="commandes-utiles-pour-le-developpeur">Commandes utiles pour le developpeur:<a class="anchor" aria-label="anchor" href="#commandes-utiles-pour-le-developpeur"></a>
-</h2>
-<ul>
-<li><code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code></li>
-<li><code><a href="https://devtools.r-lib.org/reference/check.html" class="external-link">devtools::check()</a></code></li>
-<li>
-<code><a href="https://devtools.r-lib.org/reference/install.html" class="external-link">devtools::install()</a></code> ou <code><a href="https://devtools.r-lib.org/reference/build.html" class="external-link">devtools::build()</a></code>
-</li>
-<li><code>detach("package:etudes.pdf", unload = TRUE)</code></li>
-</ul>
 </div>
-<div class="section level2">
-<h2 id="différents-moyens-de-faire-le-triangle">Différents moyens de faire le triangle:<a class="anchor" aria-label="anchor" href="#diff%C3%A9rents-moyens-de-faire-le-triangle"></a>
-</h2>
-<ul>
-<li>blabla  figure 2<br>
-</li>
-<li>blabla  figure 2  (necessite ceci: #import “@preview/fontawesome:0.5.0”: *)</li>
-<li>#let appel-fleche(corps) = { box( width: 0.8em, height: 0.8em, { place(center + horizon, polygon( fill: B6, (0%, 0%), // Point haut gauche (100%, 50%),// Pointe (milieu droite) (0%, 100%) // Point bas gauche ) ) } ) h(0.4em) corps }</li>
-</ul>
-<p>et dans le qmd:</p>
-<p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
+  </main><aside class="col-md-3"><div style="position: relative; height: 500px; ">
+  <img src="reference/figures/if157.png" alt="Description" style="position: absolute; top: 50%; transform: translateY(-50%); width: 500px;">
 </div>
-<div class="section level2">
-<h2 id="pour-conserver-le-typ-généré-avant-le-pdf">Pour conserver le .typ généré avant le .pdf<a class="anchor" aria-label="anchor" href="#pour-conserver-le-typ-g%C3%A9n%C3%A9r%C3%A9-avant-le-pdf"></a>
-</h2>
-<p>Mettre ceci comme format dans le yml du fichier qmd: format: <code>insee-flash-typst: keep-typ: true</code></p>
-<div class="section level3">
-<h3 id="exemple-de-tableau-à-1-colonne-">Exemple de tableau à 1 colonne :<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-1-colonne-"></a>
-</h3>
-<p>mfig( pos: bottom + right, largeur: 50%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une note de lecture sur une seule ligne.”, source: “Insee, 2026.”, “insee_1col.png” )</p>
-</div>
-<div class="section level3">
-<h3 id="exemple-de-tableau-à-2-colonnes">Exemple de tableau à 2 colonnes:<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-2-colonnes"></a>
-</h3>
-<p>mfig( pos: bottom, largeur: 100%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une note de lecture sur une seule ligne.”, source: “Insee, 2026.”, “insee_2cols.png” )</p>
-<p>L’image du tableau est fabriquée avec cette fonction: etudes.pdf::generer_tableau_insee(n_lignes = 20, format_colonnes = 1, nom_fichier = “insee_1col.png”)</p>
-</div>
-</div>
-<div class="section level2">
-<h2 id="gestion-fine-des-espacements">Gestion fine des espacements:<a class="anchor" aria-label="anchor" href="#gestion-fine-des-espacements"></a>
-</h2>
-<p>Ajouter un espace insécable dans le texte du content[]: <code>~</code></p>
-<p>Ajouter un espace insécable dans le chapo: <code>\u202f</code></p>
-<p>Modifier l’espace entre 2 mots (par défaut entre 0.25 et 0.33em), dans le texte du content[]: <code>La population#h(0.15em)ligérienne</code></p>
-<p>Faire un saut de colonne dans le texte du content[]:</p>
-<p><code>]</code></p>
-<p><code>colbreak()</code></p>
-<p><code>content[</code></p>
-</div>
-</div>
-  </main><aside class="col-md-3"><div class="licence">
-<h2 data-toc-skip>Licence</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
-</ul>
-</div>
-
-
-<div class="citation">
-<h2 data-toc-skip>Citation</h2>
-<ul class="list-unstyled">
-<li><a href="authors.html#citation">Citer etudes.pdf</a></li>
-</ul>
-</div>
-
-<div class="d-veloppeur-se-s">
-<h2 data-toc-skip>Développeur·se·s</h2>
-<ul class="list-unstyled">
-<li>Régis Relland <br><small class="roles"> Auteur·rice, mainteneur·se </small>   </li>
-</ul>
-</div>
-
-
 
   </aside>
 </div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Développé par Régis Relland.</p>
+  <p>Auteur: Régis Relland <a href="mailto:regis.relland@insee.fr">contact</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

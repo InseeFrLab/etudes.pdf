@@ -1,8 +1,35 @@
-url: https://mon-site
+url: https://inseefrlab.github.io/etudes.pdf/
+
+lang: fr
 
 template:
   bootstrap: 5
+  bslib:
+    bootswatch: lumen
+
+home:
+  sidebar:
+    html: pkgdown/home-sidebar.html
 
 navbar:
+  title: "etudes.pdf"
   structure:
-    left: [reference, articles, news]
+    left: [home, documentation]
+    right: [search, github, lightswitch]
+  components:
+      documentation:
+        text: Documentation
+        menu:
+          - text: Documentation de base
+            href: articles/article.html
+          - text: Documentation avancée
+            href: articles/article2.html
+          - text: Dev
+            href: articles/dev.html
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
+  components:
+    developed_by: "Auteur: Régis Relland [contact](mailto:regis.relland@insee.fr)."

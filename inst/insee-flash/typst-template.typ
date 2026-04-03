@@ -312,7 +312,7 @@ block(
 ]
 }
 
-#let mfig(
+#let myfig(
   pos: top + right,
   largeur: 66%,
   dx: 0pt, dy: 0pt,

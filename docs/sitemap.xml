@@ -1,13 +1,15 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
-<url><loc>https://mon-site/404.html</loc></url>
-<url><loc>https://mon-site/articles/article.html</loc></url>
-<url><loc>https://mon-site/articles/index.html</loc></url>
-<url><loc>https://mon-site/authors.html</loc></url>
-<url><loc>https://mon-site/index.html</loc></url>
-<url><loc>https://mon-site/reference/calibrage.html</loc></url>
-<url><loc>https://mon-site/reference/generer_tableau_insee.html</loc></url>
-<url><loc>https://mon-site/reference/index.html</loc></url>
-<url><loc>https://mon-site/reference/install_insee_analyses_typst.html</loc></url>
-<url><loc>https://mon-site/reference/install_insee_flash_typst.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/404.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/articles/article.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/articles/article2.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/articles/dev.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/articles/index.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/authors.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/index.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/reference/calibrage.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/reference/generer_tableau_insee.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/reference/index.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/reference/install_insee_analyses_typst.html</loc></url>
+<url><loc>https://inseefrlab.github.io/etudes.pdf/reference/install_insee_flash_typst.html</loc></url>
 </urlset>
 

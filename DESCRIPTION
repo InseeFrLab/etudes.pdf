@@ -13,6 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Language: fr
 Suggests: 
+    quarto,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
@@ -27,3 +28,4 @@ Imports:
     gridExtra,
     grid,
     gtable
+Config/Needs/website: quarto

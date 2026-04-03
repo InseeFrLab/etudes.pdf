@@ -1,0 +1,17 @@
+# Auteur·rice·s et Citation
+
+## Auteur·rice·s
+
+- **Régis Relland**. Auteur·rice, mainteneur·se.
+
+## Citation
+
+Relland R (2026). *etudes.pdf: Maquettage Insee Pays de la Loire*. R
+package version 1.0.0.
+
+    @Manual{,
+      title = {etudes.pdf: Maquettage Insee Pays de la Loire},
+      author = {Régis Relland},
+      year = {2026},
+      note = {R package version 1.0.0},
+    }

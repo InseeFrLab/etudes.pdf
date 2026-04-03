@@ -7,3 +7,6 @@
 ^data-raw$
 ^extdata$
 dev/
+^vignettes/articles/\.quarto$
+^vignettes/articles/*_files$
+^vignettes/articles$

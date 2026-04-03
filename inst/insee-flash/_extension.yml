@@ -5,7 +5,6 @@ version: 1.1.0
 contributes:
   formats:
     typst:
-      # Indispensable : Quarto utilise ces fichiers pour construire le rendu
       template-partials:
         - typst-template.typ
         - typst-show.typ

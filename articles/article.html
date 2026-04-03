@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>article • etudes.pdf</title>
+<title>Documentation de base • etudes.pdf</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="article">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Documentation de base">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -29,11 +29,12 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="active nav-item dropdown">
-  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
-  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/article.html">article</a></li>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-documentation" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Documentation</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-documentation">
+<li><a class="dropdown-item" href="../articles/article.html">Documentation de base</a></li>
+    <li><a class="dropdown-item" href="../articles/article2.html">Documentation avancée</a></li>
+    <li><a class="dropdown-item" href="../articles/dev.html">Dev</a></li>
   </ul>
 </li>
       </ul>
@@ -55,7 +56,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>article</h1>
+      <h1>Documentation de base</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/InseeFrLab/etudes.pdf/blob/main/vignettes/articles/article.rmd" class="external-link"><code>vignettes/articles/article.rmd</code></a></small>
@@ -65,17 +66,124 @@
     
     
 <div class="section level3">
-<h3 id="mon-article-en-rmd">Mon article en rmd<a class="anchor" aria-label="anchor" href="#mon-article-en-rmd"></a>
+<h3 id="structure-du-fichier--qmd-à-modifier">Structure du fichier .qmd à modifier<a class="anchor" aria-label="anchor" href="#structure-du-fichier--qmd-%C3%A0-modifier"></a>
 </h3>
-<p>Voici mon article</p>
+<p>Un document se compose de trois parties :</p>
+<ol style="list-style-type: decimal">
+<li><strong>Métadonnées (YAML)</strong></li>
+</ol>
+<p>Ces variables (sauf le format) sont à mettre à jour selon
+l’étude:</p>
+<ul>
+<li>title: “Titre de l’étude”</li>
+<li>collection: “Insee Flash Pays de la Loire”</li>
+<li>numero: “157”</li>
+<li>date_publication: “Septembre 2025”</li>
+<li>chapo: “Résumé de l’étude”</li>
+<li>chapo_taille: 12</li>
+<li>texte_taille: 8</li>
+<li>titre_taille: 9</li>
+<li>bloc_texte_taille: 7</li>
+<li>auteurs: “Nom Prénom (Insee)”</li>
+<li>surtitre: “SURTITRE”</li>
+<li>qrcode: “_extensions/insee-flash/resources/images/qrcode.png”</li>
+<li>format: insee-flash-typst</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Contenu (Typst)</strong></li>
+</ol>
+<p>Le contenu est écrit dans un bloc et se compose de 2 grandes parties,
+le texte et les figures/encadrés. Le texte est à mettre dans la balise
+content[] tandis que les figures/encadrés sont à positionner plus
+bas.</p>
+<pre class="typst"><code>meander.reflow({
+  import meander: *
+
+  content[
+    &lt;&lt;..texte de l'étude ici..&gt;&gt;
+  ]
+
+  // ── PAGE 1 ──
+  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;
+  page_2colonnes()
+
+  // ── PAGE 2 ──
+  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;
+  page_2colonnes(saut: false)
+})</code></pre>
 </div>
-  </main>
+<div class="section level3">
+<h3 id="rédiger-le-texte">Rédiger le texte<a class="anchor" aria-label="anchor" href="#r%C3%A9diger-le-texte"></a>
+</h3>
+<p>= Titre niveau 1</p>
+<p>* <strong>gras</strong> <em>*</em></p>
+</div>
+<div class="section level3">
+<h3 id="ajouter-une-figure-sous-forme-dimage">Ajouter une figure (sous forme d’image)<a class="anchor" aria-label="anchor" href="#ajouter-une-figure-sous-forme-dimage"></a>
+</h3>
+<pre class="typst"><code>myfig(
+  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
+  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
+  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
+  source: "Insee, Enquête annuelle de recensement 2023.",
+  "_extensions/insee-flash/resources/images/if157_fig1.png"
+)</code></pre>
+<p>Paramètres utiles:</p>
+<ul>
+<li>pos : position (top, bottom, left, right)</li>
+<li>largeur : largeur du bloc (mettre 49% afin de laisser suffisamment
+de places entre les deux colonnes)</li>
+<li>dx : ajustement horizontal</li>
+<li>dy : ajustement vertical</li>
+</ul>
+<p>Sous le titre, il est possible d’ajouter un champ-libre, une note,
+une lecture, un champ, une source. Le dernier paramètre de myfig() est
+le chemin de l’image.</p>
+</div>
+<div class="section level3">
+<h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
+</h3>
+<p>Encadré:</p>
+<pre class="typst"><code>#encadre[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
+<p>Définitions:</p>
+<pre class="typst"><code>#definitions[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
+<p>Pour en savoir plus:</p>
+<pre class="typst"><code>#pour-en-savoir-plus[
+== Pour en savoir plus
+- lien]</code></pre>
+<p>Sources:</p>
+<pre class="typst"><code>#sources[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
+</div>
+<div class="section level3">
+<h3 id="positionnement-des-blocs">Positionnement des blocs<a class="anchor" aria-label="anchor" href="#positionnement-des-blocs"></a>
+</h3>
+<p>Les blocs sont positionnés avec mybloc :</p>
+<p>mybloc( pos: bottom + right, largeur: 49%, dy: -20mm )</p>
+<p><span class="math display">$$ #encadre\[ ... $$</span></p>
+<p>Paramètres clés pos : position dans la page largeur : largeur dy :
+décalage vertical dx : décalage horizontal</p>
+</div>
+<div class="section level3">
+<h3 id="ajouter-lours-footer">Ajouter l’ours (footer)<a class="anchor" aria-label="anchor" href="#ajouter-lours-footer"></a>
+</h3>
+<p>#ours() Hauteur fixe : 17 mm QR code automatique si défini dans le
+YAML</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Régis Relland.</p>
+  <p>Auteur: Régis Relland <a href="mailto:regis.relland@insee.fr">contact</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

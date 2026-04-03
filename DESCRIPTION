@@ -1,4 +1,5 @@
 Package: etudes.pdf
+URL: https://github.com/InseeFrLab/etudes.pdf
 Title: Maquettage Insee Pays de la Loire
 Version: 1.0.0
 Authors@R: person("Régis", "Relland", 

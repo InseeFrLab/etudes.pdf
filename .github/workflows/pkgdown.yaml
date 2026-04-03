@@ -17,11 +17,13 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Install pkgdown
-        run: Rscript -e 'install.packages("pkgdown")'
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: pkgdown
+          needs: website
 
       - name: Build site
-        run: Rscript -e 'pkgdown::build_site()'
+        run: Rscript -e 'pkgdown::build_site(preview = FALSE)'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

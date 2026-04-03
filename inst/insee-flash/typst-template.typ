@@ -12,9 +12,11 @@
 #let B8 = rgb("#042F80")
 #let R1 = rgb("#FFE2E2")
 #let R3 = rgb("#FF848A")
+#let R4 = rgb("#FB5A5A")
 #let G1 = rgb("#F2F2F2")
+#let G2 = rgb("#F6F6F6")
 
-#let bloc-pour-en-savoir-plus = rgb("#f0faff")
+#let bloc-pour-en-savoir-plus = rgb("#e9f6ff")
 
 
 // =============================================================================
@@ -24,7 +26,7 @@
 // Fonction pour le point median INSEE
 // Valeur par défaut : dy = -1.7em (point final).
 #let pt-insee(dy: -1.7em) = h(0.2em) + box(height: 0pt, width: 0.5em, {
-  move(    dy: dy,    text(fill: R3, weight: "bold", size: 28pt)[#sym.dot.c]  )})
+  move(dy: dy,text(fill: R3, weight: "bold", size: 28pt)[#sym.dot.c]  )})
 
 // Triangle décoratif des titres de niveau 2.
 #let mytriangle(b, s) = box(  baseline: b, text(size: s)[#sym.triangle.filled.r])
@@ -48,13 +50,19 @@
 //donnees compl
 #let _logo_donnees_compl = state("logo_donnees_compl", none)
 
+//qrcode
+#let  _qrcode = state("qrcode", none)
+
+//logo insee
+#let  _logo_insee = state("logo_insee", none)
+
 
 // ═══════════════════════════════════════════
 // MEANDER 
 // ═══════════════════════════════════════════
 #import "@preview/meander:0.4.1"
 
-#let mybloc(pos: top + right, largeur: 50%, hauteur: auto,  dx: 4pt, dy: 0pt, 
+#let mybloc(pos: top + right, largeur: 49%, hauteur: auto,  dx: 0pt, dy: 0pt, 
             pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,  contenu) = {
   meander.placed(pos, dx: dx, dy: dy,
     pad(top: pad-top, bottom: pad-bottom,left: pad-left, right: pad-right, 
@@ -63,19 +71,12 @@
   )
 }
 
-#let page1_2colonnes(saut: true) = {
+#let page_2colonnes(saut: true) = {
   meander.container(align: left,width: 49%, margin: (right: 2.5mm), height: 100%)
   meander.container(align: right, width: 49%, margin: (left: 2.5mm), height: 100%)
     if saut { meander.pagebreak() }
 
 }
-
-#let page2_2colonnes() = {
-  meander.container(align: left, width: 49%, margin: (right: 2.5mm), height: 100% - 40mm)
-  meander.container(align: right, width: 49%, margin: (left: 2.5mm), height: 100% - 40mm)
-
-}
-
 
 
 // =============================================================================
@@ -105,50 +106,10 @@
   // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
-    margin: (x: 15mm, y: 15mm,  top: 10mm, bottom: 15mm),
-    footer: context {
-      let page_num = counter(page).get().at(0)
-      if page_num == 2 {
-      show strong: _strong-noir
+    margin: (x: 15mm, y: 15mm,  top: 14mm, bottom: 14mm),
+    numbering: none
 
-      v(-10mm)  
-
-      set text(size: 6pt, font: "Open Sans")
-      grid(
-        columns: (1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        gutter: 2mm,
-        align: left + top,
-
-        [*Insee Pays de la Loire* \
-        105, rue des Français Libres \
-        BP 67401 \
-        44274 NANTES \
-        Cedex 2],
-        [*Directeur de la publication :* \
-        Arnaud Degorre \
-        \
-        *Rédactrice en chef :* \
-        Valérie Deroin],
-        [*Bureau de presse :* \
-        02 40 41 75 89 \
-        ISSN 2275 – 9808 \
-        © Insee Pays de la Loire],
-        [#link("www.insee.fr")[www.insee.fr]\
-        #box(baseline: 2mm, image(logo_x)) #h(2pt) #link("https://twitter.com/InseePdL")[\@Insee]],
-
-        [#if qrcode != none and qrcode != "" {
-          image(qrcode) 
-        } else {
-          [qrcode]
-        }],
-
-        image(logo_insee_header, height: 0.8cm)
-      )
-  }
-      set text(size: 6pt, font: "Open Sans")
-  }
  ) // fin set page
-
 
   // taille et police du corps de texte 
   set text(font: "Open Sans", lang: "fr", size: texte_taille * 1pt)
@@ -157,7 +118,14 @@ set page(
   // Donnees complementaires
  _logo_donnees_compl.update(logo_donnees_compl)
 
-   // --- FIGURES ---
+//qrcode
+ _qrcode.update(qrcode)
+
+//logo_insee_header
+ _logo_insee.update(logo_insee_header)
+
+
+// --- FIGURES ---
   show figure: set figure(supplement: none, numbering: none)
   show figure: it => {
     set text(size: 6pt)
@@ -169,11 +137,11 @@ set page(
 
 // --- TITRES ---
   show heading.where(level: 1): it => {
-    set text(fill: B6, size: titre_taille * 1pt, weight: "bold")
+    set text(fill: B5, size: titre_taille * 1pt, weight: "bold")
     block(above: 2em, below: 1.2em)[#it.body]
   }
   show heading.where(level: 2): it => {
-    set text(fill: B6, size: titre_taille * 1pt, weight: "bold")
+    set text(fill: B5, size: titre_taille * 1pt, weight: "bold")
     block(above: 1.5em, below: 1em,
       grid(
         columns: (auto, 1fr),
@@ -184,7 +152,7 @@ set page(
     )
   }
   show heading.where(level: 3): it => {
-    set text(fill: B6, size: 7pt, weight: "bold")
+    set text(fill: B5, size: 7pt, weight: "bold")
     block(above: 2em, below: 1.2em)[#it.body]
   }
 
@@ -194,7 +162,7 @@ set page(
   show "▶︎": mytriangle(0em,12pt)
 
 
-  // --- EN-TÊTE  ---
+// --- EN-TÊTE  ---
   grid(
     columns: (47mm, 1fr),
     column-gutter: 9.6mm,
@@ -207,7 +175,7 @@ set page(
     // Zone Titre
    box(height: 25mm, width: 100%)[
    #align(bottom)[
-    #set text(size: 12pt, weight: "regular", fill:B6 )
+    #set text(size: 12pt, weight: "regular", fill:B5 )
     #block(below: 3.5mm,surtitre)
     #set text(weight: "extrabold", size: 19pt, fill:black)
     #block(title)
@@ -215,9 +183,9 @@ set page(
   ]
   )
 
-  v(3mm) // Espace vertical
+  v(1mm) // Espace vertical
 
-  // --- BANDEAU BLEU  ---
+// --- BANDEAU BLEU  ---
   stack(spacing: 0pt)[
     #move(dx: -15mm)[
       #block(
@@ -225,7 +193,7 @@ set page(
         width: 100% + 30mm,
         height: 15mm,
         inset: (x: 15mm),
-        spacing: 0pt, //  Supprime la marge propre au bloc
+        spacing: 0pt, 
       )[
         #align(right + horizon)[
           #set text(fill: R3, weight: "bold", size: 12pt)
@@ -234,29 +202,24 @@ set page(
       ]
     ]
   ][
-    // --- TETIERE ---
-    #block(height: 30mm, width: 100%, spacing: 0pt)[
+ // --- TETIERE ---
+    #block(height: 29mm, width: 100%, spacing: 0pt)[
       #move(dx: -15mm)[
-        #image(tetiere, width: 210mm, height: 100%, fit: "cover")
+        #image(tetiere, width: 210mm, height: 29mm, fit: "cover")
       ]
     ]
   ]
 
-  v(3mm)
 
-  // --- chapo
-  grid(
-    align(top)[
-      #set text(weight: "bold", size:chapo_taille*1pt)
-      #chapo
-    ],
-  )
+// --- CHAPO
+block(
+  inset: (top: 7mm, bottom: 7mm)
+)[#set text(weight: "semibold", size: chapo_taille*1pt)
+  #chapo
+]
 
-  v(6mm)
-
-
-
-  // --- TEXTE ---
+  
+// --- TEXTE ---
   body 
 
 
@@ -271,10 +234,10 @@ set page(
 #let encadre(corps) = context{
   block(
   width: 100%,
-  inset: 5pt,
+  inset: 3mm,
   radius: 8pt,
   stroke: 2pt + R3,
-  spacing: 1.2em,
+  spacing: 0.4em,
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
@@ -286,11 +249,11 @@ set page(
 //Definitions
 #let definitions(corps) = context{
   block(
-  fill: G1,
+  fill: G2,
   width: 100%,
-  inset: 5pt,
+  inset: 3mm,
   radius: 8pt,
-  spacing: 1.2em,
+  spacing: 0.4em,
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
@@ -304,9 +267,9 @@ set page(
   block(
   fill: bloc-pour-en-savoir-plus,
   width: 100%,
-  inset: 5pt,
+  inset: 3mm,
   radius: 8pt,
-  spacing: 1.2em,
+  spacing: 0.4em,
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
@@ -323,9 +286,9 @@ set page(
   block(
   fill: R1,
   width: 100%,
-  inset: 5pt,
+  inset: 3mm,
   radius: 8pt,
-  spacing: 1.2em,
+  spacing: 0.4em,
 )[
   #show strong: _strong-noir
   #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
@@ -337,14 +300,14 @@ set page(
 #let encadre-figure(corps) = context{
   block(
   width: 100%,
-  inset: 5pt,
-  spacing: 1.2em,
+  inset: 3mm,
+  spacing: 0.4em,
   radius: 8pt,
-  fill: G1,
+  fill: G2,
 )[
   #show strong: _strong-noir
   #show heading.where(level: 2): _heading2-bloc
-  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
+  #set text(size: (taille_bloc_state.get() - 1) * 1pt, weight: "regular")
   #corps
 ]
 }
@@ -352,8 +315,8 @@ set page(
 #let mfig(
   pos: top + right,
   largeur: 66%,
-  dx: 4pt, dy: 0pt,
-  pad-top: 0mm, pad-bottom: 4mm, pad-left: 0mm, pad-right: 0mm,
+  dx: 0pt, dy: 0pt,
+  pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,
   champ-libre: none,
   titre: none,
   lecture: none,
@@ -377,13 +340,75 @@ set page(
   ]
 }
 
+
+// OURS
+#let ours(
+  rc: "Ophélie Kaiser"
+) = context {
+ let qrcode = _qrcode.get()
+ let logo_insee = _logo_insee.get()
+    set text(size: 6pt, font: "Open Sans")
+
+    block(
+      width: 100%,
+      height: 16mm,
+      clip: true,
+    )[  #grid(
+        columns: (1fr, 1fr, 1fr, 1fr, 1fr),
+        gutter: 2mm,
+        align: left + top,
+
+        [*Insee Pays de la Loire* \
+        105, rue des Français Libres \
+        BP 67401 \
+        44274 NANTES \
+        Cedex 2],
+
+        [*Directeur de la publication :* \
+        Arnaud Degorre \
+        \
+        *Rédactrice en chef :* \
+        rc],
+
+        [*Bureau de presse :* \
+        02 40 41 75 89 \
+        ISSN 2275 – 9808 \
+        © Insee Pays de la Loire],
+
+        if qrcode != none and qrcode != "" {
+           image(qrcode)
+        } else {
+          []
+        },
+        align(bottom )[
+  #if logo_insee != none and logo_insee != "" {
+    box(
+      height: 100%,
+      width: 100%,
+      image(
+        logo_insee,
+        width: 31.7mm,
+        height: 7.5mm,
+        fit: "contain"
+      )
+    )
+  } else {
+    []
+  }
+]
+      )
+    ]
+  } 
+
+
+
 // Auteurs
 #let signature(auteurs: none) = {
   show strong: _strong-noir
   if auteurs != none {
     v(1em)
     block(width: 100%, breakable: false)[
-      #set text(size: 8pt, weight: "semibold", fill: B4)
+      #set text(size: 8pt, weight: "semibold", fill: B5)
       #auteurs
     ]
     v(1em)

@@ -17,7 +17,9 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Install pkgdown only
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Install pkgdown
         run: Rscript -e 'install.packages("pkgdown")'
 
       - name: Build site

@@ -4,11 +4,9 @@
 
 #### Pour faire le package R
 
-- [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
-- [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
-- [`devtools::install()`](https://devtools.r-lib.org/reference/install.html)
-  ou
-  [`devtools::build()`](https://devtools.r-lib.org/reference/build.html)
+- `devtools::document()`
+- `devtools::check()`
+- `devtools::install()` ou `devtools::build()`
 - `detach("package:etudes.pdf", unload = TRUE)`
 
 #### Pour faire le site pagedown

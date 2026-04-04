@@ -8,8 +8,8 @@
 <title>Documentation de base • etudes.pdf</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Documentation de base">
 </head>
 <body>
@@ -96,21 +96,21 @@ l’étude:</p>
 le texte et les figures/encadrés. Le texte est à mettre dans la balise
 content[] tandis que les figures/encadrés sont à positionner plus
 bas.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>meander.reflow({</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>  import meander: *</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>  content[</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>    &lt;&lt;..texte de l'étude ici..&gt;&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>  ]</span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>  <span class="co">// ── PAGE 1 ──</span></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>  page_2colonnes()</span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>  <span class="co">// ── PAGE 2 ──</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>  page_2colonnes(saut: false)</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>})</span></code></pre></div>
+<pre class="typst"><code>meander.reflow({
+  import meander: *
+
+  content[
+    &lt;&lt;..texte de l'étude ici..&gt;&gt;
+  ]
+
+  // ── PAGE 1 ──
+  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;
+  page_2colonnes()
+
+  // ── PAGE 2 ──
+  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;
+  page_2colonnes(saut: false)
+})</code></pre>
 </div>
 <div class="section level3">
 <h3 id="rédiger-le-texte">Rédiger le texte<a class="anchor" aria-label="anchor" href="#r%C3%A9diger-le-texte"></a>
@@ -121,14 +121,14 @@ bas.</p>
 <div class="section level3">
 <h3 id="ajouter-une-figure-sous-forme-dimage">Ajouter une figure (sous forme d’image)<a class="anchor" aria-label="anchor" href="#ajouter-une-figure-sous-forme-dimage"></a>
 </h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>myfig(</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,</span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",</span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  source: "Insee, Enquête annuelle de recensement 2023.",</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  "_extensions/insee-flash/resources/images/if157_fig1.png"</span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>)</span></code></pre></div>
+<pre class="typst"><code>myfig(
+  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
+  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
+  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
+  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
+  source: "Insee, Enquête annuelle de recensement 2023.",
+  "_extensions/insee-flash/resources/images/if157_fig1.png"
+)</code></pre>
 <p>Paramètres utiles:</p>
 <ul>
 <li>pos : position (top, bottom, left, right)</li>
@@ -145,21 +145,21 @@ le chemin de l’image.</p>
 <h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
 </h3>
 <p>Encadré:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+<pre class="typst"><code>#encadre[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
 <p>Définitions:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+<pre class="typst"><code>#definitions[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
 <p>Pour en savoir plus:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">[</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">== Pour en savoir plus</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>- lien<span class="op">]</span></span></code></pre></div>
+<pre class="typst"><code>#pour-en-savoir-plus[
+== Pour en savoir plus
+- lien]</code></pre>
 <p>Sources:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">#</span>sources<span class="op">[</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;<span class="op">]</span></span></code></pre></div>
+<pre class="typst"><code>#sources[
+== Titre
+&lt;&lt;..texte..&gt;&gt;]</code></pre>
 </div>
 <div class="section level3">
 <h3 id="positionnement-des-blocs">Positionnement des blocs<a class="anchor" aria-label="anchor" href="#positionnement-des-blocs"></a>

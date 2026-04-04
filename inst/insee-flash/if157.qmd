@@ -33,17 +33,18 @@ Avec des *soldes naturels* en berne, les dynamiques démographiques des régions
 
 = Pays de la Loire : un solde migratoire positif
 
-En 2022, 77 800 habitants en provenance d’autres régions s’installent dans les Pays de la Loire. Dans le même temps, 63 300 Ligériens quittent la région, soit un *rapport entre les entrants et les sortants* de 123 arrivées pour 100 départs.\
-Le *solde migratoire* est donc largement excédentaire (+14 500).
+En 2022, 77~800 habitants en provenance d’autres régions s’installent dans les Pays de la Loire. Dans le même temps, 63~300 Ligériens quittent la région, soit un *rapport entre les entrants et les sortants* de 123 arrivées pour 100 départs.\
+Le *solde migratoire* est donc largement excédentaire (+14~500).
 La région attire les générations d’actifs et leurs familles : 150 entrées pour 100 sorties pour les personnes de 30 à 64 ans, et 158 entrées pour 100 sorties pour les enfants de moins de 14 ans. Elle attire également les retraités, avec 150 entrées pour 100 sorties pour les 65 ans ou plus. \
 En revanche, les jeunes de 15 à 29 ans sont plus nombreux à quitter la région qu’à s’y installer, avec 94 entrées pour 100 sorties. En particulier, ceux âgés de 20 à 24 ans, qui rassemblent les étudiants et les jeunes actifs, sont le groupe d’âge le plus déficitaire, avec 87 entrées pour 100 sorties.\
 Parmi les actifs, la région attire principalement les artisans, commerçants et chefs d’entreprise (140 entrées pour 100 sorties), les cadres et professions intellectuelles supérieures (135), et les professions intermédiaires (120). L’économie numérique contribue à ce phénomène : elle se développe et emploie principalement des ingénieurs et techniciens, notamment dans la zone d’emploi de Nantes.
 
-Néanmoins, si la région est dans une situation favorable, avec un gain conséquent d’habitants, d’autres régions sont encore plus attractives : en premier lieu la Corse, suivie par la Bretagne, la Nouvelle-Aquitaine et l’Occitanie *▶︎ figure 1*.
+Néanmoins, si la région est dans une situation favorable, avec un gain conséquent d’habitants, d’autres régions sont encore plus attractives : en premier lieu la Corse, suivie par la Bretagne, la Nouvelle-Aquitaine et l’Occitanie *▶︎ figure 1*. \
+\
 
 = L’attrait de la région s’étiole
 
-Après avoir crû de façon constante entre 2012 et 2019, le rapport entre les entrants et les sortants baisse de 13 % entre 2019 et 2022 et revient à son niveau le plus faible sur les dix dernières années. Les départs des Pays de La Loire augmentent de 17,3 %, sensiblement plus que les arrivées (+2,5 %).
+Après avoir crû de façon constante entre 2012 et 2019, le rapport entre les entrants et les sortants baisse de 13~% entre 2019 et 2022 et revient à son niveau le plus faible sur les dix dernières années. Les départs des Pays de La Loire augmentent de 17,3~%, sensiblement plus que les arrivées (+2,5~%).
 
 Ainsi la région recule à la 5e place pour le nombre d’arrivées pour 100 départs. Elle se situe derrière l’Occitanie, la Nouvelle-Aquitaine, la Bretagne et, en tête, la Corse. Parmi ces cinq régions, seuls les Pays de la Loire enregistrent une baisse, quand les régions du sud restent en essor.
 
@@ -56,11 +57,11 @@ Les espaces ruraux, quant à eux, gagnent en attrait depuis 2017. Cette progress
 
 = La région, attractive pour les Franciliens
 
-La région attire principalement des Franciliens, avec un solde migratoire de +12 570 habitants, soit 70 % de l’excédent migratoire régional *▶︎ figure 2*. Ce solde est bien supérieur à celui de Centre-Val de Loire (+2 240 habitants), en deuxième position.
+La région attire principalement des Franciliens, avec un solde migratoire de +12~570 habitants, soit 70~% de l’excédent migratoire régional *▶︎ figure 2*. Ce solde est bien supérieur à celui de Centre-Val de Loire (+2~240 habitants), en deuxième position.
 
-Les Franciliens représentent 28 % des entrées sur le sol ligérien, alors que seuls 15 % des Ligériens quittent la région pour l’Île-de-France. L’attrait des Franciliens pour les Pays de la Loire ne cesse de progresser : 239 entrées pour 100 sorties en 2021, contre 198 en 2015.
+Les Franciliens représentent 28~% des entrées sur le sol ligérien, alors que seuls 15~% des Ligériens quittent la région pour l’Île-de-France. L’attrait des Franciliens pour les Pays de la Loire ne cesse de progresser : 239 entrées pour 100 sorties en 2021, contre 198 en 2015.
 
-Le solde migratoire a également fortement progressé avec les Hauts-de-France, troisième région de provenance des Néo-ligériens : +22 % entre 2015 et 2021, pour atteindre +1 880 habitants en 2022.\
+Le solde migratoire a également fortement progressé avec les Hauts-de-France, troisième région de provenance des Néo-ligériens : +22~% entre 2015 et 2021, pour atteindre +1~880 habitants en 2022.\
 En revanche, le solde des Pays de la Loire est déficitaire avec les régions métropolitaines les plus attractives. En particulier, les Ligériens partent de plus en plus vers la Bretagne, et le déficit d’attrait des Pays de la Loire se creuse : 88 arrivées pour 100 départs en 2021, contre 99 en 2015.#pt-insee() \
 #signature(auteurs:auteurs)
 ]
@@ -75,7 +76,6 @@ En revanche, le solde des Pays de la Loire est déficitaire avec les régions m�
 
 myfig(
   pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
-  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
   titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
   lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
   source: "Insee, Enquête annuelle de recensement 2023.",
@@ -89,16 +89,14 @@ page_2colonnes()
 
 myfig(
   pos: bottom + left, largeur: 49%, dx: 0mm, dy: -38mm, width-image: 100%,
-  pad-bottom: 0mm, pad-top: 0mm, pad-left: 0mm, pad-right: 0mm,
   titre: "2. Flux et solde migratoires entre les Pays de la Loire et les autres régions métropolitaines en 2021",
   lecture: "En 2021, le solde entre le nombre de Franciliens arrivés dans les Pays de la Loire, et le nombre de Ligériens partis en Île-de-France est de +12 570 habitants.",
   source: "Insee, Recensement de la population 2022.",
   "_extensions/insee-flash/resources/images/if157_fig2.png"
 )
 
-mybloc(pos: bottom + right, largeur: 49%, dy: -20mm,
-pad-bottom: 0mm, pad-top: 0mm, pad-left: 0mm, pad-right: 0mm,)[
-#encadre[
+mybloc(pos: bottom + right, largeur: 49%, dy: -20mm, dx: 0mm)[
+#encadre(spacing: 1em,  leading: 0.6em)[
   == Encadré - Chaque année, un Ligérien sur dix déménage
 
 En 2023, un habitant des Pays de la Loire sur dix ne vit pas à la même
@@ -152,7 +150,7 @@ type « bourgs ruraux », des communes d’habitat dispersé et des
 communes d’habitat très dispersé.
 ]
 
-#pour-en-savoir-plus[
+#pour-en-savoir-plus(spacing: 1.1em,  leading: 0.6em)[
   == Pour en savoir plus
 
 - *Coutard G., Morineau D.*, « #link("https://www.insee.fr/fr/statistiques/8627617")[Un tiers des habitants des Pays de la Loire ne sont pas nés dans la région]», Insee Flash Pays de la Loire n° 156, août 2025.
@@ -161,9 +159,10 @@ communes d’habitat très dispersé.
 ]
 ]
 
+// OURS
 mybloc(pos: bottom , largeur: 100%, dy: 0mm,
 pad-bottom: 0mm, pad-top: 0mm, pad-left: 0mm, pad-right: 0mm,)[
-#ours()
+#ours(rc:"Valérie Deroin")
 ]
 
 page_2colonnes(saut: false)

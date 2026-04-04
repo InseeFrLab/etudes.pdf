@@ -1,11 +1,11 @@
-pandoc: 3.6.3
+pandoc: '3.2'
 pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   articles/article: article.html
   articles/article2: article2.html
   articles/dev: dev.html
-last_built: 2026-04-03T15:42Z
+last_built: 2026-04-04T07:50Z
 urls:
   reference: https://inseefrlab.github.io/etudes.pdf/reference
   article: https://inseefrlab.github.io/etudes.pdf/articles

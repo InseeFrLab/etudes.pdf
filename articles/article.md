@@ -8,19 +8,19 @@ Un document se compose de trois parties :
 
 Ces variables (sauf le format) sont à mettre à jour selon l’étude:
 
-- title: “Titre de l’étude”
-- collection: “Insee Flash Pays de la Loire”
-- numero: “157”
-- date_publication: “Septembre 2025”
-- chapo: “Résumé de l’étude”
-- chapo_taille: 12
-- texte_taille: 8
-- titre_taille: 9
-- bloc_texte_taille: 7
-- auteurs: “Nom Prénom (Insee)”
-- surtitre: “SURTITRE”
-- qrcode: “\_extensions/insee-flash/resources/images/qrcode.png”
-- format: insee-flash-typst
+    title: "Titre de l’étude"
+    collection: "Insee Flash Pays de la Loire"
+    numero: "157"
+    date_publication: "Septembre 2025"
+    chapo: "Résumé de l’étude"
+    chapo_taille: 12
+    texte_taille: 8
+    titre_taille: 9
+    bloc_texte_taille: 7
+    auteurs: "Nom Prénom (Insee)"
+    surtitre: "SURTITRE"
+    qrcode: "\_extensions/insee-flash/resources/images/qrcode.png"
+    format: insee-flash-typst
 
 2.  **Contenu (Typst)**
 
@@ -46,18 +46,21 @@ meander.reflow({
 })
 ```
 
+------------------------------------------------------------------------
+
 ### Rédiger le texte
 
 = Titre niveau 1
 
 \* **gras** *\**
 
+------------------------------------------------------------------------
+
 ### Ajouter une figure (sous forme d’image)
 
 ``` typst
 myfig(
   pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
-  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
   titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
   lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
   source: "Insee, Enquête annuelle de recensement 2023.",
@@ -77,6 +80,8 @@ Sous le titre, il est possible d’ajouter un champ-libre, une note, une
 lecture, un champ, une source. Le dernier paramètre de myfig() est le
 chemin de l’image.
 
+------------------------------------------------------------------------
+
 ### Blocs disponibles
 
 Encadré:
@@ -84,7 +89,8 @@ Encadré:
 ``` typst
 #encadre[
 == Titre
-<<..texte..>>]
+<<..texte..>>
+]
 ```
 
 Définitions:
@@ -92,7 +98,8 @@ Définitions:
 ``` typst
 #definitions[
 == Titre
-<<..texte..>>]
+<<..texte..>>
+]
 ```
 
 Pour en savoir plus:
@@ -100,7 +107,8 @@ Pour en savoir plus:
 ``` typst
 #pour-en-savoir-plus[
 == Pour en savoir plus
-- lien]
+- lien
+]
 ```
 
 Sources:
@@ -108,20 +116,50 @@ Sources:
 ``` typst
 #sources[
 == Titre
-<<..texte..>>]
+<<..texte..>>
+]
 ```
+
+------------------------------------------------------------------------
 
 ### Positionnement des blocs
 
-Les blocs sont positionnés avec mybloc :
+On peut aussi positionner plusieurs blocs ensemble avec mybloc() :
 
-mybloc( pos: bottom + right, largeur: 49%, dy: -20mm )
+``` typst
+mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
 
-\$\$ \#encadre\\ ... \$\$
+#encadre(spacing: 1.2em,  leading: 0.65em)[
+  == Titre d'un encadré
+<<..texte..>>
+]
 
-Paramètres clés pos : position dans la page largeur : largeur dy :
-décalage vertical dx : décalage horizontal
+#definitions[
+  == Définitions
+  <<..texte..>>
+]
 
-### Ajouter l’ours (footer)
+]
+```
 
-\#ours() Hauteur fixe : 17 mm QR code automatique si défini dans le YAML
+------------------------------------------------------------------------
+
+### Ajouter l’ours:
+
+Préciser le nom du rédacteur en chef de l’étude.
+
+``` typst
+mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[
+ #ours(rc:"Valérie Deroin")
+]
+```
+
+------------------------------------------------------------------------
+
+### Ajouter un lien vers les données complémentaires:
+
+``` typst
+mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[
+  #donnees()
+]
+```

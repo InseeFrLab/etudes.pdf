@@ -1,5 +1,7 @@
 ## Générer un Insee Flash ou Insee Analyses en PDF
 
+------------------------------------------------------------------------
+
 ### 📋 Présentation
 
 `etudes.pdf` est un package R qui permet la création de publications
@@ -8,6 +10,8 @@ au format **PDF** conformes à la charte graphique de l’Insee.
 
 Liste des publications Insee Pays de la Loire:
 <https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109>
+
+------------------------------------------------------------------------
 
 ### 🚀 Installation
 
@@ -56,3 +60,5 @@ remotes::install_github("https://github.com/InseeFrLab/etudes.pdf")
   avancée](https://inseefrlab.github.io/etudes.pdf/articles/article2.md):
 - [UNKNOWN
   TITLE](https://inseefrlab.github.io/etudes.pdf/articles/dev.md):
+- [UNKNOWN
+  TITLE](https://inseefrlab.github.io/etudes.pdf/articles/installation.md):

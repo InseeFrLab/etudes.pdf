@@ -60,33 +60,46 @@
             
       
 
-      <div class="d-none name"><code>dev.rmd</code></div>
+      <div class="d-none name"><code>installation.rmd</code></div>
     </div>
 
     
     
 <div class="section level2">
-<h2 id="commandes-utiles-pour-le-developpeur">Commandes utiles pour le developpeur:<a class="anchor" aria-label="anchor" href="#commandes-utiles-pour-le-developpeur"></a>
+<h2 id="en-cas-de-problèmes-dinstallation">En cas de problèmes d’installation<a class="anchor" aria-label="anchor" href="#en-cas-de-probl%C3%A8mes-dinstallation"></a>
 </h2>
 <div class="section level4">
-<h4 id="pour-faire-le-package-r">Pour faire le package R<a class="anchor" aria-label="anchor" href="#pour-faire-le-package-r"></a>
+<h4 id="installation-du-package-meander">Installation du package Meander<a class="anchor" aria-label="anchor" href="#installation-du-package-meander"></a>
 </h4>
-<ul>
-<li><code>devtools::document()</code></li>
-<li><code>devtools::check()</code></li>
-<li>
-<code>devtools::install()</code> ou
-<code>devtools::build()</code>
-</li>
-<li><code>detach("package:etudes.pdf", unload = TRUE)</code></li>
-</ul>
+<p>En cas de difficulté lors du quarto render, si la version de
+quarto-typst utilisée est trop ancienne, il peut y avoir un conflit avec
+le package Meander, qui requiert des fonctions typst récentes. Un
+message d’erreur de ce genre peut alors survenir:</p>
+<pre><code>error: module sym does not contain chevron
+ ┌─ @preview/meander:0.4.2\src\bisect.typ:6:25
+ │ 6 │ #let symbol_func = [#sym.chevron.l].func() │</code></pre>
+<p>Il faut simplement mettre à jour la version de quarto utilisée, en
+téléchargeant une version plus récente ici: <a href="https://quarto.org/docs/download/" class="external-link uri">https://quarto.org/docs/download/</a></p>
+<p>Penser à redémarrer le logiciel (Rstudio, Positron) une fois quarto
+mis à jour.</p>
+<hr>
 </div>
 <div class="section level4">
-<h4 id="pour-faire-le-site-pagedown">Pour faire le site pagedown<a class="anchor" aria-label="anchor" href="#pour-faire-le-site-pagedown"></a>
+<h4 id="font-open-sans">Font Open Sans<a class="anchor" aria-label="anchor" href="#font-open-sans"></a>
 </h4>
-<ul>
-<li><code><a href="https://pkgdown.r-lib.org/reference/build_site.html" class="external-link">pkgdown::build_site()</a></code></li>
-</ul>
+<p>Si ce message survient lors du quarto render:</p>
+<pre><code>[typst]: Compiling if157.typ to if157.pdf
+...downloading @preview/hy-dro-gen:0.1.1
+ 850.9 KiB / 850.9 KiB (100 %) 850.9 KiB/s in 345.15 ms ETA: 0 s 
+warning: unknown font family: open sans
+ ┌─ \\?\C:\Users\karl4\Documents\Projets\etudes.pdf\if157.typ:325:17 
+ │ 325 │ set text(font: "Open Sans", lang: "fr", size: texte_taille * 1pt)
+ │ ^^^^^^^^^^^ warning: unknown font family: open sans</code></pre>
+<p>Il faut télécharger les polices Open Sans sur le poste, nécessaires
+pour générer les pdf: <a href="https://fonts.google.com/specimen/Open+Sans" class="external-link uri">https://fonts.google.com/specimen/Open+Sans</a></p>
+<p>Clic droit sur tous les fichiers, puis Installer.</p>
+<p>Penser à redémarrer le logiciel (Rstudio, Positron) une fois les
+fonts téléchargées sur le poste.</p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

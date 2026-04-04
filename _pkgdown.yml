@@ -26,6 +26,8 @@ navbar:
             href: articles/article2.html
           - text: Dev
             href: articles/dev.html
+          - text: En cas de problèmes d'installation
+            href: articles/installation.html
 
 footer:
   structure:

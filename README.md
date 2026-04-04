@@ -1,5 +1,6 @@
 ## Générer un Insee Flash ou Insee Analyses en PDF
 
+------------------------------------------------------------------------
 
 ### 📋 Présentation
 
@@ -7,6 +8,8 @@
 
 Liste des publications Insee Pays de la Loire: https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109
 
+
+------------------------------------------------------------------------
 
 ### 🚀 Installation
 

@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">etudes.pdf</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Activer la navigation">
@@ -35,6 +35,7 @@
 <li><a class="dropdown-item" href="../articles/article.html">Documentation de base</a></li>
     <li><a class="dropdown-item" href="../articles/article2.html">Documentation avancée</a></li>
     <li><a class="dropdown-item" href="../articles/dev.html">Dev</a></li>
+    <li><a class="dropdown-item" href="../articles/installation.html">En cas de problèmes d'installation</a></li>
   </ul>
 </li>
       </ul>
@@ -42,7 +43,6 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Rechercher sur le site" placeholder="Rechercher" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/InseeFrLab/etudes.pdf/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -59,15 +59,15 @@
       <h1>Documentation avancée</h1>
             
       
-      <small class="dont-index">Source : <a href="https://github.com/InseeFrLab/etudes.pdf/blob/HEAD/vignettes/articles/article2.rmd" class="external-link"><code>vignettes/articles/article2.rmd</code></a></small>
+
       <div class="d-none name"><code>article2.rmd</code></div>
     </div>
 
     
     
-<div class="section level2">
-<h2 id="différents-moyens-de-faire-le-triangle">Différents moyens de faire le triangle:<a class="anchor" aria-label="anchor" href="#diff%C3%A9rents-moyens-de-faire-le-triangle"></a>
-</h2>
+<div class="section level3">
+<h3 id="différents-moyens-de-faire-le-triangle">Différents moyens de faire le triangle:<a class="anchor" aria-label="anchor" href="#diff%C3%A9rents-moyens-de-faire-le-triangle"></a>
+</h3>
 <ul>
 <li>blabla figure 2<br>
 </li>
@@ -79,12 +79,15 @@ gauche ) ) } ) h(0.4em) corps }</li>
 </ul>
 <p>et dans le qmd:</p>
 <p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
+<hr>
 </div>
-<div class="section level2">
-<h2 id="pour-conserver-le--typ-généré-avant-le--pdf">Pour conserver le .typ généré avant le .pdf<a class="anchor" aria-label="anchor" href="#pour-conserver-le--typ-g%C3%A9n%C3%A9r%C3%A9-avant-le--pdf"></a>
-</h2>
+<div class="section level3">
+<h3 id="pour-conserver-le--typ-généré-avant-le--pdf">Pour conserver le .typ généré avant le .pdf<a class="anchor" aria-label="anchor" href="#pour-conserver-le--typ-g%C3%A9n%C3%A9r%C3%A9-avant-le--pdf"></a>
+</h3>
 <p>Mettre ceci comme format dans le yml du fichier qmd: format:
 <code>insee-flash-typst: keep-typ: true</code></p>
+<hr>
+</div>
 <div class="section level3">
 <h3 id="exemple-de-tableau-à-1-colonne">Exemple de tableau à 1 colonne :<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-1-colonne"></a>
 </h3>
@@ -93,6 +96,7 @@ width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm,
 pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une
 note de lecture sur une seule ligne.”, source: “Insee, 2026.”,
 “insee_1col.png” )</p>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="exemple-de-tableau-à-2-colonnes">Exemple de tableau à 2 colonnes:<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-2-colonnes"></a>
@@ -104,11 +108,11 @@ sur une seule ligne.”, source: “Insee, 2026.”, “insee_2cols.png” )</p>
 <p>L’image du tableau est fabriquée avec cette fonction:
 etudes.pdf::generer_tableau_insee(n_lignes = 20, format_colonnes = 1,
 nom_fichier = “insee_1col.png”)</p>
+<hr>
 </div>
-</div>
-<div class="section level2">
-<h2 id="gestion-fine-des-espacements">Gestion fine des espacements:<a class="anchor" aria-label="anchor" href="#gestion-fine-des-espacements"></a>
-</h2>
+<div class="section level3">
+<h3 id="gestion-fine-des-espacements">Gestion fine des espacements:<a class="anchor" aria-label="anchor" href="#gestion-fine-des-espacements"></a>
+</h3>
 <p>Ajouter un espace insécable dans le texte du content[]:
 <code>~</code></p>
 <p>Ajouter un espace insécable dans le chapo: <code>\u202f</code></p>
@@ -119,6 +123,24 @@ dans le texte du content[]:
 <p><code>]</code></p>
 <p><code>colbreak()</code></p>
 <p><code>content[</code></p>
+<hr>
+</div>
+<div class="section level2">
+<h2 id="gestion-de-lespacement-à-lintérieur-des-encadrés">Gestion de l’espacement à l’intérieur des encadrés<a class="anchor" aria-label="anchor" href="#gestion-de-lespacement-%C3%A0-lint%C3%A9rieur-des-encadr%C3%A9s"></a>
+</h2>
+<p>Par défaut, le leading (espace entre les lignes) et le spacing
+(espace entre les paragraphes) sont définis par defaut à :</p>
+<ul>
+<li>spacing: 1.2em</li>
+<li>leading: 0.65em</li>
+</ul>
+<p>Il est possible de surcharger ces valeurs en précisant les valeurs
+souhaitées:</p>
+<pre class="typst"><code>#pour-en-savoir-plus(spacing: 1em,  leading: 0.5em)[
+  == Pour en savoir plus
+
+- *Coutard G., Morineau D.*, « #link("https://www.insee.fr/fr/statistiques/8627617")[Un tiers des habitants des Pays de la Loire ne sont pas nés dans la région]», Insee Flash Pays de la Loire n° 156, août 2025.
+]</code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
     </nav></aside>

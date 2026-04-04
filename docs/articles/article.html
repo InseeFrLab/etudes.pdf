@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">etudes.pdf</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Activer la navigation">
@@ -35,6 +35,7 @@
 <li><a class="dropdown-item" href="../articles/article.html">Documentation de base</a></li>
     <li><a class="dropdown-item" href="../articles/article2.html">Documentation avancée</a></li>
     <li><a class="dropdown-item" href="../articles/dev.html">Dev</a></li>
+    <li><a class="dropdown-item" href="../articles/installation.html">En cas de problèmes d'installation</a></li>
   </ul>
 </li>
       </ul>
@@ -42,7 +43,6 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Rechercher sur le site" placeholder="Rechercher" data-search-index="../search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/InseeFrLab/etudes.pdf/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -59,7 +59,7 @@
       <h1>Documentation de base</h1>
             
       
-      <small class="dont-index">Source : <a href="https://github.com/InseeFrLab/etudes.pdf/blob/HEAD/vignettes/articles/article.rmd" class="external-link"><code>vignettes/articles/article.rmd</code></a></small>
+
       <div class="d-none name"><code>article.rmd</code></div>
     </div>
 
@@ -74,21 +74,19 @@
 </ol>
 <p>Ces variables (sauf le format) sont à mettre à jour selon
 l’étude:</p>
-<ul>
-<li>title: “Titre de l’étude”</li>
-<li>collection: “Insee Flash Pays de la Loire”</li>
-<li>numero: “157”</li>
-<li>date_publication: “Septembre 2025”</li>
-<li>chapo: “Résumé de l’étude”</li>
-<li>chapo_taille: 12</li>
-<li>texte_taille: 8</li>
-<li>titre_taille: 9</li>
-<li>bloc_texte_taille: 7</li>
-<li>auteurs: “Nom Prénom (Insee)”</li>
-<li>surtitre: “SURTITRE”</li>
-<li>qrcode: “_extensions/insee-flash/resources/images/qrcode.png”</li>
-<li>format: insee-flash-typst</li>
-</ul>
+<pre><code>title: "Titre de l’étude"
+collection: "Insee Flash Pays de la Loire"
+numero: "157"
+date_publication: "Septembre 2025"
+chapo: "Résumé de l’étude"
+chapo_taille: 12
+texte_taille: 8
+titre_taille: 9
+bloc_texte_taille: 7
+auteurs: "Nom Prénom (Insee)"
+surtitre: "SURTITRE"
+qrcode: "\_extensions/insee-flash/resources/images/qrcode.png"
+format: insee-flash-typst</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><strong>Contenu (Typst)</strong></li>
 </ol>
@@ -111,19 +109,20 @@ bas.</p>
   &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;
   page_2colonnes(saut: false)
 })</code></pre>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="rédiger-le-texte">Rédiger le texte<a class="anchor" aria-label="anchor" href="#r%C3%A9diger-le-texte"></a>
 </h3>
 <p>= Titre niveau 1</p>
 <p>* <strong>gras</strong> <em>*</em></p>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-une-figure-sous-forme-dimage">Ajouter une figure (sous forme d’image)<a class="anchor" aria-label="anchor" href="#ajouter-une-figure-sous-forme-dimage"></a>
 </h3>
 <pre class="typst"><code>myfig(
   pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
-  pad-bottom: 0mm, pad-top: 4mm, pad-left: 0mm, pad-right: 0mm,
   titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
   lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
   source: "Insee, Enquête annuelle de recensement 2023.",
@@ -140,6 +139,7 @@ de places entre les deux colonnes)</li>
 <p>Sous le titre, il est possible d’ajouter un champ-libre, une note,
 une lecture, un champ, une source. Le dernier paramètre de myfig() est
 le chemin de l’image.</p>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
@@ -147,34 +147,60 @@ le chemin de l’image.</p>
 <p>Encadré:</p>
 <pre class="typst"><code>#encadre[
 == Titre
-&lt;&lt;..texte..&gt;&gt;]</code></pre>
+&lt;&lt;..texte..&gt;&gt;
+]</code></pre>
 <p>Définitions:</p>
 <pre class="typst"><code>#definitions[
 == Titre
-&lt;&lt;..texte..&gt;&gt;]</code></pre>
+&lt;&lt;..texte..&gt;&gt;
+]</code></pre>
 <p>Pour en savoir plus:</p>
 <pre class="typst"><code>#pour-en-savoir-plus[
 == Pour en savoir plus
-- lien]</code></pre>
+- lien
+]</code></pre>
 <p>Sources:</p>
 <pre class="typst"><code>#sources[
 == Titre
-&lt;&lt;..texte..&gt;&gt;]</code></pre>
+&lt;&lt;..texte..&gt;&gt;
+]</code></pre>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="positionnement-des-blocs">Positionnement des blocs<a class="anchor" aria-label="anchor" href="#positionnement-des-blocs"></a>
 </h3>
-<p>Les blocs sont positionnés avec mybloc :</p>
-<p>mybloc( pos: bottom + right, largeur: 49%, dy: -20mm )</p>
-<p><span class="math display">$$ #encadre\[ ... $$</span></p>
-<p>Paramètres clés pos : position dans la page largeur : largeur dy :
-décalage vertical dx : décalage horizontal</p>
+<p>On peut aussi positionner plusieurs blocs ensemble avec mybloc()
+:</p>
+<pre class="typst"><code>mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
+  
+#encadre(spacing: 1.2em,  leading: 0.65em)[
+  == Titre d'un encadré
+&lt;&lt;..texte..&gt;&gt;
+]
+
+#definitions[
+  == Définitions
+  &lt;&lt;..texte..&gt;&gt;
+]
+
+]</code></pre>
+<hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-lours-footer">Ajouter l’ours (footer)<a class="anchor" aria-label="anchor" href="#ajouter-lours-footer"></a>
 </h3>
-<p>#ours() Hauteur fixe : 17 mm QR code automatique si défini dans le
-YAML</p>
+<p>Préciser le nom du rédacteur en chef de l’étude.</p>
+<pre class="typst"><code>mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[
+ #ours(rc:"Valérie Deroin")
+]</code></pre>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="ajouter-un-lien-vers-les-données-complémentaires">Ajouter un lien vers les données complémentaires<a class="anchor" aria-label="anchor" href="#ajouter-un-lien-vers-les-donn%C3%A9es-compl%C3%A9mentaires"></a>
+</h3>
+<pre class="typst"><code>mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[
+  #donnees()
+]</code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
     </nav></aside>

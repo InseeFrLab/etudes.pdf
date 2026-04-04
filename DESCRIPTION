@@ -1,12 +1,11 @@
 Package: etudes.pdf
-URL: https://github.com/InseeFrLab/etudes.pdf
 Title: Maquettage Insee Pays de la Loire
-Version: 1.0.0
+Version: 1.0.1
+Description: Outils de génération de PDF pour les études Insee Pays de la Loire.
+URL: https://inseefrlab.github.io/etudes.pdf
 Authors@R: person("Régis", "Relland", 
              email = "regis.relland@insee.fr", 
              role = c("aut", "cre"))
-Description: Regroupe les fonctions R et les modeles Typst relatifs a la 
-    publication des notes Insee Flash et Insee Analyses.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -29,4 +28,4 @@ Imports:
     gridExtra,
     grid,
     gtable
-Config/Needs/website: quarto, rmarkdown
+Config/Needs/website: rmarkdown

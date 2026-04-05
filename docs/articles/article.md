@@ -128,7 +128,7 @@ On peut aussi positionner plusieurs blocs ensemble avec mybloc() :
 
 ``` typst
 mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
-  
+
 #encadre(spacing: 1.2em,  leading: 0.65em)[
   == Titre d'un encadré
 <<..texte..>>
@@ -144,7 +144,7 @@ mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
 
 ------------------------------------------------------------------------
 
-### Ajouter l’ours (footer)
+### Ajouter l’ours:
 
 Préciser le nom du rédacteur en chef de l’étude.
 
@@ -156,7 +156,7 @@ mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[
 
 ------------------------------------------------------------------------
 
-### Ajouter un lien vers les données complémentaires
+### Ajouter un lien vers les données complémentaires:
 
 ``` typst
 mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[

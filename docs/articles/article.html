@@ -8,8 +8,8 @@
 <title>Documentation de base • etudes.pdf</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Documentation de base">
 </head>
 <body>
@@ -43,6 +43,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Rechercher sur le site" placeholder="Rechercher" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/inseefrlab/etudes.pdf" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -94,21 +95,21 @@ format: insee-flash-typst</code></pre>
 le texte et les figures/encadrés. Le texte est à mettre dans la balise
 content[] tandis que les figures/encadrés sont à positionner plus
 bas.</p>
-<pre class="typst"><code>meander.reflow({
-  import meander: *
-
-  content[
-    &lt;&lt;..texte de l'étude ici..&gt;&gt;
-  ]
-
-  // ── PAGE 1 ──
-  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;
-  page_2colonnes()
-
-  // ── PAGE 2 ──
-  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;
-  page_2colonnes(saut: false)
-})</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>meander.reflow({</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>  import meander: *</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  content[</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>    &lt;&lt;..texte de l'étude ici..&gt;&gt;</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  ]</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>  <span class="co">// ── PAGE 1 ──</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 1 ici..&gt;&gt;</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>  page_2colonnes()</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>  <span class="co">// ── PAGE 2 ──</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  &lt;&lt;..figures et encadrés de la page 2 ici..&gt;&gt;</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  page_2colonnes(saut: false)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>})</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
@@ -121,13 +122,13 @@ bas.</p>
 <div class="section level3">
 <h3 id="ajouter-une-figure-sous-forme-dimage">Ajouter une figure (sous forme d’image)<a class="anchor" aria-label="anchor" href="#ajouter-une-figure-sous-forme-dimage"></a>
 </h3>
-<pre class="typst"><code>myfig(
-  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,
-  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",
-  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",
-  source: "Insee, Enquête annuelle de recensement 2023.",
-  "_extensions/insee-flash/resources/images/if157_fig1.png"
-)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>myfig(</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>  pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>  titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région en 2022",</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>  lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>  source: "Insee, Enquête annuelle de recensement 2023.",</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>  "_extensions/insee-flash/resources/images/if157_fig1.png"</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>)</span></code></pre></div>
 <p>Paramètres utiles:</p>
 <ul>
 <li>pos : position (top, bottom, left, right)</li>
@@ -145,25 +146,25 @@ le chemin de l’image.</p>
 <h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
 </h3>
 <p>Encadré:</p>
-<pre class="typst"><code>#encadre[
-== Titre
-&lt;&lt;..texte..&gt;&gt;
-]</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <p>Définitions:</p>
-<pre class="typst"><code>#definitions[
-== Titre
-&lt;&lt;..texte..&gt;&gt;
-]</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <p>Pour en savoir plus:</p>
-<pre class="typst"><code>#pour-en-savoir-plus[
-== Pour en savoir plus
-- lien
-]</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">[</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">== Pour en savoir plus</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>- lien</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <p>Sources:</p>
-<pre class="typst"><code>#sources[
-== Titre
-&lt;&lt;..texte..&gt;&gt;
-]</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">#</span>sources<span class="op">[</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
@@ -171,36 +172,36 @@ le chemin de l’image.</p>
 </h3>
 <p>On peut aussi positionner plusieurs blocs ensemble avec mybloc()
 :</p>
-<pre class="typst"><code>mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
-
-#encadre(spacing: 1.2em,  leading: 0.65em)[
-  == Titre d'un encadré
-&lt;&lt;..texte..&gt;&gt;
-]
-
-#definitions[
-  == Définitions
-  &lt;&lt;..texte..&gt;&gt;
-]
-
-]</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">(</span>spacing<span class="op">:</span> <span class="fl">1.2em</span><span class="op">,</span>  leading<span class="op">:</span> <span class="fl">0.65em</span><span class="op">)[</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">  == Titre d'un encadré</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">  == Définitions</span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>  &lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>]</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-lours">Ajouter l’ours:<a class="anchor" aria-label="anchor" href="#ajouter-lours"></a>
 </h3>
 <p>Préciser le nom du rédacteur en chef de l’étude.</p>
-<pre class="typst"><code>mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[
- #ours(rc:"Valérie Deroin")
-]</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a> <span class="kw">#</span>ours<span class="op">(</span>rc<span class="op">:</span><span class="st">"Valérie Deroin"</span><span class="op">)</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>]</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-un-lien-vers-les-données-complémentaires">Ajouter un lien vers les données complémentaires:<a class="anchor" aria-label="anchor" href="#ajouter-un-lien-vers-les-donn%C3%A9es-compl%C3%A9mentaires"></a>
 </h3>
-<pre class="typst"><code>mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[
-  #donnees()
-]</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="kw">#</span>donnees<span class="op">()</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>]</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
     </nav></aside>

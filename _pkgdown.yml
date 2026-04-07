@@ -7,6 +7,10 @@ template:
   bslib:
     bootswatch: lumen
 
+repo:
+  url:
+    home: https://github.com/inseefrlab/etudes.pdf
+
 home:
   sidebar:
     html: pkgdown/home-sidebar.html
@@ -15,7 +19,7 @@ navbar:
   title: "etudes.pdf"
   structure:
     left: [home, documentation]
-    right: [search, github, lightswitch]
+    right: [search, github]
   components:
       documentation:
         text: Documentation

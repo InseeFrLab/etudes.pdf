@@ -2,7 +2,6 @@
 title: "Documentation de base"
 ---
 
-
 ### Structure du fichier .qmd à modifier
 
 Un document se compose de trois parties :
@@ -11,7 +10,7 @@ Un document se compose de trois parties :
 
 Ces variables (sauf le format) sont à mettre à jour selon l'étude:
 
-``` 
+```         
 title: "Titre de l’étude"
 collection: "Insee Flash Pays de la Loire"
 numero: "157"
@@ -25,7 +24,7 @@ auteurs: "Nom Prénom (Insee)"
 surtitre: "SURTITRE"
 qrcode: "\_extensions/insee-flash/resources/images/qrcode.png"
 format: insee-flash-typst
-``` 
+```
 
 2.  **Contenu (Typst)**
 
@@ -73,13 +72,12 @@ myfig(
 
 Paramètres utiles:
 
-- pos : position (top, bottom, left, right)
-- largeur : largeur du bloc (mettre 49% afin de laisser suffisamment de places entre les deux colonnes)
-- dx : ajustement horizontal
-- dy : ajustement vertical
+-   pos : position (top, bottom, left, right)
+-   largeur : largeur du bloc (mettre 49% afin de laisser suffisamment de places entre les deux colonnes)
+-   dx : ajustement horizontal
+-   dy : ajustement vertical
 
 Sous le titre, il est possible d'ajouter un champ-libre, une note, une lecture, un champ, une source. Le dernier paramètre de myfig() est le chemin de l'image.
-
 
 ------------------------------------------------------------------------
 
@@ -143,10 +141,10 @@ mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[
 ]
 ```
 
-
 ------------------------------------------------------------------------
 
 ### Ajouter l’ours:
+
 Préciser le nom du rédacteur en chef de l'étude.
 
 ``` typst
@@ -154,6 +152,7 @@ mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[
  #ours(rc:"Valérie Deroin")
 ]
 ```
+
 ------------------------------------------------------------------------
 
 ### Ajouter un lien vers les données complémentaires:

@@ -60,7 +60,7 @@
 // ═══════════════════════════════════════════
 // MEANDER 
 // ═══════════════════════════════════════════
-#import "@preview/meander:0.4.2"
+#import "@preview/meander:0.4.1"
 
 #let mybloc(pos: top + right, largeur: 49%, hauteur: auto,  dx: 0pt, dy: 0pt, 
             pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,  contenu) = {

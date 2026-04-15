@@ -1,6 +1,6 @@
 Package: etudes.pdf
 Title: Maquettage Insee Pays de la Loire
-Version: 1.0.1
+Version: 1.0.2
 Description: Outils de génération de PDF pour les études Insee Pays de la Loire.
 URL: https://inseefrlab.github.io/etudes.pdf
 Authors@R: person("Régis", "Relland", 

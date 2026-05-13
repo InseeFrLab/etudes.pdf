@@ -20,6 +20,7 @@ au format **PDF** conformes à la charte graphique de l’Insee.
 - Lancez la commande suivante pour installer le package `etudes.pdf`:
 
 ``` r
+
 remotes::install_github("https://github.com/InseeFrLab/etudes.pdf")
 ```
 

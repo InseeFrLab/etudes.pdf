@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">etudes.pdf</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Activer la navigation">
@@ -67,22 +67,6 @@
     
     
 <div class="section level3">
-<h3 id="différents-moyens-de-faire-le-triangle">Différents moyens de faire le triangle:<a class="anchor" aria-label="anchor" href="#diff%C3%A9rents-moyens-de-faire-le-triangle"></a>
-</h3>
-<ul>
-<li>blabla figure 2<br>
-</li>
-<li>blabla figure 2  (necessite ceci: #import “<span class="citation">@preview/fontawesome:0.5.0</span>”: *)</li>
-<li>#let appel-fleche(corps) = { box( width: 0.8em, height: 0.8em, {
-place(center + horizon, polygon( fill: B6, (0%, 0%), // Point haut
-gauche (100%, 50%),// Pointe (milieu droite) (0%, 100%) // Point bas
-gauche ) ) } ) h(0.4em) corps }</li>
-</ul>
-<p>et dans le qmd:</p>
-<p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
-<hr>
-</div>
-<div class="section level3">
 <h3 id="pour-conserver-le--typ-généré-avant-le--pdf">Pour conserver le .typ généré avant le .pdf<a class="anchor" aria-label="anchor" href="#pour-conserver-le--typ-g%C3%A9n%C3%A9r%C3%A9-avant-le--pdf"></a>
 </h3>
 <p>Mettre ceci comme format dans le yml du fichier qmd: format:
@@ -92,20 +76,20 @@ gauche ) ) } ) h(0.4em) corps }</li>
 <div class="section level3">
 <h3 id="exemple-de-tableau-à-1-colonne">Exemple de tableau à 1 colonne :<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-1-colonne"></a>
 </h3>
-<p>mfig( pos: bottom + right, largeur: 50%, dx: 0mm, dy: 0mm,
-width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm,
-pad-right: 0mm, titre: “1. Un titre sur une seule ligne”, lecture: “Une
-note de lecture sur une seule ligne.”, source: “Insee, 2026.”,
-“insee_1col.png” )</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>myfig( pos: bottom + right,</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>largeur: 50%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm,</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>titre: "1. Un titre sur une seule ligne",</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>lecture: "Une note de lecture sur une seule ligne.", source: "Insee, 2026.", "insee_1col.png" )</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
 <h3 id="exemple-de-tableau-à-2-colonnes">Exemple de tableau à 2 colonnes:<a class="anchor" aria-label="anchor" href="#exemple-de-tableau-%C3%A0-2-colonnes"></a>
 </h3>
-<p>mfig( pos: bottom, largeur: 100%, dx: 0mm, dy: 0mm, width-image:
-100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm,
-titre: “1. Un titre sur une seule ligne”, lecture: “Une note de lecture
-sur une seule ligne.”, source: “Insee, 2026.”, “insee_2cols.png” )</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>myfig( pos: bottom,</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>largeur: 100%, dx: 0mm, dy: 0mm, width-image: 100%, pad-bottom: 0mm, pad-top: 4mm, pad-left: 2mm, pad-right: 0mm,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>titre: "1. Un titre sur une seule ligne",</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>lecture: "Une note de lecture sur une seule ligne.",</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>source: "Insee, 2026.", "insee_2cols.png" )</span></code></pre></div>
 <p>L’image du tableau est fabriquée avec cette fonction:
 etudes.pdf::generer_tableau_insee(n_lignes = 20, format_colonnes = 1,
 nom_fichier = “insee_1col.png”)</p>
@@ -121,14 +105,14 @@ nom_fichier = “insee_1col.png”)</p>
 dans le texte du content[]:
 <code>La population#h(0.15em)ligérienne</code></p>
 <p>Faire un saut de colonne dans le texte du content[]:</p>
-<p><code>]</code></p>
-<p><code>colbreak()</code></p>
-<p><code>content[</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>]</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>colbreak()</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>content[</span></code></pre></div>
 <hr>
 </div>
-<div class="section level2">
-<h2 id="gestion-de-lespacement-à-lintérieur-des-encadrés">Gestion de l’espacement à l’intérieur des encadrés<a class="anchor" aria-label="anchor" href="#gestion-de-lespacement-%C3%A0-lint%C3%A9rieur-des-encadr%C3%A9s"></a>
-</h2>
+<div class="section level3">
+<h3 id="gestion-de-lespacement-à-lintérieur-des-encadrés">Gestion de l’espacement à l’intérieur des encadrés<a class="anchor" aria-label="anchor" href="#gestion-de-lespacement-%C3%A0-lint%C3%A9rieur-des-encadr%C3%A9s"></a>
+</h3>
 <p>Par défaut, le leading (espace entre les lignes) et le spacing
 (espace entre les paragraphes) sont définis par defaut à :</p>
 <ul>
@@ -137,11 +121,43 @@ dans le texte du content[]:
 </ul>
 <p>Il est possible de surcharger ces valeurs en précisant les valeurs
 souhaitées:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">(</span>spacing<span class="op">:</span> <span class="fl">1em</span><span class="op">,</span>  leading<span class="op">:</span> <span class="fl">0.5em</span><span class="op">)[</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">  == Pour en savoir plus</span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>- *Coutard G., Morineau D.*, « <span class="kw">#</span>link<span class="op">(</span><span class="st">"https://www.insee.fr/fr/statistiques/8627617"</span><span class="op">)[</span>Un tiers des habitants des Pays de la Loire ne sont pas nés dans la région<span class="op">]</span>», Insee Flash Pays de la Loire n° 156, août 2025.</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">(</span>spacing<span class="op">:</span> <span class="fl">1em</span><span class="op">,</span>  leading<span class="op">:</span> <span class="fl">0.5em</span><span class="op">)[</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">  == Pour en savoir plus</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>- *Coutard G., Morineau D.*, « <span class="kw">#</span>link<span class="op">(</span><span class="st">"https://www.insee.fr/fr/statistiques/8627617"</span><span class="op">)[</span>Un tiers des habitants des Pays de la Loire ne sont pas nés dans la région<span class="op">]</span>», Insee Flash Pays de la Loire n° 156, août 2025.</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="exposants">Exposants:<a class="anchor" aria-label="anchor" href="#exposants"></a>
+</h3>
+<ul>
+<li><p>chapo: caractere special d’exposant U1D49 pour le “e” et U02B3
+pour le “r” Exemple: “quittent la région le 1ᵉʳ jour”</p></li>
+<li><p>dans le texte: “1er janvier 2026” s’écrit comme ceci:
+1#super<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>e</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">er</annotation></semantics></math>
+janvier 2026</p></li>
+<li><p>dans les figures:</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>myfig( pos: bottom + right, largeur: 49%, dx: 0mm, dy: 0mm, width-image: 100%,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>titre: "1. Nombre d’entrées pour 100 sorties et solde migratoire par région le 1" + super("er") + " jour", lecture: "La Corse compte 166 arrivants pour 100 sortants au cours de l’année 2022. Son solde migratoire est égal à +2 700. En Île-de-France, le solde migratoire est de -135 300 habitants.",</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>source: "Insee, Enquête annuelle de recensement 2023.",</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>"_extensions/insee-flash/resources/images/if157_fig1.png" )</span></code></pre></div>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="différents-moyens-de-faire-le-triangle">Différents moyens de faire le triangle:<a class="anchor" aria-label="anchor" href="#diff%C3%A9rents-moyens-de-faire-le-triangle"></a>
+</h3>
+<ul>
+<li>blabla figure 2</li>
+<li>blabla figure 2  (necessite ceci: #import “<span class="citation">@preview/fontawesome:0.5.0</span>”: *)</li>
+<li>#let appel-fleche(corps) = { box( width: 0.8em, height: 0.8em, {
+place(center + horizon, polygon( fill: B6, (0%, 0%), // Point haut
+gauche (100%, 50%),// Pointe (milieu droite) (0%, 100%) // Point bas
+gauche ) ) } ) h(0.4em) corps }</li>
+</ul>
+<p>et dans le qmd:</p>
+<p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
     </nav></aside>

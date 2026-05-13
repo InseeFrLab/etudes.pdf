@@ -314,10 +314,9 @@ grid(
   v(8mm)
 
   // --- TEXTE : espacements --
-let mon_leading = 5pt
 set par(
-  leading: mon_leading, //interligne
-  spacing: texte_taille*1pt +mon_leading    //texte_taille + leading=spacing spacing=espace entre paragraphes
+  spacing: 1.2em, // espace entre les paragaphes (defaut: 1.2em)
+  leading: 0.65em, // espace entre les lignes (defaut: 0.65em)
 )
 
 show heading: set block(
@@ -337,98 +336,102 @@ body
 // =============================================================================
 
 
-//Encadre
-#let encadre(corps) = context{
-  block(
-  width: 100%,
-  inset: 5pt,
-  radius: 8pt,
-  stroke: 3pt + R4,
+#let bloc_base(
+  corps,
+  fill: none,
+  stroke: none,
+  text_delta: 0,
   spacing: 1.2em,
-)[
-  #show strong: _strong-noir
-  #show heading.where(level: 2): _heading2-bloc
-  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
-  #corps
-]
+  leading: 0.65em,
+  extra: none,
+) = context {
+
+  block(
+    width: 100%,
+    inset: 3mm,
+    radius: 8pt,
+    spacing: 0.4em,
+    fill: fill,
+    stroke: stroke,
+  )[
+    #show strong: _strong-noir
+    #show heading.where(level: 2): _heading2-bloc
+
+    #set text(
+      size: (taille_bloc_state.get() + text_delta) * 1pt,
+      weight: "regular"
+    )
+
+    #set par(
+      spacing: spacing,
+      leading: leading,
+    )
+
+    // styles spécifiques optionnels
+    #if extra != none {
+      extra
+    }
+
+    #corps
+  ]
 }
+
+//Encadre
+#let encadre(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
+    corps,
+    stroke: 3pt + R4,
+    spacing: spacing,
+    leading: leading,
+  )
+
 
 //Definitions
-#let definitions(corps) = context{
-  block(
-  fill: G1,
-  width: 100%,
-  inset: 5pt,
-  radius: 8pt,
-  spacing: 1.2em,
-)[
-  #show strong: _strong-noir
-  #show heading.where(level: 2): _heading2-bloc
-  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
-  #corps
-]
-}
+#let definitions(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
+    corps,
+    fill: G1,
+    spacing: spacing,
+    leading: leading,
+)
 
-//Pour en savoir plus
-#let pour-en-savoir-plus(corps) = context{
-  block(
-  fill: B1,
-  width: 100%,
-  inset: 5pt,
-  radius: 8pt,
-  spacing: 1.2em,
-)[
-  #show strong: _strong-noir
-  #show heading.where(level: 2): _heading2-bloc
-  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
-  #set list(marker: text(fill: B6, size: 0.8em)[#sym.circle.filled])
-  #show link: set text(fill: B6)
-  #show link: underline
-  #corps
-]
-}
+// Pour en savoir plus
+#let pour-en-savoir-plus(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
+    corps,
+    fill: B1,
+    spacing: spacing,
+    leading: leading,
+    extra: [
+      #set list(marker: text(fill: red, size: 0.8em)[#sym.circle.filled])
+      #show link: set text(fill: B6)
+      #show link: underline
+    ]
+  )
 
-// Bloc Sources 
-#let sources(corps) = context{
-  block(
-  fill:  R1,
-  width: 100%,
-  inset: 5pt,
-  radius: 8pt,
-  spacing: 1.2em,
-)[
-  #show strong: _strong-noir
-  #show heading.where(level: 2): _heading2-bloc
-  #set text(size: taille_bloc_state.get() * 1pt, weight: "regular")
-  #corps
-]
-}
+//Sources
+#let sources(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
+    corps,
+    fill: R1,
+    spacing: spacing,
+    leading: leading,
+  )
 
 
 
 //Bloc encadre-figure
-#let encadre-figure(corps) = context{
-  block(
-  width: 100%,
-  inset: 5pt,
-  spacing: 1.2em,
-  radius: 8pt,
-  fill: G1,
-)[
-  #show strong: _strong-noir
-  #show heading.where(level: 2): _heading2-bloc
-  #set text(size: (taille_bloc_state.get()-1) * 1pt, weight: "regular")
-  #corps
-]
-}
+#let encadre-figure(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
+    corps,
+    fill: G1,
+    text_delta: -1,
+    spacing: spacing,
+    leading: leading,
+  )
 
-#let mfig(
+#let myfig(
   pos: top + right,
   largeur: 66%,
-  dx: 4pt, dy: 0pt,
+  dx: 0pt, dy: 0pt,
   pad-top: 0mm, pad-bottom: 0mm, pad-left: 0mm, pad-right: 0mm,
-  titre: none,
   champ-libre: none,
+  titre: none,
   lecture: none,
   source: none,
   champ: none,
@@ -437,7 +440,7 @@ body
   chemin
 ) = {
   mybloc(pos: pos, largeur: largeur, dx: dx, dy: dy,
-         pad-top: pad-top, pad-bottom: pad-bottom, pad-left:  pad-left, pad-right: pad-right)[
+         pad-top: pad-top, pad-bottom: pad-bottom, pad-right: pad-right, pad-left: pad-left)[
     #if titre     != none [== #titre]
     #encadre-figure[
       #figure(image(chemin, width: width-image))

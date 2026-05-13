@@ -103,6 +103,9 @@
   body
 ) = {
 
+
+
+
   // --- CONFIGURATION DE LA PAGE et des FOOTER  ---
 set page(
     paper: "a4",
@@ -162,6 +165,8 @@ set page(
   show "▶︎": mytriangle(0em,12pt)
 
 
+
+
 // --- EN-TÊTE  ---
   grid(
     columns: (47mm, 1fr),
@@ -212,6 +217,7 @@ set page(
 
 
 // --- CHAPO
+
 block(
   inset: (top: 7mm, bottom: 7mm)
 )[#set text(weight: "semibold", size: chapo_taille*1pt)
@@ -291,7 +297,7 @@ set par(
     leading: leading,
 )
 
-// POur en savoir plus
+// Pour en savoir plus
 #let pour-en-savoir-plus(corps, spacing:1.2em, leading:0.65em) =  bloc_base(
     corps,
     fill: bloc-pour-en-savoir-plus,

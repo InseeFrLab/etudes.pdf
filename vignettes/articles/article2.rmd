@@ -96,3 +96,22 @@ source: "Insee, Enquête annuelle de recensement 2023.",
 et dans le qmd:
 
 `{=typst} blabla devant #appel-fleche[figure 3]`
+
+
+
+---------------------------------------------------------------------
+
+### Rstudio: Coloration syntaxique dans le chunk Typst du fichier .qmd principal:
+
+Le chunk typst du fichier .qmd principal se présente ainsi:
+
+\```{=typst}
+\```
+
+
+Cela permet au pdf d'être généré, mais dans Rstudio ce chunk est unicolore (dans Positron, il n'y a pas ce problème).
+Il est possible de faire apparaître la coloration syntaxique en enlevant momentanément le **=** du chunk puis de le remettre avant de générer le pdf:
+
+
+\```{typst}
+\```

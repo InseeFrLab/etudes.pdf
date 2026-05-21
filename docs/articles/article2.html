@@ -158,6 +158,20 @@ gauche ) ) } ) h(0.4em) corps }</li>
 </ul>
 <p>et dans le qmd:</p>
 <p><code>{=typst} blabla devant #appel-fleche[figure 3]</code></p>
+<hr>
+</div>
+<div class="section level3">
+<h3 id="rstudio-coloration-syntaxique-dans-le-chunk-typst-du-fichier--qmd-principal">Rstudio: Coloration syntaxique dans le chunk Typst du fichier .qmd
+principal:<a class="anchor" aria-label="anchor" href="#rstudio-coloration-syntaxique-dans-le-chunk-typst-du-fichier--qmd-principal"></a>
+</h3>
+<p>Le chunk typst du fichier .qmd principal se présente ainsi:</p>
+<p>```{=typst} ```</p>
+<p>Cela permet au pdf d’être généré, mais dans Rstudio ce chunk est
+unicolore (dans Positron, il n’y a pas ce problème). Il est possible de
+faire apparaître la coloration syntaxique en enlevant momentanément le
+<strong>=</strong> du chunk puis de le remettre avant de générer le
+pdf:</p>
+<p>```{typst} ```</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>
     </nav></aside>

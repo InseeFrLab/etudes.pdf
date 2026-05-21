@@ -22,7 +22,7 @@ Penser à redémarrer le logiciel (Rstudio, Positron) une fois quarto mis
 
 ------------------------------------------------------------------------
 
-#### Bouton RENDER non fonctionnel: installation de quarto sur poste à l’Insee
+#### Installation de quarto sur poste à l’Insee
 
 Depuis 2026, des restrictions empêchent d’installer des applications
 n’importe où sur son poste, notamment Quarto. Il est néanmoins possible
@@ -31,7 +31,7 @@ de l’installer dans ce dossier: C:\INSEE\LogicielsPortables
 - telecharger le .zip de quarto:
   <https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-win.zip>
 
-- creer un dossier quarto ici: C:\INSEE\LogicielsPortables
+- creer un dossier quarto ici: C:/INSEE/LogicielsPortables
 
 - mettre les dossiers bin et share du .zip quarto dans le dossier
   quarto; le but est d’avoir ce chemin fonctionnel:
@@ -40,8 +40,10 @@ de l’installer dans ce dossier: C:\INSEE\LogicielsPortables
 - créer un fichier .Renviron à la racine du projet pour forcer Rstudio à
   utiliser le quarto installé, et écrire ceci dans le fichier:
 
-PATH=C:/INSEE/LogicielsPortables/Quarto/bin;\${PATH}
-QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe
+&nbsp;
+
+    PATH=C:/INSEE/LogicielsPortables/Quarto/bin;${PATH}
+    QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe
 
 - Relancer Rstudio et utiliser le bouton RENDER ou lancer la commande
   (par exemple pour le fichier ia144.qmd) dans le Terminal: quarto

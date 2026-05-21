@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title> • etudes.pdf</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="">
 </head>
@@ -83,6 +83,32 @@ message d’erreur de ce genre peut alors survenir:</p>
 téléchargeant une version plus récente ici: <a href="https://quarto.org/docs/download/" class="external-link uri">https://quarto.org/docs/download/</a></p>
 <p>Penser à redémarrer le logiciel (Rstudio, Positron) une fois quarto
 mis à jour.</p>
+<hr>
+</div>
+<div class="section level4">
+<h4 id="bouton-render-non-fonctionnel-installation-de-quarto-sur-poste-à-linsee">Bouton RENDER non fonctionnel: installation de quarto sur poste à
+l’Insee<a class="anchor" aria-label="anchor" href="#bouton-render-non-fonctionnel-installation-de-quarto-sur-poste-%C3%A0-linsee"></a>
+</h4>
+<p>Depuis 2026, des restrictions empêchent d’installer des applications
+n’importe où sur son poste, notamment Quarto. Il est néanmoins possible
+de l’installer dans ce dossier: C:\INSEE\LogicielsPortables</p>
+<ul>
+<li><p>telecharger le .zip de quarto: <a href="https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-win.zip" class="external-link uri">https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-win.zip</a></p></li>
+<li><p>creer un dossier quarto ici: C:\INSEE\LogicielsPortables</p></li>
+<li><p>mettre les dossiers bin et share du .zip quarto dans le dossier
+quarto; le but est d’avoir ce chemin fonctionnel:
+C:/INSEE/LogicielsPortables/quarto/bin/quarto.exe</p></li>
+<li><p>créer un fichier .Renviron à la racine du projet pour forcer
+Rstudio à utiliser le quarto installé, et écrire ceci dans le
+fichier:</p></li>
+</ul>
+<p>PATH=C:/INSEE/LogicielsPortables/Quarto/bin;${PATH}
+QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe</p>
+<ul>
+<li>Relancer Rstudio et utiliser le bouton RENDER ou lancer la commande
+(par exemple pour le fichier ia144.qmd) dans le Terminal: quarto render
+ia144.qmd</li>
+</ul>
 <hr>
 </div>
 <div class="section level4">

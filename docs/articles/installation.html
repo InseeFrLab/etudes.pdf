@@ -86,15 +86,14 @@ mis à jour.</p>
 <hr>
 </div>
 <div class="section level4">
-<h4 id="bouton-render-non-fonctionnel-installation-de-quarto-sur-poste-à-linsee">Bouton RENDER non fonctionnel: installation de quarto sur poste à
-l’Insee<a class="anchor" aria-label="anchor" href="#bouton-render-non-fonctionnel-installation-de-quarto-sur-poste-%C3%A0-linsee"></a>
+<h4 id="installation-de-quarto-sur-poste-à-linsee">Installation de quarto sur poste à l’Insee<a class="anchor" aria-label="anchor" href="#installation-de-quarto-sur-poste-%C3%A0-linsee"></a>
 </h4>
 <p>Depuis 2026, des restrictions empêchent d’installer des applications
 n’importe où sur son poste, notamment Quarto. Il est néanmoins possible
 de l’installer dans ce dossier: C:\INSEE\LogicielsPortables</p>
 <ul>
 <li><p>telecharger le .zip de quarto: <a href="https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-win.zip" class="external-link uri">https://github.com/quarto-dev/quarto-cli/releases/download/v1.9.37/quarto-1.9.37-win.zip</a></p></li>
-<li><p>creer un dossier quarto ici: C:\INSEE\LogicielsPortables</p></li>
+<li><p>creer un dossier quarto ici: C:/INSEE/LogicielsPortables</p></li>
 <li><p>mettre les dossiers bin et share du .zip quarto dans le dossier
 quarto; le but est d’avoir ce chemin fonctionnel:
 C:/INSEE/LogicielsPortables/quarto/bin/quarto.exe</p></li>
@@ -102,8 +101,8 @@ C:/INSEE/LogicielsPortables/quarto/bin/quarto.exe</p></li>
 Rstudio à utiliser le quarto installé, et écrire ceci dans le
 fichier:</p></li>
 </ul>
-<p>PATH=C:/INSEE/LogicielsPortables/Quarto/bin;${PATH}
-QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe</p>
+<pre><code>PATH=C:/INSEE/LogicielsPortables/Quarto/bin;${PATH}
+QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe</code></pre>
 <ul>
 <li>Relancer Rstudio et utiliser le bouton RENDER ou lancer la commande
 (par exemple pour le fichier ia144.qmd) dans le Terminal: quarto render

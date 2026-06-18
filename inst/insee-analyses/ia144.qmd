@@ -193,7 +193,7 @@ colfill()
 
 
 // ── PAGE 1 ──
-mfig(
+myfig(
   pos: top + right, largeur: 33%, dx: 0mm, dy: 0mm,width-image: 100%,
   pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "1. Taux d’extension liée à l’activité économique entre 2011 et fin 2020",
@@ -206,7 +206,7 @@ page1_3colonnes(avec-partenaire: true)
 
 
 // ── PAGE 2 ──
-mfig(
+myfig(
   pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%, 
   pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "2. Flux annuels de consommation d’espaces de l’activité économique et de l’habitat dans les Pays de la Loire, entre 2011 et fin 2020",
@@ -216,7 +216,7 @@ mfig(
 )
 
 
-mfig(
+myfig(
   pos: bottom + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
   pad-top: 4mm, pad-bottom: 0mm, pad-left: 2mm, pad-right: 0mm,
   titre: "3. Taux d’extension liée à l’activité économique, par SCoT, entre 2011 et fin 2020",
@@ -231,7 +231,7 @@ page_3_colonnes()
 
   // ── PAGE 3 ──
 
-mfig(
+myfig(
   pos: top + right, largeur: 66%, dx: 0mm, dy: 0mm, width-image: 100%,
   pad-top: 0mm, pad-bottom: 4mm, pad-left: 2mm, pad-right: 0mm,
   titre: "4. Part de la consommation d’espaces et de l’emploi salarié dans les Pays de la Loire, par secteur économique",

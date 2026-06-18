@@ -84,15 +84,6 @@ chemin de l’image.
 
 ### Blocs disponibles
 
-Encadré:
-
-``` typst
-#encadre[
-== Titre
-<<..texte..>>
-]
-```
-
 Définitions:
 
 ``` typst
@@ -117,6 +108,32 @@ Sources:
 #sources[
 == Titre
 <<..texte..>>
+]
+```
+
+Encadré:
+
+``` typst
+#encadre[
+== Titre
+<<..texte..>>
+]
+```
+
+Encadré avec figure:
+
+``` typst
+#encadre[
+== Titre du texte
+<<..texte..>>
+
+== Titre de la figure
+#encadre-figure[
+      #figure(image("<<...chemin vers l'image...>>", width:100%))
+      *Lecture* : <<..texte..>> \ 
+      *Champ* : <<..texte..>> \ 
+      *Source* : <<..texte..>>
+    ]
 ]
 ```
 

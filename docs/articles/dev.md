@@ -10,6 +10,7 @@
   ou
   [`devtools::build()`](https://devtools.r-lib.org/reference/build.html)
 - `detach("package:etudes.pdf", unload = TRUE)`
+- [`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html)
 
 #### Pour faire le site pagedown
 

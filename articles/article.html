@@ -145,26 +145,39 @@ le chemin de l’image.</p>
 <div class="section level3">
 <h3 id="blocs-disponibles">Blocs disponibles<a class="anchor" aria-label="anchor" href="#blocs-disponibles"></a>
 </h3>
-<p>Encadré:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
+<p>Définitions:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
-<p>Définitions:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <p>Pour en savoir plus:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">[</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">== Pour en savoir plus</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>- lien</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">#</span>pour-en-savoir-plus<span class="op">[</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">== Pour en savoir plus</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>- lien</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <p>Sources:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">#</span>sources<span class="op">[</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">#</span>sources<span class="op">[</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+<p>Encadré:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="fu">== Titre</span></span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
 <span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+<p>Encadré avec figure:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">[</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">== Titre du texte</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="fu">== Titre de la figure</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="kw">#</span>encadre-figure<span class="op">[</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>      <span class="kw">#</span>figure<span class="op">(</span>image<span class="op">(</span><span class="st">"&lt;&lt;...chemin vers l'image...&gt;&gt;"</span><span class="op">,</span> width<span class="op">:</span><span class="fl">100%</span><span class="op">))</span></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>      *Lecture* : &lt;&lt;..texte..&gt;&gt; <span class="sc">\ </span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>      *Champ* : &lt;&lt;..texte..&gt;&gt; <span class="sc">\ </span></span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>      *Source* : &lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>    <span class="op">]</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
@@ -172,36 +185,36 @@ le chemin de l’image.</p>
 </h3>
 <p>On peut aussi positionner plusieurs blocs ensemble avec mybloc()
 :</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">(</span>spacing<span class="op">:</span> <span class="fl">1.2em</span><span class="op">,</span>  leading<span class="op">:</span> <span class="fl">0.65em</span><span class="op">)[</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="fu">  == Titre d'un encadré</span></span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
-<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
-<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">  == Définitions</span></span>
-<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>  &lt;&lt;..texte..&gt;&gt;</span>
-<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="op">]</span></span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 49%, dy: 0mm, dx: 0mm)[</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">#</span>encadre<span class="op">(</span>spacing<span class="op">:</span> <span class="fl">1.2em</span><span class="op">,</span>  leading<span class="op">:</span> <span class="fl">0.65em</span><span class="op">)[</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">  == Titre d'un encadré</span></span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>&lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="kw">#</span>definitions<span class="op">[</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="fu">  == Définitions</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>  &lt;&lt;..texte..&gt;&gt;</span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="op">]</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>]</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-lours">Ajouter l’ours:<a class="anchor" aria-label="anchor" href="#ajouter-lours"></a>
 </h3>
 <p>Préciser le nom du rédacteur en chef de l’étude.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a> <span class="kw">#</span>ours<span class="op">(</span>rc<span class="op">:</span><span class="st">"Valérie Deroin"</span><span class="op">)</span></span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>mybloc(pos: bottom , largeur: 100%, dy: 0mm, dx: 0mm)[</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a> <span class="kw">#</span>ours<span class="op">(</span>rc<span class="op">:</span><span class="st">"Valérie Deroin"</span><span class="op">)</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>]</span></code></pre></div>
 <hr>
 </div>
 <div class="section level3">
 <h3 id="ajouter-un-lien-vers-les-données-complémentaires">Ajouter un lien vers les données complémentaires:<a class="anchor" aria-label="anchor" href="#ajouter-un-lien-vers-les-donn%C3%A9es-compl%C3%A9mentaires"></a>
 </h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="kw">#</span>donnees<span class="op">()</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>]</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode typst"><code class="sourceCode typst"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>mybloc(pos: bottom + right, largeur: 33%, dy:0mm, dx: 0mm)[</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="kw">#</span>donnees<span class="op">()</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>]</span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

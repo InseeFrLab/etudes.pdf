@@ -13,3 +13,7 @@
 #### Pour faire le site pagedown
 
 - [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html)
+
+#### Pour lancer les tests unitaires:
+
+- `devtools::test()`

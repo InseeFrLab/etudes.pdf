@@ -11,7 +11,7 @@ au format **PDF** conformes à la charte graphique de l’Insee.
 - [Liste des publications Insee Pays de la
   Loire](https://www.insee.fr/fr/statistiques?debut=0&categorie=2&collection=109)
 - [Charte Insee Flash
-  2025](https://inseefrlab.github.io/etudes.pdf/reference/figures/Cahier%20des%20charges%20IF%202025.pdf)
+  2025](https://inseefrlab.github.io/etudes.pdf/reference/figures/Cahier_des_charges_IF_2025.pdf)
 
 ------------------------------------------------------------------------
 

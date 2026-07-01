@@ -10,3 +10,5 @@ dev/
 ^vignettes/articles/\.quarto$
 ^vignettes/articles/*_files$
 ^vignettes/articles$
+^[.]?air[.]toml$
+^\.vscode$

@@ -67,22 +67,28 @@
     
     
 <div class="section level2">
-<h2 id="commandes-utiles-pour-le-developpeur">Commandes utiles pour le developpeur:<a class="anchor" aria-label="anchor" href="#commandes-utiles-pour-le-developpeur"></a>
+<h2 id="commandes-utiles-pour-le-développeur">Commandes utiles pour le développeur:<a class="anchor" aria-label="anchor" href="#commandes-utiles-pour-le-d%C3%A9veloppeur"></a>
 </h2>
-<div class="section level4">
-<h4 id="pour-faire-le-package-r">Pour faire le package R<a class="anchor" aria-label="anchor" href="#pour-faire-le-package-r"></a>
-</h4>
+<div class="section level3">
+<h3 id="pour-faire-le-package-r">Pour faire le package R<a class="anchor" aria-label="anchor" href="#pour-faire-le-package-r"></a>
+</h3>
 <ul>
-<li><code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code></li>
-<li><code><a href="https://devtools.r-lib.org/reference/check.html" class="external-link">devtools::check()</a></code></li>
 <li>
-<code><a href="https://devtools.r-lib.org/reference/install.html" class="external-link">devtools::install()</a></code> ou
-<code><a href="https://devtools.r-lib.org/reference/build.html" class="external-link">devtools::build()</a></code>
-</li>
-<li><code>detach("package:etudes.pdf", unload = TRUE)</code></li>
-<li><code><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">devtools::load_all()</a></code></li>
+<code><a href="https://devtools.r-lib.org/reference/document.html" class="external-link">devtools::document()</a></code>: Génère la documentation R pour le
+package.</li>
+<li>
+<code><a href="https://devtools.r-lib.org/reference/check.html" class="external-link">devtools::check()</a></code>: Vérifie le package pour les erreurs
+de syntaxe et les problèmes de dépendances.</li>
+<li>
+<code><a href="https://devtools.r-lib.org/reference/install.html" class="external-link">devtools::install()</a></code> ou <code><a href="https://devtools.r-lib.org/reference/build.html" class="external-link">devtools::build()</a></code>:
+Construit et installe le package.</li>
+<li>
+<code>detach("package:etudes.pdf", unload = TRUE)</code>: Décharge
+le package.</li>
+<li>
+<code><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">devtools::load_all()</a></code>: Charge toutes les fonctions et
+objets du package.</li>
 </ul>
-</div>
 <div class="section level4">
 <h4 id="pour-faire-le-site-pagedown">Pour faire le site pagedown<a class="anchor" aria-label="anchor" href="#pour-faire-le-site-pagedown"></a>
 </h4>
@@ -94,8 +100,9 @@
 <h4 id="pour-lancer-les-tests-unitaires">Pour lancer les tests unitaires:<a class="anchor" aria-label="anchor" href="#pour-lancer-les-tests-unitaires"></a>
 </h4>
 <ul>
-<li><code>devtools::test(filter = "insee")</code></li>
+<li><code><a href="https://devtools.r-lib.org/reference/test.html" class="external-link">devtools::test()</a></code></li>
 </ul>
+</div>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table des matières"><h2>Sur cette page</h2>

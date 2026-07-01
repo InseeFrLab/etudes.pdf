@@ -1,16 +1,21 @@
 # 
 
-## Commandes utiles pour le developpeur:
+## Commandes utiles pour le développeur:
 
-#### Pour faire le package R
+### Pour faire le package R
 
-- [`devtools::document()`](https://devtools.r-lib.org/reference/document.html)
-- [`devtools::check()`](https://devtools.r-lib.org/reference/check.html)
+- [`devtools::document()`](https://devtools.r-lib.org/reference/document.html):
+  Génère la documentation R pour le package.
+- [`devtools::check()`](https://devtools.r-lib.org/reference/check.html):
+  Vérifie le package pour les erreurs de syntaxe et les problèmes de
+  dépendances.
 - [`devtools::install()`](https://devtools.r-lib.org/reference/install.html)
   ou
-  [`devtools::build()`](https://devtools.r-lib.org/reference/build.html)
-- `detach("package:etudes.pdf", unload = TRUE)`
-- [`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html)
+  [`devtools::build()`](https://devtools.r-lib.org/reference/build.html):
+  Construit et installe le package.
+- `detach("package:etudes.pdf", unload = TRUE)`: Décharge le package.
+- [`devtools::load_all()`](https://devtools.r-lib.org/reference/load_all.html):
+  Charge toutes les fonctions et objets du package.
 
 #### Pour faire le site pagedown
 
@@ -18,4 +23,4 @@
 
 #### Pour lancer les tests unitaires:
 
-- `devtools::test(filter = "insee")`
+- [`devtools::test()`](https://devtools.r-lib.org/reference/test.html)

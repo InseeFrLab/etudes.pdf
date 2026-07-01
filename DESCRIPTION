@@ -1,6 +1,6 @@
 Package: etudes.pdf
 Title: Maquettage Insee Pays de la Loire
-Version: 1.0.3
+Version: 1.0.4
 Description: Outils de génération de PDF pour les études Insee Pays de la Loire.
 URL: https://inseefrlab.github.io/etudes.pdf
 Authors@R: person("Régis", "Relland", 
@@ -13,8 +13,7 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Language: fr
 Suggests: 
-    quarto,
-    testthat (>= 3.0.0)
+    quarto
 Config/testthat/edition: 3
 Depends: 
     R (>= 3.5.0)
@@ -27,5 +26,6 @@ Imports:
     dplyr,
     gridExtra,
     grid,
-    gtable
+    gtable,
+    testthat
 Config/Needs/website: rmarkdown

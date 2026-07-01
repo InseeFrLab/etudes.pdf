@@ -11,3 +11,6 @@
 #### Pour faire le site pagedown
 -  `pkgdown::build_site()`
 
+#### Pour lancer les tests unitaires:
+-   `devtools::test()`
+

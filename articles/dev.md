@@ -1,14 +1,17 @@
 # 
 
-## Commandes utiles pour le developpeur:
+## Commandes utiles pour le développeur:
 
-#### Pour faire le package R
+### Pour faire le package R
 
-- `devtools::document()`
-- `devtools::check()`
-- `devtools::install()` ou `devtools::build()`
-- `detach("package:etudes.pdf", unload = TRUE)`
-- `devtools::load_all()`
+- `devtools::document()`: Génère la documentation R pour le package.
+- `devtools::check()`: Vérifie le package pour les erreurs de syntaxe et
+  les problèmes de dépendances.
+- `devtools::install()` ou `devtools::build()`: Construit et installe le
+  package.
+- `detach("package:etudes.pdf", unload = TRUE)`: Décharge le package.
+- `devtools::load_all()`: Charge toutes les fonctions et objets du
+  package.
 
 #### Pour faire le site pagedown
 

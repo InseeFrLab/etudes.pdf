@@ -13,7 +13,11 @@ calibrage <- function(file_path) {
     pattern <- paste0(field, ':\\s*"([^"]+)"')
     match <- regexec(pattern, full_text)
     res <- regmatches(full_text, match)[[1]]
-    if (length(res) > 1) return(res[2]) else return("")
+    if (length(res) > 1) {
+      return(res[2])
+    } else {
+      return("")
+    }
   }
 
   titre_txt <- extract_yaml("title", text)

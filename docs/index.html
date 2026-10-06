@@ -73,12 +73,26 @@
 <ul>
 <li>Lancez la commande suivante pour installer le package <code>etudes.pdf</code>:</li>
 </ul>
+<p>Sur AUS, il est obligatoire de l’installer depuis gitlab.insee.fr:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_git.html" class="external-link">install_git</a></span><span class="op">(</span><span class="st">"https://gitlab.insee.fr/yfawc1/etudes.pdf"</span>, dependencies <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p>Sur POSTE, il est aussi possible de l’installer depuis github:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"https://github.com/InseeFrLab/etudes.pdf"</span><span class="op">)</span></span></code></pre></div>
 <ul>
 <li><p>Lancer la fonction <code><a href="reference/install_insee_flash_typst.html">install_insee_flash_typst()</a></code> pour installer l’extension typst dédiée aux Insee Flash ou <code><a href="reference/install_insee_analyses_typst.html">install_insee_analyses_typst()</a></code> pour installer l’extension typst des Insee Analyses: un dossier <code>\_extensions</code> est créé.</p></li>
 <li><p>déplacer le fichier modèle <code>if157.qmd</code> ou <code>ia144.qmd</code>du dossier <code>\_extensions/insee-flash</code> ou <code>\_extensions/insee-analyses</code> vers la racine puis lancer <code>quarto render if157.qmd</code> ou <code>quarto render ia144.qmd</code>pour générer le pdf.</p></li>
 <li><p>modifier le fichier <code>if157.qmd</code> ou <code>ia144.qmd</code>en fonction de vos besoins et lancer <code>quarto render if157.qmd</code> ou <code>quarto render ia144.qmd</code>pour régenerer le pdf.</p></li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="remarque-pour-aus">Remarque pour AUS<a class="anchor" aria-label="anchor" href="#remarque-pour-aus"></a>
+</h3>
+<p>AUS étant coupé d’internet, il a été nécessaire d’embarquer la librairie Meander dans le package R:</p>
+<ul>
+<li>meander:0.4.1 est embarqué dans <code>insee_analayses/typst/packages/preview/</code> et <code>insee-flash/typst/packages/preview/</code>
+</li>
+<li>hy-dro-gen:0.1.1, sa dépendance transitive est également embarquée aux mêmes emplacements.</li>
 </ul>
 </div>
 </div>

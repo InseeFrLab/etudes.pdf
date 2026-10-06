@@ -1,23 +1,9 @@
-## En cas de problèmes d'installation
+---
+title: "En cas de problèmes d'installation sur POSTE"
+--
 
 
-#### Installation du package Meander
-En cas de difficulté lors du quarto render, si la version de quarto-typst utilisée est trop ancienne, il peut y avoir un conflit avec le package Meander, qui requiert des fonctions typst récentes.
-Un message d'erreur de ce genre peut alors survenir:
-
-```
-error: module sym does not contain chevron
- ┌─ @preview/meander:0.4.2\src\bisect.typ:6:25
- │ 6 │ #let symbol_func = [#sym.chevron.l].func() │
-```
-
-Il faut simplement mettre à jour la version de quarto utilisée, en téléchargeant une version plus récente ici: https://quarto.org/docs/download/
-
-Penser à redémarrer le logiciel (Rstudio, Positron) une fois quarto mis à jour.
-
-------------------------------------------------------------------------
-
-#### Installation de quarto sur poste à l'Insee
+#### Installation de quarto sur POSTE à l'Insee
 
 Depuis 2026, des restrictions empêchent d'installer des applications n'importe où sur son poste, notamment Quarto.
 Il est néanmoins possible de l'installer dans ce dossier: C:\\INSEE\\LogicielsPortables
@@ -45,7 +31,7 @@ QUARTO_PATH=C:/INSEE/LogicielsPortables/Quarto/bin/quarto.exe
 
 
 
-#### Font Open Sans
+#### Font Open Sans sur POSTE
 
 Si ce message survient lors du quarto render:
 
